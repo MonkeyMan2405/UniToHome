@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StateMachineDiagramAI.unity
     guid: 64a86ce32dedcc042b759d60d36915ea
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AutoTargetting.unity
     guid: c8caaa2838b61b24198859fa50a47ad7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CoinCollector.unity
     guid: 8e5c5e3f54408504cbe9e2f49d8822f3
   m_configObjects:
