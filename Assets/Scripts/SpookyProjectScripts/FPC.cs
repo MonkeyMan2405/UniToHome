@@ -1,28 +1,43 @@
+using JetBrains.Annotations;
+using System.Runtime.CompilerServices;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class FPC : MonoBehaviour
 {
+    [Header("Player Variables")]
     public float playerWalkSpeed = 5f;
     public float playerRunMultiplier = 1.5f;
     public float playerJumpForce = 2f;
     public float groundCheckDistance = 1.5f;
+    //Character Controller reference
+    private CharacterController characterController;
+    public bool isGrounded;
+    public float gravity = -9.81f;
+    private Vector3 velocity;
+    private float verticalRotation = 0f;
+    [SerializeField]
+    private Rigidbody rb;
+
+    [Header("Camera")]
     public float mouseSensitivityX = 1f;
     public float mouseSensitivityY = 1f;
     public float minLookAngleY = -90f;
     public float maxLookAngleY = 90f;
-    [SerializeField]
-    private Rigidbody rb;
-
-    //Transform for Camera
     public Transform playerCamera;
+    public GameObject camPivotRef;
+    [Header("Camera Tilting")]
+    public float zTiltAmount;
+    public float tiltStartSpeed;
+    public float tiltEndSpeed;
+    private float zCurrentTilt = 0f;
+    private float zTargetTilt = 0f;
+    public float zSmoothTilt;
 
-    //Character Controller reference
-    private CharacterController characterController;
-    public bool isGrounded;
-
-    public float gravity = -9.81f;
-    private Vector3 velocity;
-    private float verticalRotation = 0;
+    public float xTiltAmount;
+    private float xCurrentTilt = 0f;
+    private float xTargetTilt = 0f;
+    public float xSmoothTilt;
 
     void Awake()
     {
@@ -42,6 +57,9 @@ public class FPC : MonoBehaviour
         //Maps WASD to horizontal and vertical movement
         float horizontalMovement = Input.GetAxisRaw("Horizontal");
         float verticalMovement = Input.GetAxisRaw("Vertical");
+
+        CameraTilt();
+        ForwardAndBackwardTilt();
 
 
 
@@ -64,22 +82,23 @@ public class FPC : MonoBehaviour
         //Prevents faster diagonal movement
         moveDirection.Normalize();
 
-
         float speed = playerWalkSpeed;
-        if(Input.GetAxis("Sprint") > 0)
+        if (Input.GetAxis("Sprint") > 0)
         {
             speed *= playerRunMultiplier;
         }
 
+
         //Something
         characterController.Move(moveDirection * speed * Time.deltaTime);
 
-        //Move the character controller
+        //Move the character controller using inbuilt function
         characterController.Move(velocity * Time.deltaTime);
 
 
-        //Camera set up.
-        if(playerCamera != null)
+
+        //Camera set up
+        if (playerCamera != null)
         {
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivityX;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivityY;
@@ -88,9 +107,95 @@ public class FPC : MonoBehaviour
             //Clamp the vertical rotation to prevent flipping. Clamps A by given floats
             verticalRotation = Mathf.Clamp(verticalRotation, minLookAngleY, maxLookAngleY);
 
-            // Rotate the player horizontally
-            playerCamera.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
+            // Rotate the player horizontally and with tilt
+            playerCamera.localRotation = Quaternion.Euler(verticalRotation, 0, zCurrentTilt);
             transform.Rotate(Vector3.up * mouseX);
+            //transform.localRotation = Quaternion.Euler(mouseX, mouseY, currentTilt);
         }
+
     }
+
+    //if (horizontalMovement >= 0.1f)
+    //{
+    //    Debug.Log("Moving Right");
+    //}
+
+    // check for Horizontal Movement
+    //get camera transform
+    // rotate by pos or neg to a max scale
+    //to rotate the camera
+
+    private void CameraTilt()
+    {
+        bool leftStrafe = Input.GetKey(KeyCode.A);
+        bool rightStrafe = Input.GetKey(KeyCode.D);
+        bool forwardStrafe = Input.GetKey(KeyCode.W);
+        bool backwardStrafe = Input.GetKey(KeyCode.S);
+
+
+        //Left-Right Strafing Tilting
+        // Determine the Ztarget tilt based on strafing input. If strafing left, set target tilt to positive value. If strafing right, set to negative value. If not strafing, set to zero
+        if (leftStrafe && !rightStrafe)
+        {
+            zTargetTilt = zTiltAmount;
+        }
+        else if (rightStrafe && !leftStrafe)
+        {
+            zTargetTilt = -zTiltAmount;
+        }
+        else
+        {
+            zTargetTilt = 0f;
+        }
+
+        // Smoothly interpolate current tilt to target tilt. If target tilt zero, use tilt end speed forquicker return to neutral. else, use tilt start speed for slower transition when starting to strafe.
+        if (zTargetTilt == 0)
+        {
+            zSmoothTilt = tiltEndSpeed;
+        }
+        else
+        {
+            zSmoothTilt = tiltStartSpeed;
+        }
+
+        // Lerp the current tilt towards the target tilt using the determined smooth speed and delta time
+        zCurrentTilt = Mathf.Lerp(zCurrentTilt, zTargetTilt, zSmoothTilt * Time.deltaTime);
+
+
+
+        // Determine the Xtarget tilt based on strafing input. If strafing forward, set target tilt to positive value. If strafing backwards, set to negative value. If not strafing, set to zero
+        if (forwardStrafe && !backwardStrafe)
+        {
+            xTargetTilt = xTiltAmount;
+        }
+        else if (backwardStrafe && !forwardStrafe)
+        {
+            xTargetTilt = -xTiltAmount;
+        }
+        else
+        {
+            xTargetTilt = 0f;
+        }
+
+        // Smoothly interpolate current tilt to target tilt. If target tilt zero, use tilt end speed forquicker return to neutral. else, use tilt start speed for slower transition when starting to strafe.
+        if (xTargetTilt == 0)
+        {
+            xSmoothTilt = tiltEndSpeed;
+        }
+        else
+        {
+            xSmoothTilt = tiltStartSpeed;
+        }
+
+        // Lerp the current tilt towards the target tilt using the determined smooth speed and delta time
+        xCurrentTilt = Mathf.Lerp(xCurrentTilt, xTargetTilt, xSmoothTilt * Time.deltaTime);
+    }
+    
+
+    public void ForwardAndBackwardTilt()
+    {
+        camPivotRef.transform.localRotation = Quaternion.Euler(xCurrentTilt, 0, 0);
+    }
+
+
 }
