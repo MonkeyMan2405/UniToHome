@@ -196,6 +196,4 @@ public class FPC : MonoBehaviour
     {
         camPivotRef.transform.localRotation = Quaternion.Euler(xCurrentTilt, 0, 0);
     }
-
-
 }
