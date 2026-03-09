@@ -1772,7 +1772,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410439988}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2254,7 +2254,7 @@ MonoBehaviour:
   playerJumpForce: 2
   groundCheckDistance: 1.5
   isGrounded: 0
-  gravity: -9.81
+  gravity: -10000
   rb: {fileID: 1605032396}
   mouseSensitivityX: 1
   mouseSensitivityY: 1

@@ -63,6 +63,7 @@ public class FPC : MonoBehaviour
 
 
 
+
         //if (Input.GetButtonDown("Jump"))
         //{
         //    RaycastHit hit;
