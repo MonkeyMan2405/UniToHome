@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -17,7 +18,7 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EEnemyState>
 
     [SerializeField] private Rigidbody enemyRb;
     [SerializeField] private NavMeshAgent enemyAgent;
-    [SerializeField] public Transform targetTransfrom;
+    [SerializeField] public Transform targetTransform;
     [SerializeField] public Vector3 playerLastLocation;
     [SerializeField] public List<Transform> patrolPointsList;
     //Whatever other variables the enemy needs to keep track of can be added here.
@@ -29,7 +30,7 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EEnemyState>
 
     private void Awake()
     {
-        _context = new EnemyStateContext(enemyRb, enemyAgent, targetTransfrom, playerLastLocation, patrolPointsList);
+        _context = new EnemyStateContext(enemyRb, enemyAgent, targetTransform, playerLastLocation, patrolPointsList);
         InitialiseStates();
     }
 
@@ -41,7 +42,5 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EEnemyState>
         States.Add(EEnemyState.SearchPoi, new SeachPoiState(_context, EEnemyState.SearchPoi));
         CurrentState = States[EEnemyState.Patrol];
     }
-
-
 }
 

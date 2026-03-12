@@ -7,16 +7,16 @@ public class EnemyStateContext
     
     [SerializeField] private Rigidbody enemyRb;
     [SerializeField] private NavMeshAgent enemyAgent;
-    public Transform targetTransfrom;
+    public Transform targetTransform;
     public Vector3 playerLastLocation;
     public List<Transform> patrolPointsList;
 
-    public EnemyStateContext(Rigidbody enemyRb, NavMeshAgent enemyAgent, Transform targetTransfrom, Vector3 playerLastLocation, List<Transform> patrolPointsList)
+    public EnemyStateContext(Rigidbody enemyRb, NavMeshAgent enemyAgent, Transform targetTransform, Vector3 playerLastLocation, List<Transform> patrolPointsList)
     {
         // Initialize the context with the necessary variables for the enemy's state machine.
         this.enemyRb = enemyRb;
         this.enemyAgent = enemyAgent;
-        this.targetTransfrom = targetTransfrom;
+        this.targetTransform = targetTransform;
         this.playerLastLocation = playerLastLocation;
         this.patrolPointsList = patrolPointsList;
     }
@@ -24,7 +24,7 @@ public class EnemyStateContext
     // Getters for the context variables. These can be used by the different states to access the necessary information about the enemy and its environment.
     public Rigidbody EnemyRb  => enemyRb;
     public NavMeshAgent EnemyAgent => enemyAgent;
-    public Transform TargetTransfrom => targetTransfrom;    
+    public Transform TargetTransform => targetTransform;    
     public Vector3 PlayerLastLocation => playerLastLocation;
     public List<Transform> PatrolPointsList => patrolPointsList;
 
