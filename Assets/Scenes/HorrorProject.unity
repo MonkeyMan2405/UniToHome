@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 260609715}
   - component: {fileID: 260609714}
   - component: {fileID: 260609713}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: TargetTest (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +398,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 68ca2c38e18b6aa48985e990c4ea1fca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 731931873}
   - component: {fileID: 731931872}
   - component: {fileID: 731931871}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DirectionCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1719,7 +1719,7 @@ GameObject:
   - component: {fileID: 1410439993}
   - component: {fileID: 1410439992}
   - component: {fileID: 1410439991}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlayerCapsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1830,7 +1830,7 @@ GameObject:
   - component: {fileID: 1410889453}
   - component: {fileID: 1410889452}
   - component: {fileID: 1410889451}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: TargetTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1881,7 +1881,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 68ca2c38e18b6aa48985e990c4ea1fca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1991,7 +1991,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 68ca2c38e18b6aa48985e990c4ea1fca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2307,7 +2307,7 @@ GameObject:
   - component: {fileID: 1612286780}
   - component: {fileID: 1612286779}
   - component: {fileID: 1612286778}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: TargetTest (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2358,7 +2358,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 68ca2c38e18b6aa48985e990c4ea1fca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2460,11 +2460,11 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1032
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
@@ -2560,6 +2560,10 @@ MonoBehaviour:
   - {fileID: 1612286781}
   - {fileID: 2065716876}
   - {fileID: 260609716}
+  rayCheckDistance: 20
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!54 &1775265646
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2579,13 +2583,13 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1032
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &1791392226
 GameObject:
@@ -3370,7 +3374,7 @@ GameObject:
   - component: {fileID: 2065716875}
   - component: {fileID: 2065716874}
   - component: {fileID: 2065716873}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: TargetTest (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3421,7 +3425,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 68ca2c38e18b6aa48985e990c4ea1fca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

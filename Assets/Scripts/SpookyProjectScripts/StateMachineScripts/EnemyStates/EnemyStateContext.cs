@@ -10,8 +10,10 @@ public class EnemyStateContext
     public Transform targetTransform;
     public Vector3 playerLastLocation;
     public List<Transform> patrolPointsList;
+    public float rayCheckDistance;
+    public LayerMask layerMask;
 
-    public EnemyStateContext(Rigidbody enemyRb, NavMeshAgent enemyAgent, Transform targetTransform, Vector3 playerLastLocation, List<Transform> patrolPointsList)
+    public EnemyStateContext(Rigidbody enemyRb, NavMeshAgent enemyAgent, Transform targetTransform, Vector3 playerLastLocation, List<Transform> patrolPointsList, float rayCheckDistance, LayerMask layerMask)
     {
         // Initialize the context with the necessary variables for the enemy's state machine.
         this.enemyRb = enemyRb;
@@ -19,6 +21,8 @@ public class EnemyStateContext
         this.targetTransform = targetTransform;
         this.playerLastLocation = playerLastLocation;
         this.patrolPointsList = patrolPointsList;
+        this.rayCheckDistance = rayCheckDistance;
+        this.layerMask = layerMask;
     }
 
     // Getters for the context variables. These can be used by the different states to access the necessary information about the enemy and its environment.

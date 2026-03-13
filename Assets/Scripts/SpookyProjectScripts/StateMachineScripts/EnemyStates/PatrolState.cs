@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -39,6 +40,19 @@ public class PatrolState : EnemyState
 
         }
 
+
+        if (Physics.Raycast(Context.EnemyRb.transform.position, Context.EnemyRb.transform.forward,out RaycastHit hitInfo, Context.rayCheckDistance, Context.layerMask))
+        {
+            Debug.Log("Rayhit");
+            Debug.DrawRay(Context.EnemyRb.transform.position, Context.EnemyRb.transform.forward * hitInfo.distance, Color.green);
+        }
+        else
+        {
+            Debug.Log("Ray no hit");
+            Debug.DrawRay(Context.EnemyRb.transform.position, Context.EnemyRb.transform.forward * Context.rayCheckDistance, Color.blue);
+        }
+
+        //Temp
         if (Input.GetKey(KeyCode.Space))
         {
             StopPursuingCurrentTarget();
@@ -106,6 +120,8 @@ public class PatrolState : EnemyState
     //Implement Raycast system,
     //Somehow stop agent from moving mid player detect +
     //Switch to Chase State logic +
+
+  
 
 
 }

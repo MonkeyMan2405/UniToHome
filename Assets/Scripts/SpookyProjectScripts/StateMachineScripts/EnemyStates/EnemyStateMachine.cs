@@ -21,6 +21,8 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EEnemyState>
     [SerializeField] public Transform targetTransform;
     [SerializeField] public Vector3 playerLastLocation;
     [SerializeField] public List<Transform> patrolPointsList;
+    [SerializeField] public float rayCheckDistance = 20f;
+    [SerializeField] LayerMask layerMask;
     //Whatever other variables the enemy needs to keep track of can be added here.
 
 
@@ -30,7 +32,7 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EEnemyState>
 
     private void Awake()
     {
-        _context = new EnemyStateContext(enemyRb, enemyAgent, targetTransform, playerLastLocation, patrolPointsList);
+        _context = new EnemyStateContext(enemyRb, enemyAgent, targetTransform, playerLastLocation, patrolPointsList, rayCheckDistance, layerMask);
         InitialiseStates();
     }
 

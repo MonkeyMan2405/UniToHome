@@ -65,6 +65,10 @@ public class SeachPoiState : EnemyState
 
     public override EnemyStateMachine.EEnemyState GetNextState()
     {
+        if ( Input.GetKey(KeyCode.Backspace)) //raycast hits player
+        {
+            return EnemyStateMachine.EEnemyState.Chase;
+        }
         return StateKey;
     }
 
