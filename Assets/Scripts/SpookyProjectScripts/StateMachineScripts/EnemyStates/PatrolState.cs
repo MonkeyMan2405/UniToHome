@@ -11,6 +11,13 @@ public class PatrolState : EnemyState
     private float closingRange = 1f;
     private bool doNotCheck = false;
     private Transform currentPatrolTransform;
+    RaycastHit hitInfo;
+    private bool seenPlayer = false;
+
+    private float rayStartAngle;
+    private float rayAngle;
+    private Quaternion rayRotation;
+    private Vector3 rayDirection;
 
 
     public PatrolState(EnemyStateContext context, EnemyStateMachine.EEnemyState state) : base(context, state)
@@ -25,6 +32,7 @@ public class PatrolState : EnemyState
         Debug.Log("Entered Patrol State");
         //Set the patrol points list
         SetNewTargetAndMove();
+        seenPlayer = false;
     }
 
 
@@ -35,27 +43,43 @@ public class PatrolState : EnemyState
         if (Context.EnemyAgent.remainingDistance <= closingRange && doNotCheck == false)
         {
             Debug.Log("Reached");
-            //doNotCheck = true;
+            doNotCheck = true;
             SetNewTargetAndMove();
+        }
 
+        //Raycast Cone
+        Context.raySpacing = 16f;
+        Context.rayCount = 12;
+
+        Ray enemyRay = new Ray(Context.EnemyRb.transform.position, Context.EnemyRb.transform.forward);
+
+        for (int i = 0; i < Context.rayCount; i++)
+        {
+            float rayStartAngle = -(Context.raySpacing * Context.rayCount - 1) / 2f;
+            //Calculate angle for the rays
+            float rayAngle = rayStartAngle + (i * Context.raySpacing);
+            rayRotation = Quaternion.Euler(0, rayAngle, 0);
+            rayDirection = rayRotation * Context.EnemyRb.transform.forward;
+
+            // Perform the raycast. Red and blocked if hitting an object, green and passing through if not.
+
+            Debug.DrawRay(Context.EnemyRb.transform.position, rayDirection * Context.rayCheckDistance, Color.green);
+            if (Physics.Raycast(Context.EnemyRb.transform.position, rayDirection, out hitInfo, Context.rayCheckDistance))
+            {
+                //check if the raycast hit the player
+                Debug.DrawRay(Context.EnemyRb.transform.position, rayDirection * hitInfo.distance, Color.red);
+                if (hitInfo.collider.CompareTag("Player"))
+                {
+                    seenPlayer = true;
+                }
+            }
         }
 
 
-        if (Physics.Raycast(Context.EnemyRb.transform.position, Context.EnemyRb.transform.forward,out RaycastHit hitInfo, Context.rayCheckDistance, Context.layerMask))
+        //temp
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Rayhit");
-            Debug.DrawRay(Context.EnemyRb.transform.position, Context.EnemyRb.transform.forward * hitInfo.distance, Color.green);
-        }
-        else
-        {
-            Debug.Log("Ray no hit");
-            Debug.DrawRay(Context.EnemyRb.transform.position, Context.EnemyRb.transform.forward * Context.rayCheckDistance, Color.blue);
-        }
-
-        //Temp
-        if (Input.GetKey(KeyCode.Space))
-        {
-            StopPursuingCurrentTarget();
+            seenPlayer = true;
         }
     }
 
@@ -91,7 +115,7 @@ public class PatrolState : EnemyState
 
     public override EnemyStateMachine.EEnemyState GetNextState()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (seenPlayer == true)
         {
             return EnemyStateMachine.EEnemyState.Chase;
         }
@@ -106,9 +130,8 @@ public class PatrolState : EnemyState
         currentPatrolTransform = Context.patrolPointsList[Random.Range(0, Context.patrolPointsList.Count)];
         Debug.Log("Current Target is " + currentPatrolTransform.name);
         Context.EnemyAgent.SetDestination(currentPatrolTransform.position);
+        doNotCheck = false;
     }
-
-
 
 
     public void StopPursuingCurrentTarget()
@@ -116,12 +139,14 @@ public class PatrolState : EnemyState
        Context.EnemyAgent.SetDestination(Context.EnemyAgent.transform.position);
     }
 
+     
+
 
     //Implement Raycast system,
     //Somehow stop agent from moving mid player detect +
     //Switch to Chase State logic +
 
-  
+
 
 
 }

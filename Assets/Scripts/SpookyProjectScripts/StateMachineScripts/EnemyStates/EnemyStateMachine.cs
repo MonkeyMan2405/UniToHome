@@ -21,18 +21,28 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EEnemyState>
     [SerializeField] public Transform targetTransform;
     [SerializeField] public Vector3 playerLastLocation;
     [SerializeField] public List<Transform> patrolPointsList;
-    [SerializeField] public float rayCheckDistance = 20f;
-    [SerializeField] LayerMask layerMask;
+
+    [SerializeField] public float rayCheckDistance = 20f;       //obvious
+    [SerializeField] LayerMask layerMask;       //layers the raycasts can hit
+    [SerializeField] RaycastHit hitInfo;
+    [SerializeField] private int rayCount;        // Number of rays to cast
+    [SerializeField] private float raySpacing;    // Angle degree between each ray
+
+    [SerializeField] private MeshRenderer enemyMeshRenderer;
+    [SerializeField] private Material enemyFaceMaterial;
+
+   
+
     //Whatever other variables the enemy needs to keep track of can be added here.
 
 
-    
+
 
 
 
     private void Awake()
     {
-        _context = new EnemyStateContext(enemyRb, enemyAgent, targetTransform, playerLastLocation, patrolPointsList, rayCheckDistance, layerMask);
+        _context = new EnemyStateContext(enemyRb, enemyAgent, targetTransform, playerLastLocation, patrolPointsList, rayCheckDistance, layerMask, hitInfo, enemyMeshRenderer, enemyFaceMaterial.parent, rayCount, raySpacing);
         InitialiseStates();
     }
 
