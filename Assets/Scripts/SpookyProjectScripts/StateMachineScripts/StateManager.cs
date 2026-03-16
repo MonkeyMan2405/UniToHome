@@ -36,7 +36,6 @@ public abstract class StateManager<EState> : MonoBehaviour where EState : Enum
    
 
 
-
     public void TransitionToState(EState nextStateKey)
     {
         // Check if the next state exists in the dictionary before transitioning.
@@ -63,10 +62,12 @@ public abstract class StateManager<EState> : MonoBehaviour where EState : Enum
         CurrentState.OnTriggerEnter(other);
     }
 
+
     private void OnTriggerExit(Collider other)
     {
         CurrentState.OnTriggerExit(other);
     }
+
 
     private void OnTriggerStay(Collider other)
     {

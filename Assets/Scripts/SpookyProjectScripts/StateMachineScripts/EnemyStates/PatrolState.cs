@@ -48,39 +48,13 @@ public class PatrolState : EnemyState
         }
 
         //Raycast Cone
-        Context.raySpacing = 16f;
+        Context.raySpacing = 12f;
         Context.rayCount = 12;
 
         Ray enemyRay = new Ray(Context.EnemyRb.transform.position, Context.EnemyRb.transform.forward);
 
-        for (int i = 0; i < Context.rayCount; i++)
-        {
-            float rayStartAngle = -(Context.raySpacing * Context.rayCount - 1) / 2f;
-            //Calculate angle for the rays
-            float rayAngle = rayStartAngle + (i * Context.raySpacing);
-            rayRotation = Quaternion.Euler(0, rayAngle, 0);
-            rayDirection = rayRotation * Context.EnemyRb.transform.forward;
+        PatrolRaySearch();
 
-            // Perform the raycast. Red and blocked if hitting an object, green and passing through if not.
-
-            Debug.DrawRay(Context.EnemyRb.transform.position, rayDirection * Context.rayCheckDistance, Color.green);
-            if (Physics.Raycast(Context.EnemyRb.transform.position, rayDirection, out hitInfo, Context.rayCheckDistance))
-            {
-                //check if the raycast hit the player
-                Debug.DrawRay(Context.EnemyRb.transform.position, rayDirection * hitInfo.distance, Color.red);
-                if (hitInfo.collider.CompareTag("Player"))
-                {
-                    seenPlayer = true;
-                }
-            }
-        }
-
-
-        //temp
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            seenPlayer = true;
-        }
     }
 
 
@@ -124,6 +98,7 @@ public class PatrolState : EnemyState
 
 
 
+
     public void SetNewTargetAndMove()
     {
         //Target is random from 0 to size of list
@@ -139,15 +114,35 @@ public class PatrolState : EnemyState
        Context.EnemyAgent.SetDestination(Context.EnemyAgent.transform.position);
     }
 
-     
-
-
-    //Implement Raycast system,
-    //Somehow stop agent from moving mid player detect +
-    //Switch to Chase State logic +
 
 
 
+    public void PatrolRaySearch()
+    {
+        for (int i = 0; i < Context.rayCount; i++)
+        {
+            float rayStartAngle = -(Context.raySpacing * Context.rayCount - 1) / 2f;
+            //Calculate angle for the rays
+            float rayAngle = rayStartAngle + (i * Context.raySpacing);
+            rayRotation = Quaternion.Euler(0, rayAngle, 0);
+            rayDirection = rayRotation * Context.EnemyRb.transform.forward;
+
+            // Perform the raycast. Red and blocked if hitting an object, green if not.
+
+            if (Physics.Raycast(Context.EnemyRb.transform.position, rayDirection, out hitInfo, Context.rayCheckDistance))
+            {
+                Debug.DrawRay(Context.EnemyRb.transform.position, rayDirection * hitInfo.distance, Color.green);
+
+                //check if the raycast hit the player
+                if (hitInfo.collider.CompareTag("Player"))
+                {
+                      Debug.DrawRay(Context.EnemyRb.transform.position, rayDirection * hitInfo.distance, Color.red);
+                    seenPlayer = true;
+                }
+            }
+        }
+    
+    }
 
 }
 
