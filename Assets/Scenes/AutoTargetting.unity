@@ -1217,7 +1217,7 @@ GameObject:
   - component: {fileID: 1872492143}
   - component: {fileID: 1872492142}
   - component: {fileID: 1872492146}
-  - component: {fileID: 1872492147}
+  - component: {fileID: 1872492148}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1327,7 +1327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4b158a36f4f094ca8ff6efd877e411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1872492147
+--- !u!114 &1872492148
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1336,7 +1336,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1872492141}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52121f8c84af250418ff5d2862a4d417, type: 3}
+  m_Script: {fileID: 11500000, guid: b15069e1818b2d94bb934a45ee5e88ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   EnemiesList:

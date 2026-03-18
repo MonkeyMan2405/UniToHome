@@ -8,7 +8,6 @@ public class SeachPoiState : EnemyState
     private Transform lastSeenPoiTransform;
     private bool seenPlayer = false;
     private float attentionTimer;
-    private float attentionSpan;
 
     RaycastHit hitInfo;
     private float rayStartAngle;
@@ -30,7 +29,6 @@ public class SeachPoiState : EnemyState
         Debug.Log("Entered Poi State");
         lastSeenPoiTransform = Context.TargetTransform;
         attentionTimer = 0f;
-        attentionSpan = 7f;
 
         seenPlayer = false;
         SearchLastPoi();
