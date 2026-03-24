@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Runtime.CompilerServices;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class FPC : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class FPC : MonoBehaviour
     //Character Controller reference
     private CharacterController characterController;
     public bool isGrounded;
-    public float gravity = -9.81f;
+    public float gravity;
     private Vector3 velocity;
     private float verticalRotation = 0f;
     [SerializeField]
@@ -26,6 +27,7 @@ public class FPC : MonoBehaviour
     public float maxLookAngleY = 90f;
     public Transform playerCamera;
     public GameObject camPivotRef;
+
     [Header("Camera Tilting")]
     public float zTiltAmount;
     public float tiltStartSpeed;
@@ -38,6 +40,10 @@ public class FPC : MonoBehaviour
     private float xCurrentTilt = 0f;
     private float xTargetTilt = 0f;
     public float xSmoothTilt;
+
+    public int exInt;
+
+
 
     void Awake()
     {
@@ -54,77 +60,14 @@ public class FPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Maps WASD to horizontal and vertical movement
-        float horizontalMovement = Input.GetAxisRaw("Horizontal");
-        float verticalMovement = Input.GetAxisRaw("Vertical");
 
+        CameraSetup();
         CameraTilt();
         ForwardAndBackwardTilt();
-
-
-
-
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        //    RaycastHit hit;
-        //    if (Physics.Raycast(transform.position, Vector3.down, out hit, groundCheckDistance))
-        //    {
-        //       rb.AddForce(Vector3.up * playerJumpForce, ForceMode.Impulse);
-        //    }
-        //    else
-        //    {
-        //        velocity.y += gravity * Time.deltaTime;
-        //    }
-        //}
-
-
-        //Movement
-        Vector3 moveDirection = transform.forward * verticalMovement + transform.right * horizontalMovement;
-        //Prevents faster diagonal movement
-        moveDirection.Normalize();
-
-        float speed = playerWalkSpeed;
-        if (Input.GetAxis("Sprint") > 0)
-        {
-            speed *= playerRunMultiplier;
-        }
-
-
-        //Something
-        characterController.Move(moveDirection * speed * Time.deltaTime);
-
-        //Move the character controller using inbuilt function
-        characterController.Move(velocity * Time.deltaTime);
-
-
-
-        //Camera set up
-        if (playerCamera != null)
-        {
-            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivityX;
-            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivityY;
-
-            verticalRotation -= mouseY;
-            //Clamp the vertical rotation to prevent flipping. Clamps A by given floats
-            verticalRotation = Mathf.Clamp(verticalRotation, minLookAngleY, maxLookAngleY);
-
-            // Rotate the player horizontally and with tilt
-            playerCamera.localRotation = Quaternion.Euler(verticalRotation, 0, zCurrentTilt);
-            transform.Rotate(Vector3.up * mouseX);
-            //transform.localRotation = Quaternion.Euler(mouseX, mouseY, currentTilt);
-        }
+        Movement();
 
     }
 
-    //if (horizontalMovement >= 0.1f)
-    //{
-    //    Debug.Log("Moving Right");
-    //}
-
-    // check for Horizontal Movement
-    //get camera transform
-    // rotate by pos or neg to a max scale
-    //to rotate the camera
 
     private void CameraTilt()
     {
@@ -132,7 +75,6 @@ public class FPC : MonoBehaviour
         bool rightStrafe = Input.GetKey(KeyCode.D);
         bool forwardStrafe = Input.GetKey(KeyCode.W);
         bool backwardStrafe = Input.GetKey(KeyCode.S);
-
 
         //Left-Right Strafing Tilting
         // Determine the Ztarget tilt based on strafing input. If strafing left, set target tilt to positive value. If strafing right, set to negative value. If not strafing, set to zero
@@ -148,6 +90,7 @@ public class FPC : MonoBehaviour
         {
             zTargetTilt = 0f;
         }
+
 
         // Smoothly interpolate current tilt to target tilt. If target tilt zero, use tilt end speed forquicker return to neutral. else, use tilt start speed for slower transition when starting to strafe.
         if (zTargetTilt == 0)
@@ -178,7 +121,8 @@ public class FPC : MonoBehaviour
             xTargetTilt = 0f;
         }
 
-        // Smoothly interpolate current tilt to target tilt. If target tilt zero, use tilt end speed forquicker return to neutral. else, use tilt start speed for slower transition when starting to strafe.
+
+        // Smoothly interpolate current tilt to target tilt. If target tilt zero, use tilt end speed for quicker return to neutral. else, use tilt start speed for slower transition when starting to strafe.
         if (xTargetTilt == 0)
         {
             xSmoothTilt = tiltEndSpeed;
@@ -197,4 +141,69 @@ public class FPC : MonoBehaviour
     {
         camPivotRef.transform.localRotation = Quaternion.Euler(xCurrentTilt, 0, 0);
     }
+
+
+    public void Movement()
+    {
+        //Maps WASD to horizontal and vertical movement
+        float horizontalMovement = Input.GetAxisRaw("Horizontal");
+        float verticalMovement = Input.GetAxisRaw("Vertical");
+
+
+        //Movement
+        Vector3 moveDirection = transform.forward * verticalMovement + transform.right * horizontalMovement;
+        //Prevents faster diagonal movement
+        moveDirection.Normalize();
+
+        float speed = playerWalkSpeed;
+        if (Input.GetAxis("Sprint") > 0)
+        {
+            speed *= playerRunMultiplier;
+        }
+
+
+        //Something
+        characterController.Move(moveDirection * speed * Time.deltaTime);
+        //Gravity
+        characterController.Move(Vector3.down * gravity * Time.deltaTime);
+
+        //Move the character controller using inbuilt function
+        characterController.Move(velocity * Time.deltaTime);
+    }
+
+
+    public void CameraSetup()
+    {
+        //Camera set up
+        if (playerCamera != null)
+        {
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivityX;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivityY;
+
+            verticalRotation -= mouseY;
+            //Clamp the vertical rotation to prevent flipping. Clamps A by given floats
+            verticalRotation = Mathf.Clamp(verticalRotation, minLookAngleY, maxLookAngleY);
+
+            // Rotate the player horizontally and with tilt
+            playerCamera.localRotation = Quaternion.Euler(verticalRotation, 0, zCurrentTilt);
+            transform.Rotate(Vector3.up * mouseX);
+            //transform.localRotation = Quaternion.Euler(mouseX, mouseY, currentTilt);
+        }
+    }
+
+
+    //if (Input.GetButtonDown("Jump"))
+        //{
+        //    RaycastHit hit;
+        //    if (Physics.Raycast(transform.position, Vector3.down, out hit, groundCheckDistance))
+        //    {
+        //       rb.AddForce(Vector3.up * playerJumpForce, ForceMode.Impulse);
+        //    }
+        //    else
+        //    {
+        //        velocity.y += gravity * Time.deltaTime;
+        //    }
+        //}
+    
 }
+
