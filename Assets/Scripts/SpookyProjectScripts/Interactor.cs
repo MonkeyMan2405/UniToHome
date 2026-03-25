@@ -1,5 +1,7 @@
 using Unity.VisualScripting;
+using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public interface IInteractable
 {
@@ -10,6 +12,7 @@ public class Interactor : MonoBehaviour
 {
     public Transform interactorSource;
     public float interactionRange;
+    public LayerMask interactionMask;
 
     //Interactee inherits this so interacter can invoke behaviours
     //Put this on interactable objects.
@@ -27,8 +30,10 @@ public class Interactor : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Ray interactRay = new Ray(interactorSource.position, interactorSource.forward);
+           
             if (Physics.Raycast(interactRay, out RaycastHit interactRayHitInfo, interactionRange))
             {
+                Debug.DrawRay(interactorSource.position, interactorSource.forward * interactRayHitInfo.distance, Color.green, interactionMask);
                 if (interactRayHitInfo.collider.gameObject.TryGetComponent(out IInteractable interactableObject))
                 {
                     interactableObject.Interact();

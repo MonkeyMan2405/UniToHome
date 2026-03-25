@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-/// This is the state machine for the enemy. It defines the different states that the enemy can be in and manages the transitions between those states.
+// This is the state machine for the enemy. It defines the different states that the enemy can be in and manages the transitions between those states.
 public class EnemyStateMachine : StateManager<EnemyStateMachine.EEnemyState>
 {
     public enum EEnemyState

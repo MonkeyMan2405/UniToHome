@@ -25,8 +25,6 @@ public class PatrolState : EnemyState
         EnemyStateContext Context = context;
     }
 
-
-
     public override void EnterState()
     {
         Debug.Log("Entered Patrol State");

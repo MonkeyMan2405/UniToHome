@@ -41,8 +41,6 @@ public class FPC : MonoBehaviour
     private float xTargetTilt = 0f;
     public float xSmoothTilt;
 
-    public int exInt;
-
 
 
     void Awake()

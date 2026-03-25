@@ -11,6 +11,7 @@ public abstract class StateManager<EState> : MonoBehaviour where EState : Enum
 
     protected bool isTransitioningState = false;
 
+
     private void Start()
     {
         // Initialize the current state to the first state in the dictionary.

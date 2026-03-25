@@ -830,7 +830,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0deba5e1a7d59fa41a515fe25bf6f51f, type: 2}
+  - {fileID: 2100000, guid: 637d29f75b8458940b0f05f39062dc43, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1474,11 +1474,11 @@ Transform:
   m_GameObject: {fileID: 731931869}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.45, z: 0.474}
-  m_LocalScale: {x: 0.92085, y: 0.376064, z: 0.059412}
+  m_LocalPosition: {x: 0, y: 0, z: 0.474}
+  m_LocalScale: {x: 0.9208501, y: 0.376064, z: 0.059412006}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1410439989}
+  m_Father: {fileID: 1093848632}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &731931871
 BoxCollider:
@@ -1497,7 +1497,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1567,7 +1567,7 @@ GameObject:
   - component: {fileID: 777232672}
   - component: {fileID: 777232671}
   - component: {fileID: 777232675}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bookshelf/Furniture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2248,7 +2248,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 731931870}
   m_Father: {fileID: 1233967854}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1093848633
@@ -2367,7 +2368,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactorSource: {fileID: 1093848632}
-  interactionRange: 10
+  interactionRange: 2
+  interactionMask:
+    serializedVersion: 2
+    m_Bits: 4096
 --- !u!1 &1169586063
 GameObject:
   m_ObjectHideFlags: 0
@@ -2767,8 +2771,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 731931870}
+  m_Children: []
   m_Father: {fileID: 1605032393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1410439992
@@ -3392,8 +3395,8 @@ Transform:
   m_GameObject: {fileID: 1553023597}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.79, y: 0.56, z: -5.317}
-  m_LocalScale: {x: 2.0756, y: 0.39727882, z: 3.0129473}
+  m_LocalPosition: {x: 3.79, y: 0.732, z: -5.317}
+  m_LocalScale: {x: 2.0756, y: 0.48662683, z: 3.0129473}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3425,15 +3428,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605032392}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7027266, z: -0, w: 0.71146}
-  m_LocalPosition: {x: -3.67, y: 1.32, z: -9.657}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -7.89, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1410439989}
   - {fileID: 1233967854}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -89.292, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!143 &1605032394
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3490,7 +3493,6 @@ MonoBehaviour:
   zSmoothTilt: 0
   xTiltAmount: 2
   xSmoothTilt: 0
-  exInt: 0
 --- !u!54 &1605032396
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4473,7 +4475,7 @@ GameObject:
   - component: {fileID: 2003533795}
   - component: {fileID: 2003533794}
   - component: {fileID: 2003533793}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: UnderBed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4563,8 +4565,8 @@ Transform:
   m_GameObject: {fileID: 2003533792}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.79, y: 0.158, z: -5.317}
-  m_LocalScale: {x: 1.8799124, y: 0.35982338, z: 2.7288866}
+  m_LocalPosition: {x: 3.79, y: 0.009, z: -5.317}
+  m_LocalScale: {x: 1.8799124, y: 0.031404153, z: 2.7288866}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

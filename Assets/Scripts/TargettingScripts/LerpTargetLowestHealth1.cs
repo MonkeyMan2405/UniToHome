@@ -15,12 +15,14 @@ public class LerpTargetLowestHealth : MonoBehaviour
     private Transform currentTarget;
     private Vector3 targetDirection;
     private Quaternion targetRotation;
+    public MeshRenderer laserRenderer;
 
     void Start()
     {
         EnemyHealthInsertionSortList(EnemiesList);
       
         StartCoroutine(LookThenDestroy());
+        laserRenderer.enabled = false;
     }
 
     
@@ -33,10 +35,12 @@ public class LerpTargetLowestHealth : MonoBehaviour
             targetDirection = currentTarget.position - transform.position;//itself
             targetRotation = Quaternion.LookRotation(targetDirection);
             yield return waitFor1Second;
+            laserRenderer.enabled = true;
             //rotates to look at in Update Function
        
             yield return waitFor1Second;
             Destroy(enemy.gameObject);
+            laserRenderer.enabled = false;
         }
         Debug.Log("Game Over");
     }
