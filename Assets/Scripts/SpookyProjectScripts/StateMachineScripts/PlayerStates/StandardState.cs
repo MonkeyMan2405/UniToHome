@@ -215,6 +215,8 @@ public class StandardState : PlayerState, IInteractable
             if (Physics.Raycast(interactRay, out RaycastHit interactRayHitInfo, PContext.interactionRange))
             {
                 Debug.DrawRay(PContext.interactorSource.position, PContext.interactorSource.forward * interactRayHitInfo.distance, Color.green, PContext.interactionMask);
+
+                //check if the ray hits specific object with the tag below. in this instance, this is the computer.
                 if (interactRayHitInfo.collider.CompareTag("InteractableWork"))
                 {
                     PContext.changeToWorkState = true;
