@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class StandardState : PlayerState
 {
-
+    public PlayerStateMachine playerStateMachineRef;
+    public CharacterController playerCharacterController;
+    public Rigidbody playerRb;
+    public GameObject playerGameObject;
 
     public StandardState(PlayerStateContext _pcontext, PlayerStateMachine.EPlayerState state) : base(_pcontext, state)
     {
@@ -10,15 +13,18 @@ public class StandardState : PlayerState
     }
 
     public override void EnterState()
-    { 
-      
+    {
+
     }
 
 
 
     public override void UpdateState()
     {
-
+        CameraSetup();
+        CameraTilt();
+        ForwardAndBackwardTilt();
+        Movement();
     }
 
 
@@ -139,7 +145,8 @@ public class StandardState : PlayerState
 
 
         //Movement
-        Vector3 moveDirection = PContext.PlayerGameObject.transform.forward * verticalMovement + PContext.PlayerGameObject.transform.right * horizontalMovement;
+        Vector3 moveDirection = PContext.playerGameObject.transform.forward * verticalMovement + PContext.playerGameObject.transform.right * horizontalMovement;
+ 
         //Prevents faster diagonal movement
         moveDirection.Normalize();
 
@@ -174,7 +181,7 @@ public class StandardState : PlayerState
 
             // Rotate the player horizontally and with tilt
             PContext.playerCamera.localRotation = Quaternion.Euler(PContext.verticalRotation, 0, PContext.zCurrentTilt);
-            PContext.PlayerGameObject.transform.Rotate(Vector3.up * mouseX);
+            PContext.playerGameObject.transform.Rotate(Vector3.up * mouseX);
             //transform.localRotation = Quaternion.Euler(mouseX, mouseY, currentTilt);
         }
     }

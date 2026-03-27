@@ -3413,6 +3413,7 @@ GameObject:
   - component: {fileID: 1605032395}
   - component: {fileID: 1605032394}
   - component: {fileID: 1605032396}
+  - component: {fileID: 1605032397}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3469,14 +3470,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605032392}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: daa01d79f2e2acd4a91efa01c19591e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerWalkSpeed: 3
   playerRunMultiplier: 1.5
-  playerJumpForce: 5000
+  playerJumpForce: 300
   groundCheckDistance: 1.5
   isGrounded: 0
   gravity: 7
@@ -3520,6 +3521,45 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1605032397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605032392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 596f5b81fcc8020449e6409e3e85fe5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerWalkSpeed: 3
+  playerRunMultiplier: 1.5
+  playerJumpForce: 2
+  groundCheckDistance: 1.5
+  characterController: {fileID: 1605032394}
+  isGrounded: 0
+  gravity: 7
+  velocity: {x: 0, y: 0, z: 0}
+  verticalRotation: 0
+  rb: {fileID: 1605032396}
+  playerGameObject: {fileID: 1605032392}
+  mouseSensitivityX: 1
+  mouseSensitivityY: 1
+  minLookAngleY: -90
+  maxLookAngleY: 90
+  playerCamera: {fileID: 1093848632}
+  camPivotRef: {fileID: 1233967853}
+  zTiltAmount: 2
+  tiltStartSpeed: 4
+  tiltEndSpeed: 10
+  zCurrentTilt: 0
+  zTargetTilt: 0
+  zSmoothTilt: 0
+  xTiltAmount: 2
+  xCurrentTilt: 0
+  xTargetTilt: 0
+  xSmoothTilt: 0
 --- !u!1 &1612286777
 GameObject:
   m_ObjectHideFlags: 0
