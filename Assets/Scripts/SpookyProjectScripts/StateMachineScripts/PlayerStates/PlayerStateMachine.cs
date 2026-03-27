@@ -18,11 +18,26 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
 
     private PlayerStateContext _pContext;
 
+
+    //Variables
+
+    [Header("References")]
+    public Interactor interactorRef;
+    public HeadBobbing headBobbingRef;
+
+    //copies of those from Interactor script
+    [Header("Interactor")]
+    public Transform interactorSource;
+    public float interactionRange;
+    public LayerMask interactionMask;
+
+    [Header("Player Settings")]
     public float playerWalkSpeed = 5f;
     public float playerRunMultiplier = 1.5f;
     public float playerJumpForce = 2f;
     public float groundCheckDistance = 1.5f;
 
+    [Header("Character Controller")]
     //Character Controller reference
     public CharacterController characterController;
     public bool isGrounded;
@@ -45,21 +60,24 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
     public float zTiltAmount;
     public float tiltStartSpeed;
     public float tiltEndSpeed;
-    public float zCurrentTilt = 0f;
-    public float zTargetTilt = 0f;
+    private float zCurrentTilt = 0f;
+    private float zTargetTilt = 0f;
     public float zSmoothTilt;
 
     public float xTiltAmount;
-    public float xCurrentTilt = 0f;
-    public float xTargetTilt = 0f;
+    private float xCurrentTilt = 0f;
+    private float xTargetTilt = 0f;
     public float xSmoothTilt;
+
+    [Header("States and Extras Variables")]
+    public bool changeToWorkState;
 
 
 
     public void Awake()
     {
-        _pContext = new PlayerStateContext(playerWalkSpeed, playerRunMultiplier, playerJumpForce, groundCheckDistance, characterController, isGrounded, gravity, velocity, verticalRotation, rb, playerGameObject, mouseSensitivityX, mouseSensitivityY, minLookAngleY, maxLookAngleY, playerCamera, camPivotRef,
-        zTiltAmount, tiltStartSpeed, tiltEndSpeed, zCurrentTilt, zTargetTilt, zSmoothTilt, xTiltAmount, xCurrentTilt, xTargetTilt, xSmoothTilt);
+        _pContext = new PlayerStateContext(interactorRef, headBobbingRef, interactorSource, interactionRange, interactionMask, playerWalkSpeed, playerRunMultiplier, playerJumpForce, groundCheckDistance, characterController, isGrounded, gravity, velocity, verticalRotation, rb, playerGameObject, mouseSensitivityX, mouseSensitivityY, minLookAngleY, maxLookAngleY, playerCamera, camPivotRef,
+        zTiltAmount, tiltStartSpeed, tiltEndSpeed, zCurrentTilt, zTargetTilt, zSmoothTilt, xTiltAmount, xCurrentTilt, xTargetTilt, xSmoothTilt, changeToWorkState);
         InitialiseStates();     
     }
 

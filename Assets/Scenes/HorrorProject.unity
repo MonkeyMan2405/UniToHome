@@ -551,6 +551,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &181305181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 181305182}
+  m_Layer: 0
+  m_Name: Communicator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &181305182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181305181}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &249960055
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +596,7 @@ GameObject:
   - component: {fileID: 249960056}
   m_Layer: 0
   m_Name: Computer
-  m_TagString: Untagged
+  m_TagString: InteractableWork
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1104,7 +1135,7 @@ GameObject:
   - component: {fileID: 518422711}
   - component: {fileID: 518422710}
   m_Layer: 0
-  m_Name: Pointing Sphere
+  m_Name: Lerp Pointing Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2362,7 +2393,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093848631}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65ac579cca284434d89e1979750de08d, type: 3}
   m_Name: 
@@ -3056,7 +3087,7 @@ GameObject:
   - component: {fileID: 1462181102}
   - component: {fileID: 1462181101}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Ramp to test gravity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3533,6 +3564,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596f5b81fcc8020449e6409e3e85fe5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactorRef: {fileID: 1093848636}
+  headBobbingRef: {fileID: 1233967855}
+  interactorSource: {fileID: 1093848632}
+  interactionRange: 2
+  interactionMask:
+    serializedVersion: 2
+    m_Bits: 4096
   playerWalkSpeed: 3
   playerRunMultiplier: 1.5
   playerJumpForce: 2
@@ -3553,13 +3591,10 @@ MonoBehaviour:
   zTiltAmount: 2
   tiltStartSpeed: 4
   tiltEndSpeed: 10
-  zCurrentTilt: 0
-  zTargetTilt: 0
   zSmoothTilt: 0
   xTiltAmount: 2
-  xCurrentTilt: 0
-  xTargetTilt: 0
   xSmoothTilt: 0
+  changeToWorkState: 0
 --- !u!1 &1612286777
 GameObject:
   m_ObjectHideFlags: 0
@@ -4860,3 +4895,4 @@ SceneRoots:
   - {fileID: 518422713}
   - {fileID: 1871706756}
   - {fileID: 1462181104}
+  - {fileID: 181305182}

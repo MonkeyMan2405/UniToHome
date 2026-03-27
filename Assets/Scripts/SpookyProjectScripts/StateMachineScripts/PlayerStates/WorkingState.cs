@@ -11,7 +11,8 @@ public class WorkingState : PlayerState
 
     public override void EnterState()
     {
-
+        PContext.headBobbingRef.enabled = false;
+        Debug.Log("Working");
     }
 
 

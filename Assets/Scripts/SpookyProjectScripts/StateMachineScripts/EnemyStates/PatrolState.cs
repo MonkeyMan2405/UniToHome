@@ -66,7 +66,7 @@ public class PatrolState : EnemyState
 
     public override void OnTriggerEnter(Collider other)
     {
-       
+      
     }
 
 

@@ -2,11 +2,23 @@ using UnityEngine;
 
 public class PlayerStateContext
 {
+
+    [Header("References")]
+    public Interactor interactorRef;
+    public HeadBobbing headBobbingRef;
+
+    [Header("Interactor")]
+    public Transform interactorSource;
+    public float interactionRange;
+    public LayerMask interactionMask;
+
+    [Header("Player Settings")]
     public float playerWalkSpeed = 3f;
     public float playerRunMultiplier = 1.5f;
     public float playerJumpForce = 2f;
     public float groundCheckDistance = 1.5f;
 
+    [Header("CharacterController")]
     //Character Controller reference
     public CharacterController characterController;
     public bool isGrounded;
@@ -38,9 +50,18 @@ public class PlayerStateContext
     public float xTargetTilt = 0f;
     public float xSmoothTilt;
 
+    [Header("States and Extras Variables")]
+    public bool changeToWorkState;
+
 
     public PlayerStateContext
     (
+        Interactor interactorRef,
+        HeadBobbing headBobbingRef,
+
+        Transform interactorSource,
+        float interactionRange,
+        LayerMask interactionMask,
 
         float playerWalkSpeed = 5f,
         float playerRunMultiplier = 1.5f,
@@ -71,12 +92,24 @@ public class PlayerStateContext
         float xTiltAmount = 0f,
         float xCurrentTilt = 0f,
         float xTargetTilt = 0f,
-        float xSmoothTilt = 0f
+        float xSmoothTilt = 0f,
+
+        bool changeToWorkState = false
     )
 
 
     {
         // Initialise the context with nescessary variables for the player state machine
+
+        this.changeToWorkState = changeToWorkState;
+
+        this.interactorRef = interactorRef;
+        this.headBobbingRef = headBobbingRef;
+
+        this.interactorSource = interactorSource;
+        this.interactionRange = interactionRange;
+        this.interactionMask = interactionMask;
+
         this.playerWalkSpeed = playerWalkSpeed;
         this.playerRunMultiplier = playerRunMultiplier;
         this.playerJumpForce = playerJumpForce;
@@ -107,21 +140,10 @@ public class PlayerStateContext
         this.xTargetTilt = xTargetTilt;
         this.xSmoothTilt = xSmoothTilt;
 
+        this.changeToWorkState = changeToWorkState;
     }
 
     // Getters for the context variables. These can be used by the different states to access the necessary information about the Player and its environment.
-    public CharacterController CharacterController => characterController;
-    //public GameObject PlayerGameObject => playerGameObject;
-    public Vector3 Velocity => velocity;
-    public float Gravity => gravity;
-    public Rigidbody Rb => rb;
-    public Transform PlayerCamera => playerCamera;
-    public GameObject CamPivotRef => camPivotRef;
-    public float ZTiltAmount => zTiltAmount;
-    public float TiltStartSpeed => tiltStartSpeed;
-    public float TiltEndSpeed => tiltEndSpeed;
-    public float ZSmoothTilt => zSmoothTilt;
-    public float XTiltAmount => xTiltAmount;
-    public float XSmoothTilt => xSmoothTilt;
+
 
 }

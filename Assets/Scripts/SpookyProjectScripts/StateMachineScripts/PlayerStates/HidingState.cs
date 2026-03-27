@@ -10,7 +10,8 @@ public class HidingState : PlayerState
 
     public override void EnterState()
     {
-
+        PContext.headBobbingRef.enabled = false;
+        Debug.Log("Hiding");
     }
 
 

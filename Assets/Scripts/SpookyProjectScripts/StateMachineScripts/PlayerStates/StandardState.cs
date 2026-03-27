@@ -1,11 +1,9 @@
 using UnityEngine;
 
-public class StandardState : PlayerState
+public class StandardState : PlayerState, IInteractable
 {
-    public PlayerStateMachine playerStateMachineRef;
-    public CharacterController playerCharacterController;
-    public Rigidbody playerRb;
-    public GameObject playerGameObject;
+    //Variables for this State
+    public bool changeToHideState;
 
     public StandardState(PlayerStateContext _pcontext, PlayerStateMachine.EPlayerState state) : base(_pcontext, state)
     {
@@ -14,7 +12,10 @@ public class StandardState : PlayerState
 
     public override void EnterState()
     {
-
+        //enable head bobbing as it is turned off when transitioning from certain states to here
+        PContext.headBobbingRef.enabled = true;
+        changeToHideState = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
 
@@ -25,6 +26,14 @@ public class StandardState : PlayerState
         CameraTilt();
         ForwardAndBackwardTilt();
         Movement();
+        Interact();
+
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            changeToHideState = true;
+        }
+
     }
 
 
@@ -57,11 +66,21 @@ public class StandardState : PlayerState
 
 
 
-
+    //Checked every frame
     public override PlayerStateMachine.EPlayerState GetNextState()
     {
-        return StateKey;
+        if (changeToHideState == true)
+        {
+            return PlayerStateMachine.EPlayerState.Hiding;
+        }
+
+        else if (PContext.changeToWorkState == true) 
+        {
+            return PlayerStateMachine.EPlayerState.Working;
+        }
+            return StateKey;
     }
+
 
     public void CameraTilt()
     {
@@ -185,4 +204,28 @@ public class StandardState : PlayerState
             //transform.localRotation = Quaternion.Euler(mouseX, mouseY, currentTilt);
         }
     }
+
+
+    public void Interact()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Ray interactRay = new Ray(PContext.interactorSource.position, PContext.interactorSource.forward);
+
+            if (Physics.Raycast(interactRay, out RaycastHit interactRayHitInfo, PContext.interactionRange))
+            {
+                Debug.DrawRay(PContext.interactorSource.position, PContext.interactorSource.forward * interactRayHitInfo.distance, Color.green, PContext.interactionMask);
+                if (interactRayHitInfo.collider.CompareTag("InteractableWork"))
+                {
+                    PContext.changeToWorkState = true;
+                    Debug.Log("Work Interacted");
+                }
+            }
+        }
+    }
+
+
+
+          
 }
+
