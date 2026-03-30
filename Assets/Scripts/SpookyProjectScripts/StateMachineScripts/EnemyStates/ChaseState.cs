@@ -158,33 +158,6 @@ public class ChaseState : EnemyState
     }
 
 
-     // public void SingleRaySearch()
-    // {
-    //      Debug.DrawRay(Context.EnemyRb.transform.position, Context.targetTransform.position * Context.rayCheckDistance, Color.green);
-
-    //     if (Physics.Raycast(Context.EnemyRb.transform.position, Context.EnemyRb.transform.forward, out hitInfo, Context.rayCheckDistance))
-    //     {
-    //         //Check if hit the player, chase and reset timer
-    //         if (hitInfo.collider.CompareTag("Player"))
-    //         {
-    //             Context.EnemyAgent.SetDestination(Context.targetTransform.position);
-    //             lostSightTimer = 0;
-    //         }
-    //         //If not hit player, decrease timer
-    //         else
-    //         {
-    //             lostSightTimer += Time.deltaTime;
-    //         }
-    //     }
-    //     //If not hit anything, decrease timer
-    //     else
-    //     {
-    //         lostSightTimer += Time.deltaTime;
-    //     }
-       
-    // }
-
-
 }
 
 

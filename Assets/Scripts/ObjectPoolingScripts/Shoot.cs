@@ -17,6 +17,7 @@ public class Shoot : MonoBehaviour
         {
             SimpleProjectile instance = ObjectPooler.DequeueObject<SimpleProjectile>("Projectile");
             instance.gameObject.SetActive(true);
+            instance.Initialise();
             
         }
     }
