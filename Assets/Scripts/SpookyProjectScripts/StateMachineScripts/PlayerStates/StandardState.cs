@@ -16,6 +16,8 @@ public class StandardState : PlayerState, IInteractable
         PContext.headBobbingRef.enabled = true;
         changeToHideState = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        PContext.actualPlayerCamera.enabled = true;
     }
 
 
@@ -105,6 +107,7 @@ public class StandardState : PlayerState, IInteractable
         }
 
 
+
         // Smoothly interpolate current tilt to target tilt. If target tilt zero, use tilt end speed forquicker return to neutral. else, use tilt start speed for slower transition when starting to strafe.
         if (PContext.zTargetTilt == 0)
         {
@@ -117,6 +120,7 @@ public class StandardState : PlayerState, IInteractable
 
         // Lerp the current tilt towards the target tilt using the determined smooth speed and delta time
         PContext.zCurrentTilt = Mathf.Lerp(PContext.zCurrentTilt, PContext.zTargetTilt, PContext.zSmoothTilt * Time.deltaTime);
+
 
 
 
@@ -133,6 +137,7 @@ public class StandardState : PlayerState, IInteractable
         {
             PContext.xTargetTilt = 0f;
         }
+
 
 
         // Smoothly interpolate current tilt to target tilt. If target tilt zero, use tilt end speed for quicker return to neutral. else, use tilt start speed for slower transition when starting to strafe.

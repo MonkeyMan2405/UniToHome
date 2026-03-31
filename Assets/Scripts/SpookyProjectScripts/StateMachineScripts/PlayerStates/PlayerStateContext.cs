@@ -7,16 +7,28 @@ public class PlayerStateContext
     public Interactor interactorRef;
     public HeadBobbing headBobbingRef;
 
+
+
+    [Header("Working Variables")]
+    public Transform newCamPos;
+    public Camera workCamera;
+
+
+
     [Header("Interactor")]
     public Transform interactorSource;
     public float interactionRange;
     public LayerMask interactionMask;
+
+
 
     [Header("Player Settings")]
     public float playerWalkSpeed = 3f;
     public float playerRunMultiplier = 1.5f;
     public float playerJumpForce = 2f;
     public float groundCheckDistance = 1.5f;
+
+
 
     [Header("CharacterController")]
     //Character Controller reference
@@ -26,8 +38,12 @@ public class PlayerStateContext
     public Vector3 velocity;
     public float verticalRotation = 0f;
 
+
+
     public Rigidbody rb;
     public GameObject playerGameObject;
+
+
 
     [Header("Camera")]
     public float mouseSensitivityX = 1f;
@@ -36,6 +52,9 @@ public class PlayerStateContext
     public float maxLookAngleY = 90f;
     public Transform playerCamera;
     public GameObject camPivotRef;
+    public Camera actualPlayerCamera;
+
+
 
     [Header("Camera Tilting")]
     public float zTiltAmount;
@@ -45,19 +64,28 @@ public class PlayerStateContext
     public float zTargetTilt = 0f;
     public float zSmoothTilt;
 
+
+
     public float xTiltAmount;
     public float xCurrentTilt = 0f;
     public float xTargetTilt = 0f;
     public float xSmoothTilt;
 
+
+
     [Header("States and Extras Variables")]
     public bool changeToWorkState;
+
+
 
 
     public PlayerStateContext
     (
         Interactor interactorRef,
         HeadBobbing headBobbingRef,
+
+        Transform newCamPos,
+        Camera workCamera,
 
         Transform interactorSource,
         float interactionRange,
@@ -72,14 +100,17 @@ public class PlayerStateContext
         float gravity = 0f,
         Vector3 velocity = default,
         float verticalRotation = 0f,
+
         Rigidbody rb = null,
         GameObject playerGameObject = null,
+        
         float mouseSensitivityX = 1f,
         float mouseSensitivityY = 1f,
         float minLookAngleY = -90f,
         float maxLookAngleY = 90f,
         Transform playerCamera = null,
         GameObject camPivotRef = null,
+        Camera actualPlayerCamera = null,
 
 
         float zTiltAmount = 0f,
@@ -106,6 +137,9 @@ public class PlayerStateContext
         this.interactorRef = interactorRef;
         this.headBobbingRef = headBobbingRef;
 
+        this.newCamPos = newCamPos;
+        this.workCamera = workCamera;
+
         this.interactorSource = interactorSource;
         this.interactionRange = interactionRange;
         this.interactionMask = interactionMask;
@@ -127,6 +161,7 @@ public class PlayerStateContext
         this.maxLookAngleY = maxLookAngleY;
         this.playerCamera = playerCamera;
         this.camPivotRef = camPivotRef;
+        this.actualPlayerCamera = actualPlayerCamera;
 
         this.zTiltAmount = zTiltAmount;
         this.tiltStartSpeed = tiltStartSpeed;
@@ -145,5 +180,6 @@ public class PlayerStateContext
 
     // Getters for the context variables. These can be used by the different states to access the necessary information about the Player and its environment.
 
+ 
 
 }

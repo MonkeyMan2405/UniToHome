@@ -58,22 +58,22 @@ public abstract class StateManager<EState> : MonoBehaviour where EState : Enum
 
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        CurrentState.OnTriggerEnter(other);
-    }
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     CurrentState.OnTriggerEnter(other);
+    // }
 
 
-    private void OnTriggerExit(Collider other)
-    {
-        CurrentState.OnTriggerExit(other);
-    }
+    // private void OnTriggerExit(Collider other)
+    // {
+    //     CurrentState.OnTriggerExit(other);
+    // }
 
 
-    private void OnTriggerStay(Collider other)
-    {
-        CurrentState.OnTriggerStay(other);   
-    }
+    // private void OnTriggerStay(Collider other)
+    // {
+    //     CurrentState.OnTriggerStay(other);   
+    // }
 
 
 
