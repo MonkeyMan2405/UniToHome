@@ -15,6 +15,7 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
         Hiding,
         Doomed,
         Working,
+        Transition,
     }
 
     private PlayerStateContext _pContext;
@@ -31,6 +32,8 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
     [Header("Working Variables")]
     public Transform newCamPos;
     public Camera workCamera;
+    //passed through context for transition state to check what transition action to take
+    public int transitionIdentifier;
 
 
 
@@ -104,7 +107,7 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
 
     public void Awake()
     {
-        _pContext = new PlayerStateContext(interactorRef, headBobbingRef, newCamPos, workCamera, interactorSource, interactionRange, interactionMask, playerWalkSpeed, playerRunMultiplier, playerJumpForce, groundCheckDistance, characterController, isGrounded,
+        _pContext = new PlayerStateContext(interactorRef, headBobbingRef, newCamPos, workCamera, transitionIdentifier, interactorSource, interactionRange, interactionMask, playerWalkSpeed, playerRunMultiplier, playerJumpForce, groundCheckDistance, characterController, isGrounded,
         gravity, velocity, verticalRotation, rb, playerGameObject, mouseSensitivityX, mouseSensitivityY, minLookAngleY, maxLookAngleY, playerCamera, camPivotRef, actualPlayerCamera,
         zTiltAmount, tiltStartSpeed, tiltEndSpeed, zCurrentTilt, zTargetTilt, zSmoothTilt, xTiltAmount, xCurrentTilt, xTargetTilt, xSmoothTilt, changeToWorkState);
         InitialiseStates();     
@@ -119,6 +122,7 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
         States.Add(EPlayerState.Hiding, new HidingState(_pContext, EPlayerState.Hiding));
         States.Add(EPlayerState.Doomed, new DoomedState(_pContext, EPlayerState.Doomed));
         States.Add(EPlayerState.Working, new WorkingState(_pContext, EPlayerState.Working));
+        States.Add(EPlayerState.Transition, new TransitionState(_pContext, EPlayerState.Transition));
 
         CurrentState = States[EPlayerState.Standard];
     }

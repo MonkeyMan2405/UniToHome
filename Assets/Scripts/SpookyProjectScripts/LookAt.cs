@@ -4,6 +4,7 @@ public class LookAt : MonoBehaviour
 {
     [SerializeField]
     private Transform lookTarget;
+    public Transform head;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

@@ -3,7 +3,8 @@ using UnityEngine;
 public class StandardState : PlayerState, IInteractable
 {
     //Variables for this State
-    public bool changeToHideState;
+    private bool changeToHideState;
+    private bool changeToTransitionState;
 
     public StandardState(PlayerStateContext _pcontext, PlayerStateMachine.EPlayerState state) : base(_pcontext, state)
     {
@@ -14,10 +15,10 @@ public class StandardState : PlayerState, IInteractable
     {
         //enable head bobbing as it is turned off when transitioning from certain states to here
         PContext.headBobbingRef.enabled = true;
-        changeToHideState = false;
         Cursor.lockState = CursorLockMode.Locked;
 
-        PContext.actualPlayerCamera.enabled = true;
+        PContext.transitionIdentifier = 0;
+
     }
 
 
@@ -30,19 +31,14 @@ public class StandardState : PlayerState, IInteractable
         Movement();
         Interact();
 
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            changeToHideState = true;
-        }
-
     }
 
 
 
     public override void ExitState()
     {
-
+        changeToHideState = false;
+        changeToTransitionState = false;
     }
 
 
@@ -76,12 +72,13 @@ public class StandardState : PlayerState, IInteractable
             return PlayerStateMachine.EPlayerState.Hiding;
         }
 
-        else if (PContext.changeToWorkState == true) 
+        else if (changeToTransitionState == true) 
         {
-            return PlayerStateMachine.EPlayerState.Working;
+            return PlayerStateMachine.EPlayerState.Transition;
         }
             return StateKey;
     }
+
 
 
     public void CameraTilt()
@@ -224,7 +221,7 @@ public class StandardState : PlayerState, IInteractable
                 //check if the ray hits specific object with the tag below. in this instance, this is the computer.
                 if (interactRayHitInfo.collider.CompareTag("InteractableWork"))
                 {
-                    PContext.changeToWorkState = true;
+                    changeToTransitionState = true;
                     Debug.Log("Work Interacted");
                 }
             }

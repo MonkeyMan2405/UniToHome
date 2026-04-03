@@ -12,6 +12,8 @@ public class PlayerStateContext
     [Header("Working Variables")]
     public Transform newCamPos;
     public Camera workCamera;
+    //passed through context for transition state to check what transition action to take
+    public int transitionIdentifier;
 
 
 
@@ -86,6 +88,7 @@ public class PlayerStateContext
 
         Transform newCamPos,
         Camera workCamera,
+        int transitionIdentifier,
 
         Transform interactorSource,
         float interactionRange,
@@ -136,6 +139,7 @@ public class PlayerStateContext
 
         this.interactorRef = interactorRef;
         this.headBobbingRef = headBobbingRef;
+        this.transitionIdentifier = transitionIdentifier;
 
         this.newCamPos = newCamPos;
         this.workCamera = workCamera;
