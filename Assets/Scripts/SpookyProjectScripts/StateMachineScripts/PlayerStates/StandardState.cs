@@ -224,6 +224,11 @@ public class StandardState : PlayerState, IInteractable
                     changeToTransitionState = true;
                     Debug.Log("Work Interacted");
                 }
+                //or any othjer interactable object that implements the IInteractable interface, in which case it will call the Interact function on that object
+                else if (interactRayHitInfo.collider.gameObject.TryGetComponent(out IInteractable interactableObject))
+                {
+                    interactableObject.Interact();
+                }
             }
         }
     }

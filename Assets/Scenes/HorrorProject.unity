@@ -779,7 +779,8 @@ GameObject:
   - component: {fileID: 332009940}
   - component: {fileID: 332009939}
   - component: {fileID: 332009938}
-  m_Layer: 0
+  - component: {fileID: 332009942}
+  m_Layer: 12
   m_Name: HidableWardrobe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,6 +876,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &332009942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332009937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b54e8a4fdb37924e885bb8cf52d4156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &381931237
 GameObject:
   m_ObjectHideFlags: 0
@@ -4193,7 +4206,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 1
   m_VoxelSize: 0.2
   m_MinRegionArea: 1
-  m_NavMeshData: {fileID: 23800000, guid: 6155fe82845ff444da4cd4bf89d2a298, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: c5113320d29d7dd4f98ec6719084f690, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1553023597
 GameObject:

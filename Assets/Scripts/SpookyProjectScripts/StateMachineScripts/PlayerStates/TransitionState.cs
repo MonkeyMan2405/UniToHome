@@ -130,10 +130,10 @@ public class TransitionState : PlayerState
 
     private void CamComputerExitLerp()
     {
-        PContext.playerGameObject.transform.position = Vector3.Lerp(PContext.playerGameObject.transform.position, computerLocationWithOffset, lerpSpeed * Time.deltaTime);
+        PContext.playerGameObject.transform.position = Vector3.Lerp(PContext.playerGameObject.transform.position, oldPos, lerpSpeed * Time.deltaTime);
         PContext.playerCamera.transform.rotation = Quaternion.Lerp(PContext.playerCamera.transform.rotation, newCamRotation, lerpSpeed * Time.deltaTime);
 
-        if (Vector3.Distance(PContext.playerGameObject.transform.position, computerLocationWithOffset) < 0.01f)
+        if (Vector3.Distance(PContext.playerGameObject.transform.position, oldPos) < 0.01f)
         {
             changeToStandardState = true;
         }
