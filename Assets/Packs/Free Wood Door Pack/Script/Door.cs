@@ -14,8 +14,9 @@ namespace DoorScript
 		float DoorCloseAngle = 0.0f;
 		public AudioSource asource;
 		public AudioClip openDoor, closeDoor;
-		// Use this for initialization
-		void Start()
+		public Door2 door2Ref;
+
+        void Start()
 		{
 			asource = GetComponent<AudioSource>();
 		}
@@ -51,10 +52,18 @@ namespace DoorScript
 			if (open)
 			{
 				open = false;
+				if (door2Ref != null)
+				{
+					door2Ref.Interact();
+				}
             }
 			else
 			{
 				open = true;
+                if (door2Ref != null)
+                {
+                    door2Ref.Interact();
+                }
             }
 
 			Debug.Log("Door Interacted");

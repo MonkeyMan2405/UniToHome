@@ -5,6 +5,7 @@ public class StandardState : PlayerState, IInteractable
     //Variables for this State
     private bool changeToHideState;
     private bool changeToTransitionState;
+    private bool changeToBlindsState;
 
     public StandardState(PlayerStateContext _pcontext, PlayerStateMachine.EPlayerState state) : base(_pcontext, state)
     {
@@ -18,6 +19,8 @@ public class StandardState : PlayerState, IInteractable
         Cursor.lockState = CursorLockMode.Locked;
 
         PContext.transitionIdentifier = 0;
+
+        Debug.Log("Standard");
 
     }
 
@@ -39,6 +42,7 @@ public class StandardState : PlayerState, IInteractable
     {
         changeToHideState = false;
         changeToTransitionState = false;
+        changeToBlindsState = false;
     }
 
 
@@ -67,6 +71,7 @@ public class StandardState : PlayerState, IInteractable
     //Checked every frame
     public override PlayerStateMachine.EPlayerState GetNextState()
     {
+
         if (changeToHideState == true)
         {
             return PlayerStateMachine.EPlayerState.Hiding;
@@ -76,7 +81,12 @@ public class StandardState : PlayerState, IInteractable
         {
             return PlayerStateMachine.EPlayerState.Transition;
         }
+        else if (changeToBlindsState == true)
+        {
+            return PlayerStateMachine.EPlayerState.Blinds;
+        }
             return StateKey;
+
     }
 
 
@@ -103,8 +113,6 @@ public class StandardState : PlayerState, IInteractable
             PContext.zTargetTilt = 0f;
         }
 
-
-
         // Smoothly interpolate current tilt to target tilt. If target tilt zero, use tilt end speed forquicker return to neutral. else, use tilt start speed for slower transition when starting to strafe.
         if (PContext.zTargetTilt == 0)
         {
@@ -117,8 +125,6 @@ public class StandardState : PlayerState, IInteractable
 
         // Lerp the current tilt towards the target tilt using the determined smooth speed and delta time
         PContext.zCurrentTilt = Mathf.Lerp(PContext.zCurrentTilt, PContext.zTargetTilt, PContext.zSmoothTilt * Time.deltaTime);
-
-
 
 
         // Determine the Xtarget tilt based on strafing input. If strafing forward, set target tilt to positive value. If strafing backwards, set to negative value. If not strafing, set to zero
@@ -135,8 +141,6 @@ public class StandardState : PlayerState, IInteractable
             PContext.xTargetTilt = 0f;
         }
 
-
-
         // Smoothly interpolate current tilt to target tilt. If target tilt zero, use tilt end speed for quicker return to neutral. else, use tilt start speed for slower transition when starting to strafe.
         if (PContext.xTargetTilt == 0)
         {
@@ -150,6 +154,7 @@ public class StandardState : PlayerState, IInteractable
         // Lerp the current tilt towards the target tilt using the determined smooth speed and delta time
         PContext.xCurrentTilt = Mathf.Lerp(PContext.xCurrentTilt, PContext.xTargetTilt, PContext.xSmoothTilt * Time.deltaTime);
     }
+
 
 
     public void ForwardAndBackwardTilt()
@@ -210,7 +215,7 @@ public class StandardState : PlayerState, IInteractable
 
     public void Interact()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown(0))
         {
             Ray interactRay = new Ray(PContext.interactorSource.position, PContext.interactorSource.forward);
 
@@ -223,6 +228,11 @@ public class StandardState : PlayerState, IInteractable
                 {
                     changeToTransitionState = true;
                     Debug.Log("Work Interacted");
+                }
+                else if (interactRayHitInfo.collider.CompareTag("InteractableBlinds"))
+                {
+                    changeToBlindsState = true;
+                    Debug.Log("Blinds Interacted");
                 }
                 //or any othjer interactable object that implements the IInteractable interface, in which case it will call the Interact function on that object
                 else if (interactRayHitInfo.collider.gameObject.TryGetComponent(out IInteractable interactableObject))

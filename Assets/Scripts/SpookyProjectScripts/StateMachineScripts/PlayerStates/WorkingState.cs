@@ -24,7 +24,7 @@ public class WorkingState : PlayerState
 
     public override void UpdateState()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown(0))
         {
             changeToTransitionState = true;
             PContext.transitionIdentifier = 1;

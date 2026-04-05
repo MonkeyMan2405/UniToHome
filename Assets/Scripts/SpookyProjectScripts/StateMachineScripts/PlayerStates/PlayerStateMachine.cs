@@ -16,6 +16,7 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
         Doomed,
         Working,
         Transition,
+        Blinds,
     }
 
     private PlayerStateContext _pContext;
@@ -26,9 +27,13 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
     [Header("References")]
     public Interactor interactorRef;
     public HeadBobbing headBobbingRef;
-    
 
-    
+
+    [Header("Blinds Variables")]
+    public Transform blinds;
+
+
+
     [Header("Working Variables")]
     public Transform newCamPos;
     public Camera workCamera;
@@ -107,7 +112,7 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
 
     public void Awake()
     {
-        _pContext = new PlayerStateContext(interactorRef, headBobbingRef, newCamPos, workCamera, transitionIdentifier, interactorSource, interactionRange, interactionMask, playerWalkSpeed, playerRunMultiplier, playerJumpForce, groundCheckDistance, characterController, isGrounded,
+        _pContext = new PlayerStateContext(interactorRef, headBobbingRef, blinds, newCamPos, workCamera, transitionIdentifier, interactorSource, interactionRange, interactionMask, playerWalkSpeed, playerRunMultiplier, playerJumpForce, groundCheckDistance, characterController, isGrounded,
         gravity, velocity, verticalRotation, rb, playerGameObject, mouseSensitivityX, mouseSensitivityY, minLookAngleY, maxLookAngleY, playerCamera, camPivotRef, actualPlayerCamera,
         zTiltAmount, tiltStartSpeed, tiltEndSpeed, zCurrentTilt, zTargetTilt, zSmoothTilt, xTiltAmount, xCurrentTilt, xTargetTilt, xSmoothTilt, changeToWorkState);
         InitialiseStates();     
@@ -123,6 +128,7 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
         States.Add(EPlayerState.Doomed, new DoomedState(_pContext, EPlayerState.Doomed));
         States.Add(EPlayerState.Working, new WorkingState(_pContext, EPlayerState.Working));
         States.Add(EPlayerState.Transition, new TransitionState(_pContext, EPlayerState.Transition));
+        States.Add(EPlayerState.Blinds, new BlindsState(_pContext, EPlayerState.Blinds));
 
         CurrentState = States[EPlayerState.Standard];
     }

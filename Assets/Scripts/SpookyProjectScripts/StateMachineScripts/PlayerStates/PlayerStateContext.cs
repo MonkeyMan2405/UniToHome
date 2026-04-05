@@ -9,6 +9,11 @@ public class PlayerStateContext
 
 
 
+    [Header("Blinds Variables")]
+    public Transform blinds;
+
+
+
     [Header("Working Variables")]
     public Transform newCamPos;
     public Camera workCamera;
@@ -86,6 +91,8 @@ public class PlayerStateContext
         Interactor interactorRef,
         HeadBobbing headBobbingRef,
 
+        Transform blinds,
+
         Transform newCamPos,
         Camera workCamera,
         int transitionIdentifier,
@@ -136,6 +143,8 @@ public class PlayerStateContext
         // Initialise the context with nescessary variables for the player state machine
 
         this.changeToWorkState = changeToWorkState;
+
+        this.blinds = blinds;
 
         this.interactorRef = interactorRef;
         this.headBobbingRef = headBobbingRef;
