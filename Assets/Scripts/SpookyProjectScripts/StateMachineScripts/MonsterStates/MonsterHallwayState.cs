@@ -9,7 +9,7 @@ public class MonsterHallwayState : MonsterState
 
     public override void EnterState()
     {
-
+        Debug.Log("Entered Hallway State");
     }
 
 

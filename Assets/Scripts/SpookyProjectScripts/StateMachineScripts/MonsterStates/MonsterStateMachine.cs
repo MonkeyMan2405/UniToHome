@@ -20,6 +20,16 @@ public class MonsterStateMachine : StateManager<MonsterStateMachine.EMonsterStat
 
     public Transform playerTransform;
 
+    public GameObject monsterHallway;
+    public GameObject monsterWindow;
+    public GameObject monsterWardrobe;
+
+    [Header("AI and Difficulty")]
+
+    public float thinkingTime;
+
+    //How long it will wait before dooming
+    public float patience;
 
 
 
@@ -30,7 +40,7 @@ public class MonsterStateMachine : StateManager<MonsterStateMachine.EMonsterStat
     {
         // try this: _mContext = GetComponent<MonsterStateContext>();
 
-        _mContext = new MonsterStateContext();
+        _mContext = new MonsterStateContext(playerTransform, monsterHallway, monsterWindow, monsterWardrobe, thinkingTime, patience);
 
         InitialiseStates();
     }
@@ -44,6 +54,8 @@ public class MonsterStateMachine : StateManager<MonsterStateMachine.EMonsterStat
         States.Add(EMonsterState.Hallway, new MonsterHallwayState(_mContext, EMonsterState.Hallway));
         States.Add(EMonsterState.Window, new MonsterWindowState(_mContext, EMonsterState.Window));
         States.Add(EMonsterState.Door, new MonsterDoorState(_mContext, EMonsterState.Door));
+
+        CurrentState = States[EMonsterState.Thinking];
     }
 
 }

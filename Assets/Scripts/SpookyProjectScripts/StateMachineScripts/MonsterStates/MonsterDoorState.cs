@@ -9,7 +9,7 @@ public class MonsterDoorState : MonsterState
 
     public override void EnterState()
     {
-
+        Debug.Log("Entered Door State");
     }
 
 

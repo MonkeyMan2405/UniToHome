@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class MonsterWindowState : MonsterState
 {
+
+    private Transform windowInitialPos;
+
     public MonsterWindowState(MonsterStateContext _mcontext, MonsterStateMachine.EMonsterState state) : base(_mcontext, state)
     {
         MonsterStateContext MContext = _mcontext;
@@ -9,7 +12,10 @@ public class MonsterWindowState : MonsterState
 
     public override void EnterState()
     {
+        Debug.Log("Entered Window State");
 
+        MContext.monsterWindow.SetActive(true);
+        windowInitialPos = MContext.monsterWindow.transform;
     }
 
 

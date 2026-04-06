@@ -58,9 +58,7 @@ public class WardrobeTrigger : MonoBehaviour, IInteractable
         {
             timer = 0f;
         }
-
-        Debug.Log(timer);
-   
+  
     }
 
 }
