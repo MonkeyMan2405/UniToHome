@@ -20,6 +20,8 @@ public class MonsterStateContext
     public float patience;
 
 
+
+
     public MonsterStateContext
     (
         Transform playerTransform,
@@ -30,6 +32,7 @@ public class MonsterStateContext
 
         float thinkingTime,
         float patience
+
     )
 
 
@@ -42,6 +45,7 @@ public class MonsterStateContext
 
         this.thinkingTime = thinkingTime;
         this.patience = patience;
+
     }
 
 }

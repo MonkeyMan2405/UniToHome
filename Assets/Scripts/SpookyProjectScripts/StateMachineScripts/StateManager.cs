@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,7 +37,6 @@ public abstract class StateManager<EState> : MonoBehaviour where EState : Enum
     }
    
 
-
     public void TransitionToState(EState nextStateKey)
     {
         // Check if the next state exists in the dictionary before transitioning.
@@ -58,22 +58,22 @@ public abstract class StateManager<EState> : MonoBehaviour where EState : Enum
 
 
 
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     CurrentState.OnTriggerEnter(other);
-    // }
+    private void OnTriggerEnter(Collider other)
+    {
+        CurrentState.OnTriggerEnter(other);
+    }
 
 
-    // private void OnTriggerExit(Collider other)
-    // {
-    //     CurrentState.OnTriggerExit(other);
-    // }
+    private void OnTriggerExit(Collider other)
+    {
+        CurrentState.OnTriggerExit(other);
+    }
 
 
-    // private void OnTriggerStay(Collider other)
-    // {
-    //     CurrentState.OnTriggerStay(other);   
-    // }
+    private void OnTriggerStay(Collider other)
+    {
+        CurrentState.OnTriggerStay(other);   
+    }
 
 
 

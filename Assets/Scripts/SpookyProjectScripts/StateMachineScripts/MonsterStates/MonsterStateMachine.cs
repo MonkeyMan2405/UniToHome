@@ -3,6 +3,8 @@ using UnityEngine;
 public class MonsterStateMachine : StateManager<MonsterStateMachine.EMonsterState>
 {
 
+    public static float monsterDanger = -1;
+    public static float monsterMin = -1;
     public enum EMonsterState
     {
         Thinking,
@@ -30,9 +32,6 @@ public class MonsterStateMachine : StateManager<MonsterStateMachine.EMonsterStat
 
     //How long it will wait before dooming
     public float patience;
-
-
-
 
 
 

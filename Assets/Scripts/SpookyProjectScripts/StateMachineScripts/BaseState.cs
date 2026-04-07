@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 /// This is a base class for all states in the state machine. It defines the common interface that all states must implement.
-public abstract class BaseState<EState> where EState : Enum
+public abstract class BaseState<EState>: MonoBehaviour where EState : Enum 
 {
     // The constructor for the base state. It takes in the key that identifies this state and assigns it to the StateKey property.
     public BaseState(EState key)

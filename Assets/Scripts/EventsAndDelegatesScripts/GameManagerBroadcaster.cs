@@ -10,12 +10,6 @@ public class GameManagerBroadcaster : MonoBehaviour
 
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -24,8 +18,10 @@ public class GameManagerBroadcaster : MonoBehaviour
             //Invoke any subscriber anywhere in the scene. 
             OnGamePaused?.Invoke();
         }
+
         else if (Input.GetKeyDown(KeyCode.F))
         {
+            //Flashlight On and Off
             OnFClicked?.Invoke();
         }
     }

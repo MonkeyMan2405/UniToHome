@@ -19,8 +19,13 @@ public class Flashlight : MonoBehaviour
     {
         transform.position = playerTransform.position + new Vector3(0, 0, zFlashlightOffset);
         transform.rotation = Quaternion.Lerp(transform.rotation, playerTransform.rotation, catchingSpeed * Time.deltaTime);
+        
     }
 
+
+
+    //Implementation of the Event system from 30/3/2026's workshop. Not the best implementation as the if statement checking complexity it tecyhnically the same as is currently,
+    // I just wanted to put it into practise further
     private void OnEnable()
     {
         GameManagerBroadcaster.OnFClicked.AddListener(ToggleFlashlight);
