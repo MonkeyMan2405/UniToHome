@@ -21,13 +21,23 @@ public class MonsterLightFlick : MonsterStateMachine
     // Update is called once per frame
     void Update()
     {
+ 
+        //start flickering coroutine. scales by delta time as running purely in update caused it to run too fast, impacing flickering. also performance
         timer += Time.deltaTime;
         if (timer >=0.5f)
         {
             timer = 0;
             StartCoroutine(LightFlickering());
         }
-        
+
+
+        if (monsterDanger == 1.75f)
+        {
+            StopCoroutine(LightFlickering());
+            StartCoroutine(ImpendingDoomFlickering());
+
+        }
+
     }
 
 
@@ -41,19 +51,13 @@ public class MonsterLightFlick : MonsterStateMachine
             yield return new WaitForSeconds (0.1f);
             deskLight.enabled = true;
         }
-       
     }
 
-      // IEnumerator LightFlickering()
-    // {
-    //     Debug.LogError(1);
-    //     flickerRdm = UnityEngine.Random.Range(0, MContext.danger * 10);
-    //     if (flickerRdm <= 5)
-    //     {
-    //         MContext.deskLight.enabled = false;
-    //         yield return new WaitForSeconds(0.1f);
-    //         MContext.deskLight.enabled = true;
-    //     }
+    IEnumerator ImpendingDoomFlickering()
+    {
+        deskLight.enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        deskLight.enabled = true;
+    }
 
-    // }
 }

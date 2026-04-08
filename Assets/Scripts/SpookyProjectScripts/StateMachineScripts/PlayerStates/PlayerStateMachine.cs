@@ -1,11 +1,10 @@
 using Unity.VisualScripting;
 using UnityEngine;
-using static EnemyStateMachine;
 
 // This is the state machine for the Player. It defines the different states that the enemy can be in and manages the transitions between those states.
 public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
-{ 
-
+{
+    public static bool blindsClosed;
 
     public enum EPlayerState
     {

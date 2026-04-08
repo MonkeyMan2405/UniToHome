@@ -40,6 +40,7 @@ public class MonsterThinkingState : MonsterState
         changeToHallwayState = false;
         changeToWindowState = false;
         changeToWardrobeState = false;
+
     }
 
 
@@ -90,11 +91,9 @@ public class MonsterThinkingState : MonsterState
         timer += Time.deltaTime;
 
         if (timer >= MContext.thinkingTime)
-        {
-            //reset timer and make decision
-            timer = 0f;
-            //randomDecision = Random.Range(0, 3);
-            randomDecision = 2;
+        {   timer = 0f; 
+            randomDecision = Random.Range(0, 2);
+            //randomDecision = 2;
             MakeDecision();
         }
     }

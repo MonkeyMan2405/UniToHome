@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class MonsterIdleState : MonsterState
 {
+
+    private float thinkingTimer;
+    private float thinkingChange;
+
     public MonsterIdleState(MonsterStateContext _mcontext, MonsterStateMachine.EMonsterState state) : base(_mcontext, state)
     {
         MonsterStateContext MContext = _mcontext;
@@ -9,14 +13,18 @@ public class MonsterIdleState : MonsterState
 
     public override void EnterState()
     {
-
+        thinkingChange = Random.Range(20, MContext.thinkingTime);
     }
 
 
 
     public override void UpdateState()
     {
-
+       thinkingTimer += Time.deltaTime;
+       if(thinkingTimer >= thinkingChange)
+       {
+           
+       }
     }
 
 

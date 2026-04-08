@@ -6,10 +6,13 @@ public class MonsterStateContext
     [Header("References")]
 
     public Transform playerTransform;
+    public PlayerStateMachine psmRef;
 
     public GameObject monsterHallway;
     public GameObject monsterWindow;
     public GameObject monsterWardrobe;
+
+    public WardrobeTrigger wardrobeTriggerRef;
 
 
     [Header("AI and Difficulty")]
@@ -25,10 +28,13 @@ public class MonsterStateContext
     public MonsterStateContext
     (
         Transform playerTransform,
+        PlayerStateMachine psmRef,
 
         GameObject monsterHallway,
         GameObject monsterWindow,
         GameObject monsterWardrobe,
+
+        WardrobeTrigger wardrobeTriggerRef,
 
         float thinkingTime,
         float patience
@@ -38,10 +44,13 @@ public class MonsterStateContext
 
     {
         this.playerTransform = playerTransform;
+        this.psmRef = psmRef;
 
         this.monsterHallway = monsterHallway;
         this.monsterWindow = monsterWindow;
         this.monsterWardrobe = monsterWardrobe;
+
+        this.wardrobeTriggerRef = wardrobeTriggerRef;
 
         this.thinkingTime = thinkingTime;
         this.patience = patience;

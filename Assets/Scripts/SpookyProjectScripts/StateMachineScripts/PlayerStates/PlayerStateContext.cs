@@ -11,6 +11,7 @@ public class PlayerStateContext
 
     [Header("Blinds Variables")]
     public Transform blinds;
+    public bool blindsClosed;
 
 
 

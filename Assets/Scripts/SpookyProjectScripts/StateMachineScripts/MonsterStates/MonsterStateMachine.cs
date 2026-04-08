@@ -8,7 +8,6 @@ public class MonsterStateMachine : StateManager<MonsterStateMachine.EMonsterStat
     public enum EMonsterState
     {
         Thinking,
-        Idle,
         Hallway,
         Window,
         Door,
@@ -21,13 +20,17 @@ public class MonsterStateMachine : StateManager<MonsterStateMachine.EMonsterStat
     [Header("References")]
 
     public Transform playerTransform;
+    public PlayerStateMachine psmRef;
 
     public GameObject monsterHallway;
     public GameObject monsterWindow;
     public GameObject monsterWardrobe;
 
+    public WardrobeTrigger wardrobeTriggerRef;
+
     [Header("AI and Difficulty")]
 
+    //how long the monster will think before doing something
     public float thinkingTime;
 
     //How long it will wait before dooming
@@ -39,17 +42,16 @@ public class MonsterStateMachine : StateManager<MonsterStateMachine.EMonsterStat
     {
         // try this: _mContext = GetComponent<MonsterStateContext>();
 
-        _mContext = new MonsterStateContext(playerTransform, monsterHallway, monsterWindow, monsterWardrobe, thinkingTime, patience);
+        _mContext = new MonsterStateContext(playerTransform, psmRef, monsterHallway, monsterWindow, monsterWardrobe, wardrobeTriggerRef, thinkingTime, patience);
 
         InitialiseStates();
     }
-
+    
 
 
     private void InitialiseStates()
     {
         States.Add(EMonsterState.Thinking, new MonsterThinkingState(_mContext, EMonsterState.Thinking));
-        States.Add(EMonsterState.Idle, new MonsterIdleState(_mContext, EMonsterState.Idle));
         States.Add(EMonsterState.Hallway, new MonsterHallwayState(_mContext, EMonsterState.Hallway));
         States.Add(EMonsterState.Window, new MonsterWindowState(_mContext, EMonsterState.Window));
         States.Add(EMonsterState.Door, new MonsterDoorState(_mContext, EMonsterState.Door));

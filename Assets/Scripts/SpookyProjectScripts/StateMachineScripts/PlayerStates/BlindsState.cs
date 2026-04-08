@@ -8,8 +8,6 @@ public class BlindsState : PlayerState
     private float blindsDownSpeed = 3f;
     private float blindsUpSpeed = 6f;
 
-    public bool blindsClosed = false;
-
     private bool ableToClose;
 
     private float distanceToBlinds;
@@ -38,7 +36,7 @@ public class BlindsState : PlayerState
         Movement();
         ForwardAndBackwardTilt();
         CameraTilt();
-        checkDistance();
+        CheckDistance();
     }
 
 
@@ -98,30 +96,30 @@ public class BlindsState : PlayerState
                 if (interactRayHitInfo.collider.CompareTag("InteractableBlinds"))
                 {
                     PContext.blinds.transform.position = Vector3.Lerp(PContext.blinds.transform.position, newBlindsPos, blindsDownSpeed * Time.deltaTime);
-                    blindsClosed = true;
+                    PlayerStateMachine.blindsClosed = true;
                 }
                 else
                 {
                     PContext.blinds.transform.position = Vector3.Lerp(PContext.blinds.transform.position, oldBlindsPos, blindsUpSpeed * Time.deltaTime);
-                    blindsClosed = false;
+                    PlayerStateMachine.blindsClosed = false;
                 }
             }
             else
             {
                 PContext.blinds.transform.position = Vector3.Lerp(PContext.blinds.transform.position, oldBlindsPos, blindsUpSpeed * Time.deltaTime);
-                blindsClosed = false;
+                PlayerStateMachine.blindsClosed = false;
             }
         }
         else
         {
             PContext.blinds.transform.position = Vector3.Lerp(PContext.blinds.transform.position, oldBlindsPos, blindsUpSpeed * Time.deltaTime);
-            blindsClosed = false;
+            PlayerStateMachine.blindsClosed = false;
         }
     }
 
 
 
-    public void checkDistance()
+    public void CheckDistance()
     {
         distanceToBlinds = Vector3.Distance(PContext.playerGameObject.transform.position, newBlindsPos);
         if (distanceToBlinds <= blindsClosingDistance)
@@ -157,6 +155,7 @@ public class BlindsState : PlayerState
             //transform.localRotation = Quaternion.Euler(mouseX, mouseY, currentTilt);
         }
     }
+
 
 
    

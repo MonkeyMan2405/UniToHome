@@ -4,9 +4,11 @@ using UnityEngine;
 public class MonsterWindowState : MonsterState
 {
 
-    private Transform windowInitialPos;
     private float timer;
-    private float flickerRdm;
+    private float leaveTimer;
+    private bool changeToThinkingState;
+    private Animator monsterWindowAnimator;
+    private bool visitedBefore;
 
     public MonsterWindowState(MonsterStateContext _mcontext, MonsterStateMachine.EMonsterState state) : base(_mcontext, state)
     {
@@ -17,7 +19,15 @@ public class MonsterWindowState : MonsterState
     {
         Debug.Log("Entered Window State");
         MContext.monsterWindow.SetActive(true);
-        windowInitialPos = MContext.monsterWindow.transform;
+
+        monsterWindowAnimator = MContext.monsterWindow.GetComponentInChildren<Animator>();
+
+        if (visitedBefore == true)
+        {
+            //enablke this again, as it was disabled once animation was completred to allow head looking
+            monsterWindowAnimator.enabled = true;
+        }
+   
 
         MonsterStateMachine.monsterDanger = 10;
         MonsterStateMachine.monsterMin = 0;
@@ -29,14 +39,22 @@ public class MonsterWindowState : MonsterState
     {
 
         DoomAndDangerTimer();
+        CheckWindowLeave();
 
     }
+
 
     public override void ExitState()
     {
         timer = 0;
         MonsterStateMachine.monsterDanger = -1;
         MonsterStateMachine.monsterMin = -1;
+
+        changeToThinkingState = false;
+
+        visitedBefore = true;
+
+        MContext.monsterWindow.SetActive(false);
     }
 
 
@@ -65,11 +83,15 @@ public class MonsterWindowState : MonsterState
     //Checked every frame
     public override MonsterStateMachine.EMonsterState GetNextState()
     {
+        if (changeToThinkingState == true)
+        {
+            return MonsterStateMachine.EMonsterState.Thinking;
+        }
         return StateKey;
     }
 
 
-
+    //be careful when changing values, monster light clicker scripts relies on same values as 2nd if statement
     public void DoomAndDangerTimer()
     {
         timer += Time.deltaTime;
@@ -79,25 +101,33 @@ public class MonsterWindowState : MonsterState
             Debug.Log("Doomed");
             MonsterStateMachine.monsterDanger = -1f;
         }
-        else if (timer > 40f)
+
+        else if (timer >30f)
         {
             MonsterStateMachine.monsterDanger = 1.75f;
         }
-        else if (timer >30f)
+        else if (timer >20f)
         {
-             MonsterStateMachine.monsterDanger = 4f;
+            MonsterStateMachine.monsterDanger = 4f;
         }
-         else if (timer >20f)
+        else if (timer >10f)
         {
-             MonsterStateMachine.monsterDanger = 7f;
+            MonsterStateMachine.monsterDanger = 8;
         }
-         else if (timer >10f)
-        {
-             MonsterStateMachine.monsterDanger = 8;
-        }
-
-       // if (timer >= MContext.patience)
     
+    }
+
+    public void CheckWindowLeave()
+    {
+        if (PlayerStateMachine.blindsClosed == true)
+        {
+            leaveTimer += Time.deltaTime;
+            if (leaveTimer >= 5f)
+            {
+                changeToThinkingState = true;
+                leaveTimer = 0;
+            }
+        }
     }
    
 }

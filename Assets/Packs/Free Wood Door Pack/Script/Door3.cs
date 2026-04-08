@@ -10,8 +10,8 @@ namespace DoorScript
 	{
 		public bool open;
 		public float smooth = 1.0f;
-		float DoorOpenAngle = -90f;
-		float DoorCloseAngle = 0f;
+		public float DoorOpenAngle = -90f;
+		public float DoorCloseAngle = 0f;
 		public AudioSource asource;
 		public AudioClip openDoor, closeDoor;
 
@@ -50,7 +50,9 @@ namespace DoorScript
 
 		public void Interact()
 		{
-			if (open)
+			//reset angle if monster had interacted with it prior
+			DoorOpenAngle = -90f;
+            if (open)
 			{
 				open = false;
             }
@@ -58,10 +60,22 @@ namespace DoorScript
 			{
 				open = true;
             }
-
-			Debug.Log("Door Interacted");
-			
-
+		
         }
-	}
+
+        public void MonsterInteract()
+        {
+            if (open)
+            {
+                open = false;
+            }
+            else
+            {
+                open = true;
+            }
+        }
+
+    }
+
+	
 }
