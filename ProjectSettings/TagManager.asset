@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - InteractableWork
   - InteractableBlinds
+  - MonsterTrigger
   layers:
   - Default
   - TransparentFX

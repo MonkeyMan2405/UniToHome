@@ -19,8 +19,13 @@ public class MonsterThinkingState : MonsterState
     {
         Debug.Log("Entered Thinking State");
         MContext.monsterHallway.SetActive(false);
+        MContext.monsterHallDoor.SetActive(false);
         MContext.monsterWindow.SetActive(false);
         MContext.monsterWardrobe.SetActive(false);
+        MContext.monsterDoom.SetActive(false);
+
+        MContext.doomCamera.enabled = false;
+       
     }
 
 
@@ -91,9 +96,8 @@ public class MonsterThinkingState : MonsterState
         timer += Time.deltaTime;
 
         if (timer >= MContext.thinkingTime)
-        {   timer = 0f; 
-            randomDecision = Random.Range(0, 2);
-            //randomDecision = 2;
+        {   timer = 0f;
+            randomDecision = Random.Range(0, 4);
             MakeDecision();
         }
     }

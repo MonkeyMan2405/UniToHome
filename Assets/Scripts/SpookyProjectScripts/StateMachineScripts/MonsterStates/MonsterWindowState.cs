@@ -54,7 +54,6 @@ public class MonsterWindowState : MonsterState
 
         visitedBefore = true;
 
-        MContext.monsterWindow.SetActive(false);
     }
 
 
@@ -87,6 +86,10 @@ public class MonsterWindowState : MonsterState
         {
             return MonsterStateMachine.EMonsterState.Thinking;
         }
+        else if (MonsterStateMachine.triggerDoom == true)
+        {
+            return MonsterStateMachine.EMonsterState.Doom;
+        }
         return StateKey;
     }
 
@@ -98,7 +101,7 @@ public class MonsterWindowState : MonsterState
         
         if (timer >= MContext.patience)
         {
-            Debug.Log("Doomed");
+            MonsterStateMachine.triggerDoom = true;
             MonsterStateMachine.monsterDanger = -1f;
         }
 

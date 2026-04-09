@@ -62,6 +62,7 @@ public class WardrobeTrigger : MonoBehaviour, IInteractable
         //if door open, start timer, if hit limit, vlose doors, if closed, reset timer
         if (door2Ref.open == true)
         {
+            //I'm not sure this does anything
             if (monsterPresent == false)
             {
                 timer += Time.deltaTime;

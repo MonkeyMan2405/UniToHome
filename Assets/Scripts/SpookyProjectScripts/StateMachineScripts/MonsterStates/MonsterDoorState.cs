@@ -42,8 +42,6 @@ public class MonsterDoorState : MonsterState
 
         MContext.wardrobeTriggerRef.monsterPresent = false;
 
-        MContext.monsterWardrobe.SetActive(false);
-
         changeToThinkingState = false;
     }
 
@@ -77,6 +75,10 @@ public class MonsterDoorState : MonsterState
         {
             return MonsterStateMachine.EMonsterState.Thinking;
         }
+        else if (MonsterStateMachine.triggerDoom == true)
+        {
+            return MonsterStateMachine.EMonsterState.Doom;
+        }
         return StateKey;
     }
 
@@ -86,7 +88,7 @@ public class MonsterDoorState : MonsterState
 
         if (timer >= MContext.patience)
         {
-            Debug.Log("Doomed");
+            MonsterStateMachine.triggerDoom = true;
             MonsterStateMachine.monsterDanger = -1f;
         }
 
