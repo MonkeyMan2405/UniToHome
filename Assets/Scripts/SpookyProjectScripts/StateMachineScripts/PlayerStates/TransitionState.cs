@@ -14,8 +14,8 @@ public class TransitionState : PlayerState
     private Quaternion oldCamRotation;
 
     private float lerpSpeed = 5f;
-    private float zPosOffset = 1.3f;
-    private float yPosOffset = 0.45f;
+    private float zPosOffset = 1f;
+    private float yPosOffset = 0f;
 
     private bool changeToStandardState;
     private bool changeToWorkingState;
@@ -33,7 +33,7 @@ public class TransitionState : PlayerState
 
         newCamRotation = (Quaternion.Euler(0f, 0f, 0f));
 
-        computerLocationWithOffset = PContext.newCamPos.position + new Vector3(0, -yPosOffset, -1.4f);
+        computerLocationWithOffset = PContext.newCamPos.position + new Vector3(0, -yPosOffset, -30f);
         //Set the new cam pos to infront of the computer
         localNewPos = PContext.newCamPos.position + new Vector3(0, -yPosOffset, -zPosOffset);
 

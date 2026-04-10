@@ -27,6 +27,7 @@ public class MonsterDoomState : MonsterState
             MContext.monsterDoom.transform.rotation = MContext.monsterHallway.transform.rotation;
         }
 
+        MContext.playerCamera.enabled = false;
         MContext.doomCamera.enabled = true;
         MContext.monsterDoom.SetActive(true);
 

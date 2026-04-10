@@ -34,7 +34,14 @@ public class StandardState : PlayerState, IInteractable
         Movement();
         Interact();
 
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SoundManager.PlaySoundAt(SoundType.Monster, 1, 1f, PContext.blinds.transform);
+            SoundManager.PlayLoopingSound(SoundType.Monster, 1, 1f);
+        }
+
     }
+    
 
 
 

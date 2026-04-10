@@ -1,13 +1,15 @@
-using System.Runtime.CompilerServices;
-using Unity.Mathematics;
-using Unity.VisualScripting;
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WorkingState : PlayerState
 {
     private bool changeToTransitionState;
-   
+
+    public static UnityEvent GeneratePattern = new UnityEvent();
+    public static UnityEvent<int> MonitorInput = new UnityEvent<int>();
+
+    public int directionInput;
+
     public WorkingState(PlayerStateContext _pcontext, PlayerStateMachine.EPlayerState state) : base(_pcontext, state)
     {
         PlayerStateContext PContext = _pcontext;
@@ -28,6 +30,30 @@ public class WorkingState : PlayerState
         {
             changeToTransitionState = true;
             PContext.transitionIdentifier = 1;
+        }
+        else if (Input.GetKeyDown(KeyCode.W))
+        {
+            directionInput = 1;
+            MonitorInput?.Invoke(directionInput);
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            directionInput = 4;
+            MonitorInput?.Invoke(directionInput);
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            directionInput = 3;
+            MonitorInput?.Invoke(directionInput);
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            directionInput = 2;
+            MonitorInput?.Invoke(directionInput);
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            GeneratePattern?.Invoke();
         }
 
     }

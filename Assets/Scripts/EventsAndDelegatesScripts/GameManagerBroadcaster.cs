@@ -8,8 +8,6 @@ public class GameManagerBroadcaster : MonoBehaviour
     public static UnityEvent OnGamePaused = new UnityEvent();
     public static UnityEvent OnFClicked = new UnityEvent();
 
-
-
     // Update is called once per frame
     void Update()
     {
@@ -25,4 +23,6 @@ public class GameManagerBroadcaster : MonoBehaviour
             OnFClicked?.Invoke();
         }
     }
+
+  
 }

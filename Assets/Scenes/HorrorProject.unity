@@ -1889,7 +1889,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!65 &736207407
 BoxCollider:
@@ -4450,6 +4450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactorRef: {fileID: 1093848636}
   headBobbingRef: {fileID: 1233967855}
+  blinds: {fileID: 0}
   newCamPos: {fileID: 249960059}
   workCamera: {fileID: 0}
   transitionIdentifier: 0
@@ -4635,6 +4636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d276046a5c29c4489e996c644c78055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monitorRef: {fileID: 0}
 --- !u!1 &1775265637
 GameObject:
   m_ObjectHideFlags: 0

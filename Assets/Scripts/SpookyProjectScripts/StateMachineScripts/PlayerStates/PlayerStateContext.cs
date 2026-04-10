@@ -6,6 +6,7 @@ public class PlayerStateContext
     [Header("References")]
     public Interactor interactorRef;
     public HeadBobbing headBobbingRef;
+    public SoundManager audioManagerRef;
 
 
 
@@ -20,7 +21,7 @@ public class PlayerStateContext
     public Camera workCamera;
     //passed through context for transition state to check what transition action to take
     public int transitionIdentifier;
-
+    public SpriteRenderer monitorSpriteRendererRef;
 
 
     [Header("Interactor")]
@@ -91,6 +92,7 @@ public class PlayerStateContext
     (
         Interactor interactorRef,
         HeadBobbing headBobbingRef,
+        SoundManager audioManagerRef,
 
         Transform blinds,
 
@@ -149,6 +151,8 @@ public class PlayerStateContext
 
         this.interactorRef = interactorRef;
         this.headBobbingRef = headBobbingRef;
+        this.audioManagerRef = audioManagerRef;
+
         this.transitionIdentifier = transitionIdentifier;
 
         this.newCamPos = newCamPos;
