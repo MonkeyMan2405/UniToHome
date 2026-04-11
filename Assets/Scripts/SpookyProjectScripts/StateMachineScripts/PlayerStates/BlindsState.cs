@@ -8,6 +8,7 @@ public class BlindsState : PlayerState
     private float blindsDownSpeed = 3f;
     private float blindsUpSpeed = 6f;
 
+    private bool blindsSoundVisited;
     private bool ableToClose;
 
     private float distanceToBlinds;
@@ -15,6 +16,9 @@ public class BlindsState : PlayerState
     private float blindsClosingDistance = 1.2f;
 
     private bool changeToStandardState;
+
+    private float playerResetSpeed;
+    private bool hasVisitedBefore;
 
     public BlindsState(PlayerStateContext _pcontext, PlayerStateMachine.EPlayerState state) : base(_pcontext, state)
     {
@@ -25,6 +29,14 @@ public class BlindsState : PlayerState
     {
         oldBlindsPos = PContext.blinds.transform.position;
         newBlindsPos = oldBlindsPos + new Vector3(0, -1.1f, 0f);
+
+        PContext.playerSprintSpeed = PlayerStateMachine.playerMovementSpeed * PContext.playerRunMultiplier;
+
+        if (hasVisitedBefore == false)
+        {
+            playerResetSpeed = PlayerStateMachine.playerMovementSpeed;
+        }
+
     }
 
 
@@ -46,6 +58,8 @@ public class BlindsState : PlayerState
         changeToStandardState = false;
         ableToClose = true;
         PContext.blinds.transform.position = oldBlindsPos;
+
+        hasVisitedBefore = true;
     }
 
 
@@ -97,23 +111,29 @@ public class BlindsState : PlayerState
                 {
                     PContext.blinds.transform.position = Vector3.Lerp(PContext.blinds.transform.position, newBlindsPos, blindsDownSpeed * Time.deltaTime);
                     PlayerStateMachine.blindsClosed = true;
+                    BlindsSounds();
                 }
                 else
                 {
                     PContext.blinds.transform.position = Vector3.Lerp(PContext.blinds.transform.position, oldBlindsPos, blindsUpSpeed * Time.deltaTime);
                     PlayerStateMachine.blindsClosed = false;
+                    blindsSoundVisited = false;
+
                 }
             }
             else
             {
                 PContext.blinds.transform.position = Vector3.Lerp(PContext.blinds.transform.position, oldBlindsPos, blindsUpSpeed * Time.deltaTime);
                 PlayerStateMachine.blindsClosed = false;
+                blindsSoundVisited = false;
+
             }
         }
         else
         {
             PContext.blinds.transform.position = Vector3.Lerp(PContext.blinds.transform.position, oldBlindsPos, blindsUpSpeed * Time.deltaTime);
             PlayerStateMachine.blindsClosed = false;
+            blindsSoundVisited = false;
         }
     }
 
@@ -133,7 +153,14 @@ public class BlindsState : PlayerState
     }
 
 
-
+    public void BlindsSounds()
+    {
+        if(blindsSoundVisited == false)
+        {
+            blindsSoundVisited = true;
+            SoundManager.PlaySoundAt(SoundType.Blinds, 1f, 0.5f, PContext.blinds);
+        }
+    }
 
 
 
@@ -238,20 +265,15 @@ public class BlindsState : PlayerState
 
 
         //Movement
-        Vector3 moveDirection = PContext.playerGameObject.transform.forward * verticalMovement + PContext.playerGameObject.transform.right * horizontalMovement;
+        PlayerStateMachine.playerMovementDirection = PContext.playerGameObject.transform.forward * verticalMovement + PContext.playerGameObject.transform.right * horizontalMovement;
 
         //Prevents faster diagonal movement
-        moveDirection.Normalize();
+        PlayerStateMachine.playerMovementDirection.Normalize();
 
-        float speed = PContext.playerWalkSpeed;
-        if (Input.GetAxis("Sprint") > 0)
-        {
-            speed *= PContext.playerRunMultiplier;
-        }
+        //sprint is missing from this intentionally
 
-
-        //Something
-        PContext.characterController.Move(moveDirection * speed * Time.deltaTime);
+        //Move direction and speed
+        PContext.characterController.Move(PlayerStateMachine.playerMovementDirection * PlayerStateMachine.playerMovementSpeed * Time.deltaTime);
         //Gravity
         PContext.characterController.Move(Vector3.down * PContext.gravity * Time.deltaTime);
 

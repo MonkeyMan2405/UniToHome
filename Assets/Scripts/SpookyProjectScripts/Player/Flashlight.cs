@@ -41,10 +41,12 @@ public class Flashlight : MonoBehaviour
         if (flashlightLight.enabled)
         {
             flashlightLight.enabled = false;
+            SoundManager.PlaySound(SoundType.PlayerFlashlight, Random.Range(0.6f, 1f), Random.Range(0.4f, 0.6f));
         }
         else
         {
             flashlightLight.enabled = true;
+            SoundManager.PlaySound(SoundType.PlayerFlashlight, Random.Range(0.6f, 1f), Random.Range(0.4f, 0.6f));
         }
     }
 

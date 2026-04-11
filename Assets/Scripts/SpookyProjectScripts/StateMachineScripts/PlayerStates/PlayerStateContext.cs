@@ -7,6 +7,7 @@ public class PlayerStateContext
     public Interactor interactorRef;
     public HeadBobbing headBobbingRef;
     public SoundManager audioManagerRef;
+    public PlayerFootsteps footstepsRef;
 
 
 
@@ -32,7 +33,7 @@ public class PlayerStateContext
 
 
     [Header("Player Settings")]
-    public float playerWalkSpeed = 3f;
+    public float playerSprintSpeed;
     public float playerRunMultiplier = 1.5f;
     public float playerJumpForce = 2f;
     public float groundCheckDistance = 1.5f;
@@ -92,7 +93,7 @@ public class PlayerStateContext
     (
         Interactor interactorRef,
         HeadBobbing headBobbingRef,
-        SoundManager audioManagerRef,
+        PlayerFootsteps footstepsRef,
 
         Transform blinds,
 
@@ -104,7 +105,7 @@ public class PlayerStateContext
         float interactionRange,
         LayerMask interactionMask,
 
-        float playerWalkSpeed = 5f,
+        float playerSprintSpeed,
         float playerRunMultiplier = 1.5f,
         float playerJumpForce = 2f,
         float groundCheckDistance = 1.5f,
@@ -151,7 +152,7 @@ public class PlayerStateContext
 
         this.interactorRef = interactorRef;
         this.headBobbingRef = headBobbingRef;
-        this.audioManagerRef = audioManagerRef;
+        this.footstepsRef = footstepsRef;
 
         this.transitionIdentifier = transitionIdentifier;
 
@@ -162,7 +163,7 @@ public class PlayerStateContext
         this.interactionRange = interactionRange;
         this.interactionMask = interactionMask;
 
-        this.playerWalkSpeed = playerWalkSpeed;
+        this.playerSprintSpeed = playerSprintSpeed;
         this.playerRunMultiplier = playerRunMultiplier;
         this.playerJumpForce = playerJumpForce;
         this.groundCheckDistance = groundCheckDistance;

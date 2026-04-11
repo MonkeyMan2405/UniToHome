@@ -97,7 +97,8 @@ public class MonsterThinkingState : MonsterState
 
         if (timer >= MContext.thinkingTime)
         {   timer = 0f;
-            randomDecision = Random.Range(0, 4);
+            //randomDecision = Random.Range(0, 4);
+            randomDecision = 1;
             MakeDecision();
         }
     }

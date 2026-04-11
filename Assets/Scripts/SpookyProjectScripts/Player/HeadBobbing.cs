@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -53,8 +54,8 @@ public class HeadBobbing : MonoBehaviour
         private Vector3 StartHeadBobbing()
         {
             Vector3 pos = Vector3.zero;
-        // Calculate the head bobbing effect using sine and cosine + apply amount and frequency to create bobbing motion. Vertical bobbing influenced by yUpAndDownMultiplier, horizontal bobbing influenced by xLeftAndRightMultiplier.
-        pos.y += Mathf.Lerp(pos.y, Mathf.Sin(Time.time * frequency) * amount * yUpAndDownMultiplier, smoothness * Time.deltaTime);
+            // Calculate the head bobbing effect using sine and cosine + apply amount and frequency to create bobbing motion. Vertical bobbing influenced by yUpAndDownMultiplier, horizontal bobbing influenced by xLeftAndRightMultiplier.
+            pos.y += Mathf.Lerp(pos.y, Mathf.Sin(Time.time * frequency) * amount * yUpAndDownMultiplier, smoothness * Time.deltaTime);
             pos.x += Mathf.Lerp(pos.x, Mathf.Cos(Time.time * frequency / 2f) * amount * 1.6f, smoothness * Time.deltaTime);
             // Apply the head bobbing effect to the camera's local position
             transform.localPosition += pos;
@@ -66,6 +67,12 @@ public class HeadBobbing : MonoBehaviour
     {
         if (transform.localPosition == startPos) return;
         transform.localPosition = Vector3.Lerp(transform.localPosition, startPos, 1 * Time.deltaTime);
+
+
     }
+
+  
+    
+
 
 }

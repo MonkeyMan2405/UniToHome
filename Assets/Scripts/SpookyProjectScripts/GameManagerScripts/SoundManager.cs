@@ -3,9 +3,35 @@ using System;
 
 public enum SoundType
 {
-    Monster,
-    Environment,
-    Player,
+    PlayerStep,
+    PlayerFlashlight,
+
+    AirAmbience,
+    HorrorAmbience,
+    HorrorStinger,
+    HorrorRiser,
+
+    MonsterJumpscare,
+    MonsterLeave,
+    MonsterClimbWindow,
+    Stab,
+    HeavyFootsteps,
+    MonsterSee,
+
+    DoorOpen,
+    DoorClose,
+    ClosetOpen,
+    ClosetClose,
+    DoorSlam,
+    Blinds,
+
+    MonitorRight,
+    MonitorWrong,
+    LightFlick,
+    MonitorPattern,
+
+    MonsterShock,
+    TensionRiser,
 
 }
 
@@ -48,7 +74,7 @@ public class SoundManager : MonoBehaviour
 #endif
 
 
-    public static void PlaySound(SoundType sound, float volume = 1, float pitch = 1)
+    public static void PlaySound(SoundType sound, float volume, float pitch)
     {
         //parameters passed through ideally are above,
 
@@ -56,24 +82,24 @@ public class SoundManager : MonoBehaviour
         AudioClip soundToPlay = clips[0];
         instance.audioSource.pitch = pitch;
 
-        //Implement this is wanting randomness
+        //Implement this is if wanting randomness
         //AudioClip randomClip = clips[UnityEngine.Random.Range(0, clips.Length)];
 
         instance.audioSource.PlayOneShot(soundToPlay, volume);
     }
 
 
-    public static void PlaySoundAt(SoundType sound, float volume = 1, float pitch = 1, Transform whereToPlay = null)
+    public static void PlaySoundAt(SoundType sound, float volume, float pitch, Transform whereToPlay = null)
     {
         AudioClip[] clips = instance.soundList[(int)sound].Sounds;
         AudioClip soundToPlay = clips[0];
-        instance.audioSource.pitch = pitch;
 
-       AudioSource.PlayClipAtPoint(soundToPlay, whereToPlay.position);
+        AudioSource.PlayClipAtPoint(soundToPlay, whereToPlay.position, pitch);
+
     }
 
 
-    public static void PlayLoopingSound(SoundType sound, float volume = 1, float pitch = 1)
+    public static void PlayLoopingSound(SoundType sound, float volume, float pitch)
     {
 
         AudioClip[] clips = instance.soundList[(int)sound].Sounds;
@@ -82,7 +108,10 @@ public class SoundManager : MonoBehaviour
         //ensure spatial blend of audio source is zero
 
         instance.loopingAudioSource.clip = soundToPlay;
+        instance.loopingAudioSource.volume = volume;
+        instance.loopingAudioSource.pitch = pitch;
 
+        //different audio source than the rest. don't conmfuse it
         instance.loopingAudioSource.Play();
 
     }
@@ -96,6 +125,8 @@ public struct SoundList
 {
     //is returned when calling sound array
     public AudioClip[] Sounds { get => sounds; }
+
+
     //allows to set the group bname of the sounds in the inspector
     [HideInInspector]
     public string name;

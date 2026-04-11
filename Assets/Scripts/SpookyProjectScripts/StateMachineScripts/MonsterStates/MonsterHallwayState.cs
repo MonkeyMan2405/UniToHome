@@ -8,6 +8,7 @@ public class MonsterHallwayState : MonsterState
     private float countdownTimer;
     private float timer;
     private float doomTimer;
+    private float footstepTimer;
 
     private bool startDoomTimer;
     private bool shouldPeek;
@@ -63,6 +64,7 @@ public class MonsterHallwayState : MonsterState
 
         switchToThinkingState = false;
         timer = 0;
+        footstepTimer = 0;
 
         //disable just in case jumpscared early
         MContext.monsterHallDoor.SetActive(false);
@@ -127,6 +129,15 @@ public class MonsterHallwayState : MonsterState
                 SetupRoomDoorAndMonster();
 
             }
+
+            footstepTimer += Time.deltaTime;
+            if (footstepTimer >= 4f)
+            {
+                footstepTimer = 0;
+                SoundManager.PlaySoundAt(SoundType.HeavyFootsteps, 1f, 0.5f, MContext.monsterHallway.transform);
+            }
+
+
         }
 
        
@@ -160,6 +171,7 @@ public class MonsterHallwayState : MonsterState
                 if (MContext.doorTriggerRef.doorRef.open == false)
                 {
                     MContext.doorTriggerRef.doorRef.Interact();
+                    
                 }
             }
         }

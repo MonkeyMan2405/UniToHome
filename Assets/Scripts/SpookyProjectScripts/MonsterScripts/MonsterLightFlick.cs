@@ -48,6 +48,7 @@ public class MonsterLightFlick : MonsterStateMachine
         {
             Debug.Log(flickerRdm);
             deskLight.enabled = false;
+            SoundManager.PlaySoundAt(SoundType.LightFlick, 1f, Random.Range(0.2f, 0.8f), deskLight.transform);
             yield return new WaitForSeconds (0.1f);
             deskLight.enabled = true;
         }
@@ -56,6 +57,7 @@ public class MonsterLightFlick : MonsterStateMachine
     IEnumerator ImpendingDoomFlickering()
     {
         deskLight.enabled = false;
+        SoundManager.PlaySoundAt(SoundType.LightFlick, 1f, Random.Range(0.2f, 0.8f), deskLight.transform);
         yield return new WaitForSeconds(0.1f);
         deskLight.enabled = true;
     }

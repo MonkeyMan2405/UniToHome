@@ -23,10 +23,12 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
 
     //Variables
 
+    public static Vector3 playerMovementDirection;
+
     [Header("References")]
     public Interactor interactorRef;
     public HeadBobbing headBobbingRef;
-    public SoundManager audioManagerRef;
+    public PlayerFootsteps footstepsRef;
 
 
     [Header("Blinds Variables")]
@@ -36,7 +38,7 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
 
     [Header("Working Variables")]
     public Transform newCamPos;
-    public Camera workCamera;
+    private Camera workCamera;
     //passed through context for transition state to check what transition action to take
     public int transitionIdentifier;
 
@@ -52,7 +54,8 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
 
 
     [Header("Player Settings")]
-    public float playerWalkSpeed = 5f;
+    public static float playerMovementSpeed = 3f;
+    private float playerSprintSpeed;
     public float playerRunMultiplier = 1.5f;
     public float playerJumpForce = 2f;
     public float groundCheckDistance = 1.5f;
@@ -112,7 +115,7 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
 
     public void Awake()
     {
-        _pContext = new PlayerStateContext(interactorRef, headBobbingRef, audioManagerRef, blinds, newCamPos, workCamera, transitionIdentifier, interactorSource, interactionRange, interactionMask, playerWalkSpeed, playerRunMultiplier, playerJumpForce, groundCheckDistance, characterController, isGrounded,
+        _pContext = new PlayerStateContext(interactorRef, headBobbingRef, footstepsRef, blinds, newCamPos, workCamera, transitionIdentifier, interactorSource, interactionRange, interactionMask, playerSprintSpeed, playerRunMultiplier, playerJumpForce, groundCheckDistance, characterController, isGrounded,
         gravity, velocity, verticalRotation, rb, playerGameObject, mouseSensitivityX, mouseSensitivityY, minLookAngleY, maxLookAngleY, playerCamera, camPivotRef, actualPlayerCamera,
         zTiltAmount, tiltStartSpeed, tiltEndSpeed, zCurrentTilt, zTargetTilt, zSmoothTilt, xTiltAmount, xCurrentTilt, xTargetTilt, xSmoothTilt, changeToWorkState);
         InitialiseStates();     

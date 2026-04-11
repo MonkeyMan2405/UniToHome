@@ -7,6 +7,11 @@ public class StandardState : PlayerState, IInteractable
     private bool changeToTransitionState;
     private bool changeToBlindsState;
 
+    private float playerResetSpeed;
+    private bool hasVisitedBefore;
+
+
+
     public StandardState(PlayerStateContext _pcontext, PlayerStateMachine.EPlayerState state) : base(_pcontext, state)
     {
         PlayerStateContext PContext = _pcontext;
@@ -18,9 +23,17 @@ public class StandardState : PlayerState, IInteractable
         PContext.headBobbingRef.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
 
+        PContext.playerSprintSpeed = PlayerStateMachine.playerMovementSpeed * PContext.playerRunMultiplier;
+
+
         PContext.transitionIdentifier = 0;
 
         Debug.Log("Standard");
+
+        if (hasVisitedBefore == false)
+        {
+            playerResetSpeed = PlayerStateMachine.playerMovementSpeed;
+        }
 
     }
 
@@ -34,12 +47,6 @@ public class StandardState : PlayerState, IInteractable
         Movement();
         Interact();
 
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            SoundManager.PlaySoundAt(SoundType.Monster, 1, 1f, PContext.blinds.transform);
-            SoundManager.PlayLoopingSound(SoundType.Monster, 1, 1f);
-        }
-
     }
     
 
@@ -50,6 +57,8 @@ public class StandardState : PlayerState, IInteractable
         changeToHideState = false;
         changeToTransitionState = false;
         changeToBlindsState = false;
+
+        hasVisitedBefore = true;
     }
 
 
@@ -88,10 +97,12 @@ public class StandardState : PlayerState, IInteractable
         {
             return PlayerStateMachine.EPlayerState.Transition;
         }
+
         else if (changeToBlindsState == true)
         {
             return PlayerStateMachine.EPlayerState.Blinds;
         }
+
             return StateKey;
 
     }
@@ -170,6 +181,7 @@ public class StandardState : PlayerState, IInteractable
     }
 
 
+
     public void Movement()
     {
         //Maps WASD to horizontal and vertical movement
@@ -178,20 +190,26 @@ public class StandardState : PlayerState, IInteractable
 
 
         //Movement
-        Vector3 moveDirection = PContext.playerGameObject.transform.forward * verticalMovement + PContext.playerGameObject.transform.right * horizontalMovement;
- 
-        //Prevents faster diagonal movement
-        moveDirection.Normalize();
+        PlayerStateMachine.playerMovementDirection = PContext.playerGameObject.transform.forward * verticalMovement + PContext.playerGameObject.transform.right * horizontalMovement;
 
-        float speed = PContext.playerWalkSpeed;
-        if (Input.GetAxis("Sprint") > 0)
+        //Prevents faster diagonal movement
+        PlayerStateMachine.playerMovementDirection.Normalize();
+
+
+        if (Input.GetButton("Sprint"))
         {
-            speed *= PContext.playerRunMultiplier;
+            PlayerStateMachine.playerMovementSpeed = PContext.playerSprintSpeed;
+
+        }
+        else
+        {
+            PlayerStateMachine.playerMovementSpeed = playerResetSpeed;
         }
 
 
-        //Something
-        PContext.characterController.Move(moveDirection * speed * Time.deltaTime);
+        //Move direction and speed
+        PContext.characterController.Move(PlayerStateMachine.playerMovementDirection * PlayerStateMachine.playerMovementSpeed * Time.deltaTime);
+
         //Gravity
         PContext.characterController.Move(Vector3.down * PContext.gravity * Time.deltaTime);
 
@@ -249,9 +267,6 @@ public class StandardState : PlayerState, IInteractable
             }
         }
     }
-
-
-
           
 }
 

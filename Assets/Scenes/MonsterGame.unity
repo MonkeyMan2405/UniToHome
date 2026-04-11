@@ -13284,6 +13284,8 @@ GameObject:
   - component: {fileID: 711942493}
   - component: {fileID: 711942492}
   - component: {fileID: 711942497}
+  - component: {fileID: 711942498}
+  - component: {fileID: 711942499}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -13305,17 +13307,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactorRef: {fileID: 703591415}
   headBobbingRef: {fileID: 551740353}
-  audioManagerRef: {fileID: 0}
+  footstepsRef: {fileID: 711942498}
   blinds: {fileID: 1147789672}
   newCamPos: {fileID: 20870553}
-  workCamera: {fileID: 0}
   transitionIdentifier: 0
   interactorSource: {fileID: 703591414}
   interactionRange: 2
   interactionMask:
     serializedVersion: 2
     m_Bits: 4096
-  playerWalkSpeed: 3
   playerRunMultiplier: 1.5
   playerJumpForce: 2
   groundCheckDistance: 1.5
@@ -13450,6 +13450,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03317406578a1a64d97b0fc04a50a0d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &711942498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711942491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 787795dbee3950d4589588b5caff4393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &711942499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711942491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07222a04d61d8144d8f7926f622c81d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &720645686
@@ -21998,8 +22022,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1185507329}
   - component: {fileID: 1185507330}
-  - component: {fileID: 1185507331}
   - component: {fileID: 1185507332}
+  - component: {fileID: 1185507333}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -22034,7 +22058,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: d09ca812438567449adb386a49585e57, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -22120,28 +22144,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1185507331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1185507327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 548d7e6261a7f9a45a4ec5e9e26608f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundList:
-  - name: Monster
-    sounds:
-    - {fileID: 8300000, guid: ceacf2a3c695ab740a2af6369ca87032, type: 3}
-  - name: Environment
-    sounds:
-    - {fileID: 8300000, guid: 4722c87c7de758a4685286bf1a23d646, type: 3}
-  - name: Player
-    sounds: []
-  loopingAudioSource: {fileID: 159951413}
 --- !u!114 &1185507332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22154,6 +22156,91 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840a80f5c37bc1b47be7e13eb69c3f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1185507333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185507327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 548d7e6261a7f9a45a4ec5e9e26608f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundList:
+  - name: PlayerStep
+    sounds:
+    - {fileID: 8300000, guid: 5fd939d8abff0e54cb7fcc89d2799380, type: 3}
+  - name: PlayerFlashlight
+    sounds:
+    - {fileID: 8300000, guid: d09ca812438567449adb386a49585e57, type: 3}
+  - name: AirAmbience
+    sounds:
+    - {fileID: 8300000, guid: 4722c87c7de758a4685286bf1a23d646, type: 3}
+  - name: HorrorAmbience
+    sounds:
+    - {fileID: 8300000, guid: 4da3063161a942f40ae0836d298776b9, type: 3}
+  - name: HorrorStinger
+    sounds:
+    - {fileID: 8300000, guid: cf56782b28deb584a803db4833868736, type: 3}
+  - name: HorrorRiser
+    sounds:
+    - {fileID: 8300000, guid: 28d07decc872afc4faa28010f81bbefe, type: 3}
+  - name: MonsterJumpscare
+    sounds:
+    - {fileID: 8300000, guid: 20218e1436a69634b8f009116ae6a5e0, type: 3}
+  - name: MonsterLeave
+    sounds:
+    - {fileID: 8300000, guid: cf56782b28deb584a803db4833868736, type: 3}
+  - name: MonsterClimbWindow
+    sounds:
+    - {fileID: 8300000, guid: 01f961b785c429448a1bfe6ca8e694df, type: 3}
+  - name: Stab
+    sounds:
+    - {fileID: 8300000, guid: c56c244335a20b949ade9a6ffdf267f3, type: 3}
+  - name: HeavyFootsteps
+    sounds:
+    - {fileID: 8300000, guid: e67da75a9f9b6884c8e5e179184452a8, type: 3}
+  - name: MonsterSee
+    sounds: []
+  - name: DoorOpen
+    sounds:
+    - {fileID: 8300000, guid: 44b63b0db16ce624b97e45ebde0a0971, type: 3}
+  - name: DoorClose
+    sounds:
+    - {fileID: 8300000, guid: bc37ad25465405a428a26ff0facd9a7b, type: 3}
+  - name: ClosetOpen
+    sounds:
+    - {fileID: 8300000, guid: 746655fa79c7e0046bb57c550ec35190, type: 3}
+  - name: ClosetClose
+    sounds:
+    - {fileID: 8300000, guid: 746655fa79c7e0046bb57c550ec35190, type: 3}
+  - name: DoorSlam
+    sounds:
+    - {fileID: 8300000, guid: 8cdd1d5f41e3577418c93fa8b889f1c8, type: 3}
+  - name: Blinds
+    sounds:
+    - {fileID: 8300000, guid: eb037343bb135354598de19e1ac557ef, type: 3}
+  - name: MonitorRight
+    sounds:
+    - {fileID: 8300000, guid: ceacf2a3c695ab740a2af6369ca87032, type: 3}
+  - name: MonitorWrong
+    sounds:
+    - {fileID: 8300000, guid: a93af37eb8f45f94a9d7c2b49bf0a362, type: 3}
+  - name: LightFlick
+    sounds:
+    - {fileID: 8300000, guid: d09ca812438567449adb386a49585e57, type: 3}
+  - name: MonitorPattern
+    sounds:
+    - {fileID: 8300000, guid: 66174f8adbaf40c46b1e6a8c0deff90c, type: 3}
+  - name: MonsterShock
+    sounds:
+    - {fileID: 8300000, guid: 26ec280dcd7673f44ba46b5677a34694, type: 3}
+  - name: TensionRiser
+    sounds:
+    - {fileID: 8300000, guid: c65bf8d21c6719949a7abe278a79182e, type: 3}
+  loopingAudioSource: {fileID: 159951413}
 --- !u!1 &1186745851
 GameObject:
   m_ObjectHideFlags: 0

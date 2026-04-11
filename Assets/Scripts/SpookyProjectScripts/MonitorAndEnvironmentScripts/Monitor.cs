@@ -90,10 +90,14 @@ public class Monitor : MonoBehaviour
         foreach (int i in directionsList)
         {
             yield return new WaitForSeconds(0.75f);
+
+            SoundManager.PlaySoundAt(SoundType.MonitorPattern, 1f, 0.5f, gameObject.transform);
             monitorImage.sprite = monitorSpriteList[i];
+
             yield return new WaitForSeconds(0.75f);
             monitorImage.sprite = monitorSpriteList[0];
         }
+
 
         finishedDisplaying = true;
         //player can now input
@@ -121,11 +125,13 @@ public class Monitor : MonoBehaviour
                 //check if last one
                 if (inputNumber == directionsList.Count)
                 {
+                    SoundManager.PlaySoundAt(SoundType.MonitorRight, 1f, 0.5f, gameObject.transform);
                     StartCoroutine(Complete());
                     inputNumber = 0;
                 }
                 else
                 {
+                    SoundManager.PlaySoundAt(SoundType.MonitorRight, 1f, 0.5f, gameObject.transform);
                     StartCoroutine(CorrectAndPrepare());
                 }
                     
@@ -162,15 +168,18 @@ public class Monitor : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         monitorImage.sprite = monitorSpriteList[0];
         yield return new WaitForSeconds(0.25f);
+        SoundManager.PlaySoundAt(SoundType.MonitorRight, 1f, 1f, gameObject.transform);
+        monitorImage.sprite = monitorSpriteList[9];
+        yield return new WaitForSeconds(0.25f);
+        monitorImage.sprite = monitorSpriteList[0];
+        yield return new WaitForSeconds(0.25f);
+        SoundManager.PlaySoundAt(SoundType.MonitorRight, 1f, 1f, gameObject.transform);
         monitorImage.sprite = monitorSpriteList[9];
         yield return new WaitForSeconds(0.25f);
         monitorImage.sprite = monitorSpriteList[0];
         yield return new WaitForSeconds(0.25f);
         monitorImage.sprite = monitorSpriteList[9];
-        yield return new WaitForSeconds(0.25f);
-        monitorImage.sprite = monitorSpriteList[0];
-        yield return new WaitForSeconds(0.25f);
-        monitorImage.sprite = monitorSpriteList[9];
+        SoundManager.PlaySoundAt(SoundType.MonitorRight, 1f, 1f, gameObject.transform);
         yield return new WaitForSeconds(0.25f);
         monitorImage.sprite = monitorSpriteList[0];
         yield return new WaitForSeconds(0.25f);
@@ -192,14 +201,17 @@ public class Monitor : MonoBehaviour
 
     IEnumerator Incorrect()
     {
+        SoundManager.PlaySoundAt(SoundType.MonitorWrong, 1f, 0.5f, gameObject.transform);
         monitorImage.sprite = monitorSpriteList[10];
         yield return new WaitForSeconds(0.25f);
         monitorImage.sprite = monitorSpriteList[0];
         yield return new WaitForSeconds(0.25f);
+        SoundManager.PlaySoundAt(SoundType.MonitorWrong, 1f, 0.5f, gameObject.transform);
         monitorImage.sprite = monitorSpriteList[10];
         yield return new WaitForSeconds(0.25f);
         monitorImage.sprite = monitorSpriteList[0];
         yield return new WaitForSeconds(0.25f);
+        SoundManager.PlaySoundAt(SoundType.MonitorWrong, 1f, 0.5f, gameObject.transform);
         monitorImage.sprite = monitorSpriteList[10];
         yield return new WaitForSeconds(0.25f);
         monitorImage.sprite = monitorSpriteList[0];

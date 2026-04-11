@@ -32,6 +32,8 @@ public class MonsterWindowState : MonsterState
         MonsterStateMachine.monsterDanger = 10;
         MonsterStateMachine.monsterMin = 0;
 
+        SoundManager.PlaySoundAt(SoundType.MonsterClimbWindow, 0.75f, Random.Range(0.3f, 0.6f), MContext.monsterWindow.transform);
+
     }
 
 

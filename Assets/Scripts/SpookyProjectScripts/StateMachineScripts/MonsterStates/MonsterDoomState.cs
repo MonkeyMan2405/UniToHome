@@ -1,11 +1,11 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.Events;
 
 public class MonsterDoomState : MonsterState
 {
 
-
+    public static UnityEvent PlayerDoom = new UnityEvent();
 
     public MonsterDoomState(MonsterStateContext _mcontext, MonsterStateMachine.EMonsterState state) : base(_mcontext, state)
     {
@@ -18,7 +18,7 @@ public class MonsterDoomState : MonsterState
 
 
         //disable player character movement and flashlight and camera,
-        // enable doom camera and trigger flashing light,
+        //enable doom camera and trigger flashing light,
         //and enable doom animation
 
         if (MonsterStateMachine.hallwayDoom == true)
@@ -34,9 +34,10 @@ public class MonsterDoomState : MonsterState
         MContext.psmRef.enabled = false;
         MContext.playerCamera.enabled = false;
 
-        
-
+      
         MonsterStateMachine.monsterDanger = 1.75f;
+
+        PlayerDoom?.Invoke();
 
 
 
@@ -87,4 +88,10 @@ public class MonsterDoomState : MonsterState
     }
 
    
+    public void Doom()
+    {
+        
+    }
+
+
 }

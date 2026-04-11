@@ -28,10 +28,12 @@ public class WardrobeTrigger : MonoBehaviour, IInteractable
         if (wardrobeCollider.isTrigger)
         {
             wardrobeCollider.isTrigger = false;
+            SoundManager.PlaySoundAt(SoundType.ClosetClose, 1f, 0.5f, gameObject.transform);
         }
         else
         {
             wardrobeCollider.isTrigger = true;
+            SoundManager.PlaySoundAt(SoundType.ClosetOpen, 1f, 0.5f, gameObject.transform);
         }
 
     }
@@ -44,10 +46,12 @@ public class WardrobeTrigger : MonoBehaviour, IInteractable
         if (wardrobeCollider.isTrigger)
         {
             wardrobeCollider.isTrigger = false;
+            SoundManager.PlaySoundAt(SoundType.ClosetClose, 1f, 0.5f, gameObject.transform);
         }
         else
         {
             wardrobeCollider.isTrigger = true;
+            SoundManager.PlaySoundAt(SoundType.ClosetOpen, 1f, 0.5f, gameObject.transform);
         }
     }
 
