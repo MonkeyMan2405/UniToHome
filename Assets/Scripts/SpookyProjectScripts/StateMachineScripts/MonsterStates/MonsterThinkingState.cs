@@ -101,6 +101,7 @@ public class MonsterThinkingState : MonsterState
         {   timer = 0f;
 
             randomDecision = Random.Range(0, 4);
+
             MakeDecision();
         }
     }
