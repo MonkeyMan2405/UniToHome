@@ -37,12 +37,12 @@ public class MonsterDoorState : MonsterState
     public override void ExitState()
     {
         timer = 0;
-        MonsterStateMachine.monsterDanger = -1;
-        MonsterStateMachine.monsterMin = -1;
 
         MContext.wardrobeTriggerRef.monsterPresent = false;
 
         changeToThinkingState = false;
+
+        SoundManager.PlaySound(SoundType.HorrorStinger, 0.3f, Random.Range(0.2f, 0.7f));
     }
 
 

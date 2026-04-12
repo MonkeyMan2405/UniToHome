@@ -17,6 +17,7 @@ public class StandardState : PlayerState, IInteractable
         PlayerStateContext PContext = _pcontext;
     }
 
+
     public override void EnterState()
     {
         //enable head bobbing as it is turned off when transitioning from certain states to here

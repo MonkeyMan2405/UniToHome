@@ -1,12 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Collections.Generic;
-using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Monitor : MonoBehaviour
 {
     public int patternAmount = 4;
+    private int incrementPatternDifficulty;
     private int patternReset;
     public List <int> directionsList = new List<int>();
     public List <Sprite> monitorSpriteList = new List<Sprite>();
@@ -15,18 +18,17 @@ public class Monitor : MonoBehaviour
     private int inputNumber;
     private float timer;
 
-    public float score;
-
-    //nesw -- 1,2,3,4
-
+    //for monitor display
+    [SerializeField]
+    private float scoreLeft;
+    public TextMeshProUGUI monitorTextUGUI;
     public Image monitorImage;
 
+
+    //nesw = 1,2,3,4
     //will check this when event is called to see if input should be recieved yet
     private bool finishedDisplaying;
     private bool isReady;
-
-
-
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,13 +39,13 @@ public class Monitor : MonoBehaviour
        isReady = true;
 
        patternReset = patternAmount;
+
+        //display remaining on monitor screen
+        monitorTextUGUI.text = scoreLeft.ToString();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     private void OnEnable()
     {
@@ -60,6 +62,7 @@ public class Monitor : MonoBehaviour
 
     public void GeneratePuzzlePattern()
     {
+        //called from working state
 
         if (isReady == true)
         {
@@ -89,12 +92,12 @@ public class Monitor : MonoBehaviour
     {
         foreach (int i in directionsList)
         {
-            yield return new WaitForSeconds(0.75f);
+            yield return new WaitForSeconds(0.6f);
 
             SoundManager.PlaySoundAt(SoundType.MonitorPattern, 1f, 0.5f, gameObject.transform);
             monitorImage.sprite = monitorSpriteList[i];
 
-            yield return new WaitForSeconds(0.75f);
+            yield return new WaitForSeconds(0.5f);
             monitorImage.sprite = monitorSpriteList[0];
         }
 
@@ -153,7 +156,7 @@ public class Monitor : MonoBehaviour
 
     IEnumerator CorrectAndPrepare()
     {
-        yield return new WaitForSeconds (0.5f);
+        yield return new WaitForSeconds (0.4f);
         monitorImage.sprite = monitorSpriteList[0];
         yield return new WaitForSeconds(0.1f);
         finishedDisplaying = true;
@@ -187,15 +190,10 @@ public class Monitor : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         monitorImage.sprite = monitorSpriteList[0];
 
-        //increment score
-        //increment score
-        score += 1f;
-
-        //reset
-        isReady = true;
 
         StopCoroutine(Complete());
-        directionsList.Clear();
+    
+        ResetAndCheckAndDifficulty();
 
     }
 
@@ -223,6 +221,39 @@ public class Monitor : MonoBehaviour
         isReady = true;
         directionsList.Clear();
         StopCoroutine(Incorrect());
+
+    }
+
+
+    public void ResetAndCheckAndDifficulty()
+    {
+
+        directionsList.Clear();
+
+        //increment score and disaply on monitor
+        scoreLeft -= 1f;
+        monitorTextUGUI.text = scoreLeft.ToString();
+
+        incrementPatternDifficulty++;
+
+        if(incrementPatternDifficulty == 3)
+        {
+            incrementPatternDifficulty = 0;
+            //Increase Pattern Amount
+            patternReset++;
+        }
+
+
+        if (scoreLeft == 0)
+        {
+            SceneManager.LoadScene("MonsterWinMenu", LoadSceneMode.Single);
+            SceneManager.SetActiveScene(SceneManager.GetActiveScene());
+        }
+
+     
+
+        //reset
+        isReady = true;
 
     }
 

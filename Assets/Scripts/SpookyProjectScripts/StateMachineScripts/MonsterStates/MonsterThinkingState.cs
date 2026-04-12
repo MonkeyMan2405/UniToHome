@@ -25,7 +25,9 @@ public class MonsterThinkingState : MonsterState
         MContext.monsterDoom.SetActive(false);
 
         MContext.doomCamera.enabled = false;
-       
+
+        MonsterStateMachine.monsterDanger = -1;
+        MonsterStateMachine.monsterMin = -1;
     }
 
 
@@ -97,8 +99,8 @@ public class MonsterThinkingState : MonsterState
 
         if (timer >= MContext.thinkingTime)
         {   timer = 0f;
-            //randomDecision = Random.Range(0, 4);
-            randomDecision = 1;
+
+            randomDecision = Random.Range(0, 4);
             MakeDecision();
         }
     }

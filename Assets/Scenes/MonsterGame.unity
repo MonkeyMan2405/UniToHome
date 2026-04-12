@@ -646,7 +646,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 847c1c69e26ab6940b10123cdc2f21fe, type: 3}
   - {fileID: 21300000, guid: 2f537332bc5675c4f9a0e75a6ae157c8, type: 3}
   - {fileID: 21300000, guid: 49a80b2d5b3f84b4598df87095e3f919, type: 3}
-  score: 0
+  scoreLeft: 6
+  monitorTextUGUI: {fileID: 823903717}
   monitorImage: {fileID: 722251708}
 --- !u!1001 &21787953
 PrefabInstance:
@@ -699,6 +700,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b0671ce535ec2d74f8113e5b682e96e8, type: 3}
       propertyPath: m_Name
       value: dragon_tree (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b0671ce535ec2d74f8113e5b682e96e8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -756,6 +761,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 65a3c51c1bab70d4e8bcbaae980ca0a2, type: 3}
       propertyPath: m_Name
       value: bush_02_fall_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 65a3c51c1bab70d4e8bcbaae980ca0a2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1140,6 +1149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_006 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6969e90c1e678f84fbfd086a81e6844d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1201,6 +1214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Triple Flower (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 635b559c754cc8341b32a152e4059ce9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1257,6 +1274,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 97bbde1049ff7f643a71261a858eb96f, type: 3}
       propertyPath: m_Name
       value: bush_01_fall_001 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 97bbde1049ff7f643a71261a858eb96f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1319,6 +1340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: dragon_tree (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b0671ce535ec2d74f8113e5b682e96e8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1375,6 +1400,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f150b4c37a4c40047a9633b96429c219, type: 3}
       propertyPath: m_Name
       value: Green Plant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f150b4c37a4c40047a9633b96429c219, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1532,7 +1561,6 @@ MonoBehaviour:
   doorTriggerRef: {fileID: 0}
   thinkingTime: 0
   patience: 0
-  msmRef: {fileID: 306952789}
   deskLight: {fileID: 54353725}
 --- !u!1 &54992072
 GameObject:
@@ -1699,6 +1727,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: dragon_tree (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b0671ce535ec2d74f8113e5b682e96e8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1755,6 +1787,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f1a467beea8b62641bb71a3b0c748db8, type: 3}
       propertyPath: m_Name
       value: tree_2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f1a467beea8b62641bb71a3b0c748db8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2143,6 +2179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1cec8e4e1e7380488228a67ada0f42b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2203,6 +2243,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a1cec8e4e1e7380488228a67ada0f42b, type: 3}
       propertyPath: m_Name
       value: tree_1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1cec8e4e1e7380488228a67ada0f42b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2434,6 +2478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_1 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1cec8e4e1e7380488228a67ada0f42b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2599,6 +2647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dark Case
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 627c4ae26f127244e95c3bd0d160c879, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2655,6 +2707,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2c4eec42cfc85c749be391e82aceb875, type: 3}
       propertyPath: m_Name
       value: Vaselamp (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2c4eec42cfc85c749be391e82aceb875, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3105,6 +3161,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pine_tree_1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5ca7b90243e4c449b8b46532f6a13ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3162,6 +3222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green Book
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c15b7d73296b9054c8e17343a5c273c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3218,6 +3282,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d316d6b42c7cf914bb81ed6652debdef, type: 3}
       propertyPath: m_Name
       value: pine_tree_1_fall_001 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d316d6b42c7cf914bb81ed6652debdef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4071,6 +4139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Yellow Book (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bb35e30754ded1b458a77799176309ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4127,6 +4199,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e5ca7b90243e4c449b8b46532f6a13ba, type: 3}
       propertyPath: m_Name
       value: pine_tree_1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5ca7b90243e4c449b8b46532f6a13ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4349,6 +4425,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 64dccf619abaee04ab1842c4ec5e5f70, type: 3}
       propertyPath: m_Name
       value: Wall Bookshelf Large (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64dccf619abaee04ab1842c4ec5e5f70, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4696,6 +4776,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a1cec8e4e1e7380488228a67ada0f42b, type: 3}
       propertyPath: m_Name
       value: tree_1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1cec8e4e1e7380488228a67ada0f42b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5060,7 +5144,7 @@ MonoBehaviour:
   monsterDoom: {fileID: 1088758786}
   wardrobeTriggerRef: {fileID: 435346463}
   doorTriggerRef: {fileID: 1071309902}
-  thinkingTime: 2
+  thinkingTime: 12
   patience: 35
 --- !u!43 &320242924
 Mesh:
@@ -5278,6 +5362,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 824c8db400013dd4bb682dbbe289f48a, type: 3}
       propertyPath: m_Name
       value: Blue Vase (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 824c8db400013dd4bb682dbbe289f48a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5500,6 +5588,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c12191cd2f81c5748b201a73a4608f2d, type: 3}
       propertyPath: m_Name
       value: Big Mouse (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c12191cd2f81c5748b201a73a4608f2d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5898,6 +5990,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pine_tree_1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5ca7b90243e4c449b8b46532f6a13ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5959,6 +6055,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pine_tree_1_fall_001 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d316d6b42c7cf914bb81ed6652debdef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6015,6 +6115,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9ee0b31c151b68645a4f3f9ca910199c, type: 3}
       propertyPath: m_Name
       value: rock_005
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9ee0b31c151b68645a4f3f9ca910199c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6507,6 +6611,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stump_011
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 501dc5288e56fe9448d5f4d4025cee04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6563,6 +6671,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d74a36366eeaa9345a1658de0de381af, type: 3}
       propertyPath: m_Name
       value: Small Mouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d74a36366eeaa9345a1658de0de381af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6625,6 +6737,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1cec8e4e1e7380488228a67ada0f42b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6682,6 +6798,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Book
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bc09309e8485efb4f988398655898bb6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6738,6 +6858,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 57de2a595fe18cf49b7e38dae58851e3, type: 3}
       propertyPath: m_Name
       value: bush_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57de2a595fe18cf49b7e38dae58851e3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7687,6 +7811,46 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4227889827151656, guid: 58da3cc45ce31a449a52ffb1cc83acb7, type: 3}
   m_PrefabInstance: {fileID: 723935082}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &433348571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 635547659545568360, guid: 95ef13283438c374697100060bc901ef, type: 3}
+  m_PrefabInstance: {fileID: 645682337}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &433348575
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433348571}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8.03926, y: 15.179439, z: 6.052249}
+  m_Center: {x: 0.345711, y: -2.642686, z: 0.5453316}
+--- !u!114 &433348576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433348571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 464e9d7d4986b99479f04ee35e8d648a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hallway: 0
+  wardrobe: 1
 --- !u!1 &435346462
 GameObject:
   m_ObjectHideFlags: 0
@@ -7867,6 +8031,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e5ca7b90243e4c449b8b46532f6a13ba, type: 3}
       propertyPath: m_Name
       value: pine_tree_1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5ca7b90243e4c449b8b46532f6a13ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8580,6 +8748,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall Bookshelf Large
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64dccf619abaee04ab1842c4ec5e5f70, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8637,6 +8809,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bush_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b6ce2e5b295e90c4dbb849d60b22c41c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8693,6 +8869,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 30663d2e0eae90940b64eff3e2f719f4, type: 3}
       propertyPath: m_Name
       value: Black Book (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 30663d2e0eae90940b64eff3e2f719f4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8777,6 +8957,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cylinder Lamp
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 463d37cb9531858459b89a23f7121366, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8842,6 +9026,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Standart Wardrobe (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67f26b897a8659d4882a7294baadc9c9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8898,6 +9086,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: de209842c5136d041842489a189c9eb6, type: 3}
       propertyPath: m_Name
       value: stump_006
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de209842c5136d041842489a189c9eb6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9260,6 +9452,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec528ebcec49801448f0e686818cdeff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9316,6 +9512,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3ea3d2a5bf18aa84284124fe246a65b1, type: 3}
       propertyPath: m_Name
       value: Triple Cactus
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ea3d2a5bf18aa84284124fe246a65b1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9482,6 +9682,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b0671ce535ec2d74f8113e5b682e96e8, type: 3}
       propertyPath: m_Name
       value: dragon_tree (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b0671ce535ec2d74f8113e5b682e96e8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10309,6 +10513,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Vase
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 824c8db400013dd4bb682dbbe289f48a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10490,6 +10698,22 @@ PrefabInstance:
     - target: {fileID: 1160928174161554, guid: c92cdb9d3b3e15f4b99ce98fe4c864b2, type: 3}
       propertyPath: m_Name
       value: Door_1_Yellow (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160928174161554, guid: c92cdb9d3b3e15f4b99ce98fe4c864b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1640358248201884, guid: c92cdb9d3b3e15f4b99ce98fe4c864b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662773160828718, guid: c92cdb9d3b3e15f4b99ce98fe4c864b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988184177506868, guid: c92cdb9d3b3e15f4b99ce98fe4c864b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4073697980755798, guid: c92cdb9d3b3e15f4b99ce98fe4c864b2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10756,6 +10980,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bush_02 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b6ce2e5b295e90c4dbb849d60b22c41c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10812,6 +11040,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e9bffd5ceb3415b40b0b7dcae0ae6a03, type: 3}
       propertyPath: m_Name
       value: Purple Book (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e9bffd5ceb3415b40b0b7dcae0ae6a03, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10870,6 +11102,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bush_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57de2a595fe18cf49b7e38dae58851e3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10926,6 +11162,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d85ef61dc65edb0459f322feee831e3e, type: 3}
       propertyPath: m_Name
       value: stump_016
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d85ef61dc65edb0459f322feee831e3e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11463,7 +11703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 95ef13283438c374697100060bc901ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.977
+      value: -1.948
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 95ef13283438c374697100060bc901ef, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11471,11 +11711,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 95ef13283438c374697100060bc901ef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.446
+      value: 1.411
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 95ef13283438c374697100060bc901ef, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.34202018
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 95ef13283438c374697100060bc901ef, type: 3}
       propertyPath: m_LocalRotation.x
@@ -11483,7 +11723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 95ef13283438c374697100060bc901ef, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9396927
+      value: 0.92387956
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 95ef13283438c374697100060bc901ef, type: 3}
       propertyPath: m_LocalRotation.z
@@ -11495,7 +11735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 95ef13283438c374697100060bc901ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 140
+      value: 135
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 95ef13283438c374697100060bc901ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -11917,6 +12157,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 71.556
       objectReference: {fileID: 0}
+    - target: {fileID: 4167280743394806330, guid: 95ef13283438c374697100060bc901ef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167280743394806330, guid: 95ef13283438c374697100060bc901ef, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167280743394806330, guid: 95ef13283438c374697100060bc901ef, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4817316470774157427, guid: 95ef13283438c374697100060bc901ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.000072360046
@@ -12131,6 +12383,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -3445215227243982187, guid: 95ef13283438c374697100060bc901ef, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1362202909}
+    - targetCorrespondingSourceObject: {fileID: 635547659545568360, guid: 95ef13283438c374697100060bc901ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 433348575}
+    - targetCorrespondingSourceObject: {fileID: 635547659545568360, guid: 95ef13283438c374697100060bc901ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 433348576}
   m_SourcePrefab: {fileID: 100100000, guid: 95ef13283438c374697100060bc901ef, type: 3}
 --- !u!1001 &648083341
 PrefabInstance:
@@ -12183,6 +12441,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c6559dc7184f6844ba0fde53236e97e6, type: 3}
       propertyPath: m_Name
       value: Pink Vase
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6559dc7184f6844ba0fde53236e97e6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12435,6 +12697,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pine_tree_1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5ca7b90243e4c449b8b46532f6a13ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12491,6 +12757,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 57de2a595fe18cf49b7e38dae58851e3, type: 3}
       propertyPath: m_Name
       value: bush_01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57de2a595fe18cf49b7e38dae58851e3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12857,6 +13127,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Triple Flower
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 635b559c754cc8341b32a152e4059ce9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12940,6 +13214,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f0d009a5b203f1f4eb0a2f1b708cdfe6, type: 3}
       propertyPath: m_Name
       value: Desk
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f0d009a5b203f1f4eb0a2f1b708cdfe6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13105,6 +13383,144 @@ MonoBehaviour:
   interactionMask:
     serializedVersion: 2
     m_Bits: 4096
+--- !u!1 &707551989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 707551990}
+  - component: {fileID: 707551992}
+  - component: {fileID: 707551991}
+  m_Layer: 5
+  m_Name: RemainingText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &707551990
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707551989}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 722251707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -313.7, y: 239}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &707551991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707551989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Remaining:
+
+'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 50
+  m_fontSizeBase: 50
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: -57.62558, w: -10.236969}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &707551992
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707551989}
+  m_CullTransparentMesh: 1
 --- !u!1001 &709925808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13156,6 +13572,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 463d37cb9531858459b89a23f7121366, type: 3}
       propertyPath: m_Name
       value: CeilingLight?
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 463d37cb9531858459b89a23f7121366, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13532,6 +13952,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Triple Cactus (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ea3d2a5bf18aa84284124fe246a65b1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13566,7 +13990,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 707551990}
+  - {fileID: 823903716}
   m_Father: {fileID: 1437066363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -14073,6 +14499,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rectangle Table
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 36df2876932ca6b448b29d0333cec2ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14133,6 +14563,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: oak_tree
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f5e0e006ddc6aad41ac237874e69a776, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14189,6 +14623,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e9bffd5ceb3415b40b0b7dcae0ae6a03, type: 3}
       propertyPath: m_Name
       value: Purple Book (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e9bffd5ceb3415b40b0b7dcae0ae6a03, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15059,6 +15497,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Old Keyboard
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2eeece6b09550364fb45b8217b6ab93d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15246,6 +15688,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 464e9d7d4986b99479f04ee35e8d648a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hallway: 0
+  wardrobe: 0
 --- !u!1001 &809836902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15297,6 +15741,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eb094d1cae7836344ada3f0b0739bc0f, type: 3}
       propertyPath: m_Name
       value: stump_008 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eb094d1cae7836344ada3f0b0739bc0f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15715,6 +16163,144 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816061647}
   m_Mesh: {fileID: 610104229}
+--- !u!1 &823903715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 823903716}
+  - component: {fileID: 823903718}
+  - component: {fileID: 823903717}
+  m_Layer: 5
+  m_Name: RemainingNumberText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &823903716
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823903715}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 722251707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -52.7, y: 239}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &823903717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823903715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: '10
+
+'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 50
+  m_fontSizeBase: 50
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 123.62841, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &823903718
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823903715}
+  m_CullTransparentMesh: 1
 --- !u!1001 &832240308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15778,6 +16364,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e5ca7b90243e4c449b8b46532f6a13ba, type: 3}
       propertyPath: m_Name
       value: pine_tree_1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5ca7b90243e4c449b8b46532f6a13ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16453,7 +17043,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850620472}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e66ab426afc89148baee67d88f09ff8, type: 3}
   m_Name: 
@@ -16681,6 +17271,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b9481de97a1dcc4ea907b9650f091ae, type: 3}
       propertyPath: m_Name
       value: sakura_tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b9481de97a1dcc4ea907b9650f091ae, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16915,6 +17509,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c12191cd2f81c5748b201a73a4608f2d, type: 3}
       propertyPath: m_Name
       value: Big Mouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c12191cd2f81c5748b201a73a4608f2d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17876,6 +18474,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Purple Book (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e9bffd5ceb3415b40b0b7dcae0ae6a03, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18098,6 +18700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pine_tree_1 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5ca7b90243e4c449b8b46532f6a13ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18154,6 +18760,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 27f3bdbe614bdc240a2bf1750c7fc3a5, type: 3}
       propertyPath: m_Name
       value: rock (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 27f3bdbe614bdc240a2bf1750c7fc3a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18388,6 +18998,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Triple Cactus (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ea3d2a5bf18aa84284124fe246a65b1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18609,6 +19223,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b6ce2e5b295e90c4dbb849d60b22c41c, type: 3}
       propertyPath: m_Name
       value: bush_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b6ce2e5b295e90c4dbb849d60b22c41c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19160,6 +19778,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stump_008
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eb094d1cae7836344ada3f0b0739bc0f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19385,6 +20007,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2e478b462dd4cdd47ac83b5a69d74ec2, type: 3}
       propertyPath: m_Name
       value: Twin Wardrobe
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e478b462dd4cdd47ac83b5a69d74ec2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20272,6 +20898,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gaming Keyboard
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a06b162f44b643c4d9c840b2c07435f1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20328,6 +20958,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 30663d2e0eae90940b64eff3e2f719f4, type: 3}
       propertyPath: m_Name
       value: Black Book (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 30663d2e0eae90940b64eff3e2f719f4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20779,6 +21413,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_005 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9ee0b31c151b68645a4f3f9ca910199c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20835,6 +21473,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0e67f4f822790f44d8fec74f48e045af, type: 3}
       propertyPath: m_Name
       value: Short Nightstand
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0e67f4f822790f44d8fec74f48e045af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20899,6 +21541,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 78ade105789c1114f91e52abcdd9f12b, type: 3}
       propertyPath: m_Name
       value: Thin Chair (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 78ade105789c1114f91e52abcdd9f12b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21328,6 +21974,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: de28c4b7898423c439068dd7f02263cb, type: 3}
       propertyPath: m_Name
       value: Standart Bookshelf (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de28c4b7898423c439068dd7f02263cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22006,6 +22656,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e5ca7b90243e4c449b8b46532f6a13ba, type: 3}
       propertyPath: m_Name
       value: pine_tree_1 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5ca7b90243e4c449b8b46532f6a13ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22896,6 +23550,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_1 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1cec8e4e1e7380488228a67ada0f42b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22957,6 +23615,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thin Chair
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 78ade105789c1114f91e52abcdd9f12b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23016,6 +23678,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d316d6b42c7cf914bb81ed6652debdef, type: 3}
       propertyPath: m_Name
       value: pine_tree_1_fall_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d316d6b42c7cf914bb81ed6652debdef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23321,6 +23987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Yellow Book
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bb35e30754ded1b458a77799176309ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23377,6 +24047,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 27f3bdbe614bdc240a2bf1750c7fc3a5, type: 3}
       propertyPath: m_Name
       value: rock (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 27f3bdbe614bdc240a2bf1750c7fc3a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23435,6 +24109,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Book (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bc09309e8485efb4f988398655898bb6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23492,6 +24170,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bush_01_fall_001
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 97bbde1049ff7f643a71261a858eb96f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23548,6 +24230,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6bbbbba3268de084691cabc9205db50d, type: 3}
       propertyPath: m_Name
       value: sign_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6bbbbba3268de084691cabc9205db50d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23716,6 +24402,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bush_01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57de2a595fe18cf49b7e38dae58851e3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23772,6 +24462,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 57de2a595fe18cf49b7e38dae58851e3, type: 3}
       propertyPath: m_Name
       value: bush_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57de2a595fe18cf49b7e38dae58851e3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24644,6 +25338,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: dragon_tree
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b0671ce535ec2d74f8113e5b682e96e8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25051,6 +25749,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bush_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57de2a595fe18cf49b7e38dae58851e3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25111,6 +25813,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c6559dc7184f6844ba0fde53236e97e6, type: 3}
       propertyPath: m_Name
       value: Pink Vase (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6559dc7184f6844ba0fde53236e97e6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25181,6 +25887,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pine_tree_1 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5ca7b90243e4c449b8b46532f6a13ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25250,6 +25960,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Single Bed
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 88bfcb4cfbf572c4090d7535fdd4fed5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598994234610288420, guid: 88bfcb4cfbf572c4090d7535fdd4fed5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25309,6 +26027,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 30663d2e0eae90940b64eff3e2f719f4, type: 3}
       propertyPath: m_Name
       value: Black Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 30663d2e0eae90940b64eff3e2f719f4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25392,7 +26114,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -25559,6 +26281,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a1cec8e4e1e7380488228a67ada0f42b, type: 3}
       propertyPath: m_Name
       value: tree_1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1cec8e4e1e7380488228a67ada0f42b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25750,6 +26476,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Vase (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 824c8db400013dd4bb682dbbe289f48a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25806,6 +26536,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bf528d5706848834fbba082ba758dbe3, type: 3}
       propertyPath: m_Name
       value: stump_007
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bf528d5706848834fbba082ba758dbe3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26028,6 +26762,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2c4eec42cfc85c749be391e82aceb875, type: 3}
       propertyPath: m_Name
       value: Vaselamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2c4eec42cfc85c749be391e82aceb875, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26390,6 +27128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pine_tree_1_fall_001 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d316d6b42c7cf914bb81ed6652debdef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26642,6 +27384,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armchair
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8ec0b51daaffc83479e7c8ea5ad3ffba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26702,6 +27448,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b0671ce535ec2d74f8113e5b682e96e8, type: 3}
       propertyPath: m_Name
       value: dragon_tree (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b0671ce535ec2d74f8113e5b682e96e8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26925,6 +27675,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 27f3bdbe614bdc240a2bf1750c7fc3a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26985,6 +27739,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 67f26b897a8659d4882a7294baadc9c9, type: 3}
       propertyPath: m_Name
       value: Standart Wardrobe
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67f26b897a8659d4882a7294baadc9c9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27589,6 +28347,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 27f3bdbe614bdc240a2bf1750c7fc3a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27645,6 +28407,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a06b162f44b643c4d9c840b2c07435f1, type: 3}
       propertyPath: m_Name
       value: Gaming Keyboard (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a06b162f44b643c4d9c840b2c07435f1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28193,6 +28959,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2775b75fa6d5bd84489e458726fed96f, type: 3}
       propertyPath: m_Name
       value: dragon_tree_fall_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2775b75fa6d5bd84489e458726fed96f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29050,6 +29820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rectangle Table (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 36df2876932ca6b448b29d0333cec2ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29117,6 +29891,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a1cec8e4e1e7380488228a67ada0f42b, type: 3}
       propertyPath: m_Name
       value: tree_1 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1cec8e4e1e7380488228a67ada0f42b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29201,6 +29979,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Standart Bookshelf
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de28c4b7898423c439068dd7f02263cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29260,6 +30042,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e9bffd5ceb3415b40b0b7dcae0ae6a03, type: 3}
       propertyPath: m_Name
       value: Purple Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e9bffd5ceb3415b40b0b7dcae0ae6a03, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29370,6 +30156,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_1 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1cec8e4e1e7380488228a67ada0f42b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29426,6 +30216,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d74a36366eeaa9345a1658de0de381af, type: 3}
       propertyPath: m_Name
       value: Small Mouse (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d74a36366eeaa9345a1658de0de381af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29484,6 +30278,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 27f3bdbe614bdc240a2bf1750c7fc3a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29540,6 +30338,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e5ca7b90243e4c449b8b46532f6a13ba, type: 3}
       propertyPath: m_Name
       value: pine_tree_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5ca7b90243e4c449b8b46532f6a13ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29762,6 +30564,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c15b7d73296b9054c8e17343a5c273c0, type: 3}
       propertyPath: m_Name
       value: Green Book (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c15b7d73296b9054c8e17343a5c273c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30163,6 +30969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green Plant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f150b4c37a4c40047a9633b96429c219, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30523,6 +31333,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e9bffd5ceb3415b40b0b7dcae0ae6a03, type: 3}
       propertyPath: m_Name
       value: Purple Book (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e9bffd5ceb3415b40b0b7dcae0ae6a03, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31079,6 +31893,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Vase (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 824c8db400013dd4bb682dbbe289f48a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31140,6 +31958,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_1 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1cec8e4e1e7380488228a67ada0f42b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31197,6 +32019,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nightstand
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5bc0e5fdfe70ab8409a03ded63e6af9b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31253,6 +32079,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f5e0e006ddc6aad41ac237874e69a776, type: 3}
       propertyPath: m_Name
       value: oak_tree (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f5e0e006ddc6aad41ac237874e69a776, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32706,6 +33536,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green Book (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c15b7d73296b9054c8e17343a5c273c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32766,6 +33600,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 824c8db400013dd4bb682dbbe289f48a, type: 3}
       propertyPath: m_Name
       value: Blue Vase (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 824c8db400013dd4bb682dbbe289f48a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33811,6 +34649,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_1 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1cec8e4e1e7380488228a67ada0f42b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -33872,6 +34714,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1cec8e4e1e7380488228a67ada0f42b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -33928,6 +34774,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 411af27e158519b41948a5e284dc938d, type: 3}
       propertyPath: m_Name
       value: stump_010
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 411af27e158519b41948a5e284dc938d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33986,6 +34836,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall Bookshelf Small
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4ac0c85b05ac2a649a6ac847d089c80c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34042,6 +34896,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d8ea38793a6bd104aa20d7dc912caba7, type: 3}
       propertyPath: m_Name
       value: Laptop
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d8ea38793a6bd104aa20d7dc912caba7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34273,6 +35131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_1 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1cec8e4e1e7380488228a67ada0f42b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34342,6 +35204,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Old Screen
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e4cc1467e2788fa4cac37f127450157c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34402,6 +35268,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a3c8436bd2348474a824d0baa0786aa9, type: 3}
       propertyPath: m_Name
       value: Yellow Vase
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a3c8436bd2348474a824d0baa0786aa9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35610,6 +36480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall Bookshelf Large (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64dccf619abaee04ab1842c4ec5e5f70, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35753,6 +36627,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_006
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6969e90c1e678f84fbfd086a81e6844d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35779,7 +36657,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 8, z: 10}
@@ -35796,6 +36674,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 464e9d7d4986b99479f04ee35e8d648a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hallway: 1
+  wardrobe: 0
 --- !u!1 &2099764321
 GameObject:
   m_ObjectHideFlags: 0
@@ -36642,6 +37522,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Short Nightstand (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0e67f4f822790f44d8fec74f48e045af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36698,6 +37582,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 049261c380654ce41a3962a1e1c2d0b5, type: 3}
       propertyPath: m_Name
       value: Blue Flower
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 049261c380654ce41a3962a1e1c2d0b5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

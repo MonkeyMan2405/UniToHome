@@ -70,6 +70,8 @@ public class MonsterHallwayState : MonsterState
         MContext.monsterHallDoor.SetActive(false);
         MContext.monsterHallway.SetActive(false);
 
+        SoundManager.PlaySound(SoundType.HorrorStinger, 0.3f, Random.Range(0.2f, 0.7f));
+
     }
 
 
@@ -131,10 +133,10 @@ public class MonsterHallwayState : MonsterState
             }
 
             footstepTimer += Time.deltaTime;
-            if (footstepTimer >= 4f)
+            if (footstepTimer >= 2.5f)
             {
                 footstepTimer = 0;
-                SoundManager.PlaySoundAt(SoundType.HeavyFootsteps, 1f, 0.5f, MContext.monsterHallway.transform);
+                SoundManager.PlaySoundAt(SoundType.HeavyFootsteps, 1f, 1f, MContext.monsterHallway.transform);
             }
 
 
@@ -171,6 +173,7 @@ public class MonsterHallwayState : MonsterState
                 if (MContext.doorTriggerRef.doorRef.open == false)
                 {
                     MContext.doorTriggerRef.doorRef.Interact();
+                    MContext.doorTriggerRef.doorRef.MonsterSlam();
                     
                 }
             }

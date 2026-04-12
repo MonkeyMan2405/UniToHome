@@ -59,6 +59,7 @@ public class SoundManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+
 #if UNITY_EDITOR
     private void OnEnable()
     {

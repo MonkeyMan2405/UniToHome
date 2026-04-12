@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class MonsterLightFlick : MonsterStateMachine
 {
-
-    public MonsterStateMachine msmRef;
     private float flickerRdm;
     private float timer;
 

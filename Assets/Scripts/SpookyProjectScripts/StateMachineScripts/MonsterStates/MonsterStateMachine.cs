@@ -7,6 +7,7 @@ public class MonsterStateMachine : StateManager<MonsterStateMachine.EMonsterStat
     public static float monsterMin = -1;
     public static bool triggerDoom;
     public static bool hallwayDoom;
+    public static bool wardrobeDoom;
     public enum EMonsterState
     {
         Thinking,
