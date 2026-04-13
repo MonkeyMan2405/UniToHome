@@ -26,6 +26,9 @@ public class MonsterThinkingState : MonsterState
 
         MContext.doomCamera.enabled = false;
 
+        MonsterStateMachine.hallwayDoom = false;
+        MonsterStateMachine.wardrobeDoom = false;
+
         MonsterStateMachine.monsterDanger = -1;
         MonsterStateMachine.monsterMin = -1;
     }

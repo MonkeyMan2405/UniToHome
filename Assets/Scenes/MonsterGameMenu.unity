@@ -1545,21 +1545,21 @@ MonoBehaviour:
   m_text: 'Controls,
 
 
-    Movement- WASD or Joystick,
+    Movement- WASD or Joystick, Shift - Sprint,
 
-    Interact- Left Click
-    or Left Bumper,
+    Interact-
+    Left Click or Left Bumper,
 
     Flashlight- F (Key) or B (Button),
 
 
-    Monitor Interact-
-    Right Click or Right Bumper,
+    Monitor
+    Interact- Right Click or Right Bumper,
 
-    Monitor Direction Inputs- WASD or Joystick,
+    Monitor Direction Inputs- WASD or
+    Joystick,
 
-    Hold
-    Blinds to keep Closed.'
+    Hold Blinds to keep Closed.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
