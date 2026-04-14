@@ -1,7 +1,12 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class BlindsState : PlayerState
 {
+
+#region Member Variables
+
 
     private Vector3 oldBlindsPos;
     private Vector3 newBlindsPos;
@@ -20,6 +25,14 @@ public class BlindsState : PlayerState
     private float playerResetSpeed;
     private bool hasVisitedBefore;
 
+    InputAction mouseJoystickLook;
+
+    InputAction interact;
+
+#endregion
+
+
+
     public BlindsState(PlayerStateContext _pcontext, PlayerStateMachine.EPlayerState state) : base(_pcontext, state)
     {
         PlayerStateContext PContext = _pcontext;
@@ -31,6 +44,11 @@ public class BlindsState : PlayerState
         newBlindsPos = oldBlindsPos + new Vector3(0, -1.1f, 0f);
 
         PContext.playerSprintSpeed = PlayerStateMachine.playerMovementSpeed * PContext.playerRunMultiplier;
+
+        mouseJoystickLook = InputSystem.actions.FindAction("Look");
+
+        interact = InputSystem.actions.FindAction("Interact");
+
 
         if (hasVisitedBefore == false)
         {
@@ -64,27 +82,6 @@ public class BlindsState : PlayerState
 
 
 
-    public override void OnTriggerEnter(Collider other)
-    {
-
-    }
-
-
-
-    public override void OnTriggerExit(Collider other)
-    {
-
-    }
-
-
-
-    public override void OnTriggerStay(Collider other)
-    {
-
-    }
-
-
-
     //Checked every frame
     public override PlayerStateMachine.EPlayerState GetNextState()
     {
@@ -101,9 +98,9 @@ public class BlindsState : PlayerState
     {
         Ray interactRay = new Ray(PContext.interactorSource.position, PContext.interactorSource.forward);
 
-        //while pressing lmb, sends raycasts, if hits blinds, move them down, set blindsclosed to true, else, move back up and sewt blindsclosed false
+        //while pressing lmb, sends raycasts, if hits blinds, move them down, set blindsclosed to true, else, move back up and set blindsclosed false
 
-        if (Input.GetMouseButton(0) && ableToClose == true)
+        if (interact.IsPressed() && ableToClose == true)
         {
             if (Physics.Raycast(interactRay, out RaycastHit interactRayHitInfo, PContext.interactionRange))
             {
@@ -169,16 +166,24 @@ public class BlindsState : PlayerState
         //Camera set up
         if (PContext.playerCamera != null)
         {
-            float mouseX = Input.GetAxis("Mouse X") * PContext.mouseSensitivityX;
-            float mouseY = Input.GetAxis("Mouse Y") * PContext.mouseSensitivityY;
+            //float mouseX = Input.GetAxis("Mouse X") * PContext.mouseSensitivityX;
+            //float mouseY = Input.GetAxis("Mouse Y") * PContext.mouseSensitivityY;
 
-            PContext.verticalRotation -= mouseY;
+            Vector2 mouseX = mouseJoystickLook.ReadValue<Vector2>();
+            Vector2 mouseY = mouseJoystickLook.ReadValue<Vector2>();
+
+            float floatMouseX = mouseX.x * PContext.mouseSensitivityX * Time.deltaTime;
+
+            float floatMouseY = mouseY.y * PContext.mouseSensitivityY * Time.deltaTime;
+
+
+            PContext.verticalRotation -= floatMouseY;
             //Clamp the vertical rotation to prevent flipping. Clamps A by given floats
             PContext.verticalRotation = Mathf.Clamp(PContext.verticalRotation, PContext.minLookAngleY, PContext.maxLookAngleY);
 
             // Rotate the player horizontally and with tilt
             PContext.playerCamera.localRotation = Quaternion.Euler(PContext.verticalRotation, 0, PContext.zCurrentTilt);
-            PContext.playerGameObject.transform.Rotate(Vector3.up * mouseX);
+            PContext.playerGameObject.transform.Rotate(Vector3.up * floatMouseX);
             //transform.localRotation = Quaternion.Euler(mouseX, mouseY, currentTilt);
         }
     }
@@ -222,6 +227,7 @@ public class BlindsState : PlayerState
         PContext.zCurrentTilt = Mathf.Lerp(PContext.zCurrentTilt, PContext.zTargetTilt, PContext.zSmoothTilt * Time.deltaTime);
 
 
+
         // Determine the Xtarget tilt based on strafing input. If strafing forward, set target tilt to positive value. If strafing backwards, set to negative value. If not strafing, set to zero
         if (forwardStrafe && !backwardStrafe)
         {
@@ -263,17 +269,16 @@ public class BlindsState : PlayerState
         float horizontalMovement = Input.GetAxisRaw("Horizontal");
         float verticalMovement = Input.GetAxisRaw("Vertical");
 
-
         //Movement
         PlayerStateMachine.playerMovementDirection = PContext.playerGameObject.transform.forward * verticalMovement + PContext.playerGameObject.transform.right * horizontalMovement;
 
         //Prevents faster diagonal movement
         PlayerStateMachine.playerMovementDirection.Normalize();
 
-        //sprint is missing from this intentionally
 
         //Move direction and speed
         PContext.characterController.Move(PlayerStateMachine.playerMovementDirection * PlayerStateMachine.playerMovementSpeed * Time.deltaTime);
+
         //Gravity
         PContext.characterController.Move(Vector3.down * PContext.gravity * Time.deltaTime);
 

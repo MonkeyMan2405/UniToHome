@@ -30,27 +30,6 @@ public class DoomedState : PlayerState
 
 
 
-    public override void OnTriggerEnter(Collider other)
-    {
-
-    }
-
-
-
-    public override void OnTriggerExit(Collider other)
-    {
-
-    }
-
-
-
-    public override void OnTriggerStay(Collider other)
-    {
-
-    }
-
-
-
 
     public override PlayerStateMachine.EPlayerState GetNextState()
     {

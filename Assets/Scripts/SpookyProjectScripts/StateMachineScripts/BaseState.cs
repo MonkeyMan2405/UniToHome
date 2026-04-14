@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 
 /// This is a base class for all states in the state machine. It defines the common interface that all states must implement.
 public abstract class BaseState<EState> where EState : Enum 
@@ -15,7 +14,5 @@ public abstract class BaseState<EState> where EState : Enum
     public abstract void ExitState();
     public abstract void UpdateState();
     public abstract EState GetNextState();
-    public abstract void OnTriggerEnter(Collider other);
-    public abstract void OnTriggerExit(Collider other);
-    public abstract void OnTriggerStay(Collider other);
+
 }

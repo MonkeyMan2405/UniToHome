@@ -112,7 +112,7 @@ public class SoundManager : MonoBehaviour
         instance.loopingAudioSource.volume = volume;
         instance.loopingAudioSource.pitch = pitch;
 
-        //different audio source than the rest. don't conmfuse it
+        //different audio source than the rest. don't confuse it
         instance.loopingAudioSource.Play();
 
     }
@@ -128,7 +128,7 @@ public struct SoundList
     public AudioClip[] Sounds { get => sounds; }
 
 
-    //allows to set the group bname of the sounds in the inspector
+    //allows to set the group name of the sounds in the inspector
     [HideInInspector]
     public string name;
 

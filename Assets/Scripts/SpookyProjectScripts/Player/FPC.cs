@@ -1,8 +1,5 @@
-using JetBrains.Annotations;
-using System.Runtime.CompilerServices;
-using UnityEditor.Experimental.GraphView;
+
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 public class FPC : MonoBehaviour
 {

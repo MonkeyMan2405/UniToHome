@@ -1,4 +1,6 @@
+
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class StandardState : PlayerState, IInteractable
 {
@@ -9,6 +11,9 @@ public class StandardState : PlayerState, IInteractable
 
     private float playerResetSpeed;
     private bool hasVisitedBefore;
+
+    InputAction mouseJoystickLook;
+    InputAction interact;
 
 
 
@@ -36,6 +41,10 @@ public class StandardState : PlayerState, IInteractable
             playerResetSpeed = PlayerStateMachine.playerMovementSpeed;
         }
 
+        mouseJoystickLook = InputSystem.actions.FindAction("Look");
+
+        interact = InputSystem.actions.FindAction("Interact");
+
     }
 
 
@@ -60,27 +69,6 @@ public class StandardState : PlayerState, IInteractable
         changeToBlindsState = false;
 
         hasVisitedBefore = true;
-    }
-
-
-
-    public override void OnTriggerEnter(Collider other)
-    {
-
-    }
-
-
-
-    public override void OnTriggerExit(Collider other)
-    {
-
-    }
-
-
-
-    public override void OnTriggerStay(Collider other)
-    {
-
     }
 
 
@@ -189,7 +177,6 @@ public class StandardState : PlayerState, IInteractable
         float horizontalMovement = Input.GetAxisRaw("Horizontal");
         float verticalMovement = Input.GetAxisRaw("Vertical");
 
-
         //Movement
         PlayerStateMachine.playerMovementDirection = PContext.playerGameObject.transform.forward * verticalMovement + PContext.playerGameObject.transform.right * horizontalMovement;
 
@@ -224,16 +211,24 @@ public class StandardState : PlayerState, IInteractable
         //Camera set up
         if (PContext.playerCamera != null)
         {
-            float mouseX = Input.GetAxis("Mouse X") * PContext.mouseSensitivityX;
-            float mouseY = Input.GetAxis("Mouse Y") * PContext.mouseSensitivityY;
+            //float mouseX = Input.GetAxis("Mouse X") * PContext.mouseSensitivityX;
+            //float mouseY = Input.GetAxis("Mouse Y") * PContext.mouseSensitivityY;
 
-            PContext.verticalRotation -= mouseY;
+            Vector2 mouseX = mouseJoystickLook.ReadValue<Vector2>();
+            Vector2 mouseY = mouseJoystickLook.ReadValue<Vector2>();
+
+            float floatMouseX = mouseX.x * PContext.mouseSensitivityX * Time.deltaTime;
+
+            float floatMouseY = mouseY.y * PContext.mouseSensitivityY * Time.deltaTime;
+
+
+            PContext.verticalRotation -= floatMouseY;
             //Clamp the vertical rotation to prevent flipping. Clamps A by given floats
             PContext.verticalRotation = Mathf.Clamp(PContext.verticalRotation, PContext.minLookAngleY, PContext.maxLookAngleY);
 
             // Rotate the player horizontally and with tilt
             PContext.playerCamera.localRotation = Quaternion.Euler(PContext.verticalRotation, 0, PContext.zCurrentTilt);
-            PContext.playerGameObject.transform.Rotate(Vector3.up * mouseX);
+            PContext.playerGameObject.transform.Rotate(Vector3.up * floatMouseX);
             //transform.localRotation = Quaternion.Euler(mouseX, mouseY, currentTilt);
         }
     }
@@ -241,7 +236,7 @@ public class StandardState : PlayerState, IInteractable
 
     public void Interact()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (interact.WasPressedThisFrame())
         {
             Ray interactRay = new Ray(PContext.interactorSource.position, PContext.interactorSource.forward);
 

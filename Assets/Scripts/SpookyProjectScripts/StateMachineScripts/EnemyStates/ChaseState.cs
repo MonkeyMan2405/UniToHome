@@ -1,6 +1,4 @@
-using System.Runtime.CompilerServices;
-using UnityEditor.Experimental.GraphView;
-using UnityEditor.PackageManager;
+
 using UnityEngine;
 
 public class ChaseState : EnemyState
@@ -68,27 +66,6 @@ public class ChaseState : EnemyState
     {
         //switch back to normal face material
         Context.enemyMeshRenderer.material = originalFaceMaterial;
-    }
-
-
-
-    public override void OnTriggerEnter(Collider other)
-    {
-
-    }
-
-
-
-    public override void OnTriggerExit(Collider other)
-    {
-
-    }
-
-
-
-    public override void OnTriggerStay(Collider other)
-    {
-
     }
 
 

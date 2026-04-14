@@ -76,26 +76,6 @@ public class MonsterHallwayState : MonsterState
 
 
 
-    public override void OnTriggerEnter(Collider other)
-    {
-        
-    }
-
-
-
-    public override void OnTriggerExit(Collider other)
-    {
-
-    }
-
-
-
-    public override void OnTriggerStay(Collider other)
-    {
-
-    }
-
-
 
     //Checked every frame
     public override MonsterStateMachine.EMonsterState GetNextState()

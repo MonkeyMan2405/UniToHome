@@ -1,7 +1,4 @@
-using System.Runtime.CompilerServices;
-using Unity.Mathematics;
-using Unity.VisualScripting;
-using UnityEditor.Rendering.LookDev;
+
 using UnityEngine;
 
 public class TransitionState : PlayerState
@@ -75,26 +72,6 @@ public class TransitionState : PlayerState
         changeToStandardState = false;
     }
 
-
-
-    public override void OnTriggerEnter(Collider other)
-    {
-
-    }
-
-
-
-    public override void OnTriggerExit(Collider other)
-    {
-
-    }
-
-
-
-    public override void OnTriggerStay(Collider other)
-    {
-
-    }
 
 
 

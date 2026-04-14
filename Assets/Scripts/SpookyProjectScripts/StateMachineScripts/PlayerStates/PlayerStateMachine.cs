@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 // This is the state machine for the Player. It defines the different states that the enemy can be in and manages the transitions between those states.
 public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
@@ -29,6 +30,8 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
     public Interactor interactorRef;
     public HeadBobbing headBobbingRef;
     public PlayerFootsteps footstepsRef;
+
+    public InputAction playerControls;
 
 
     [Header("Blinds Variables")]
@@ -115,7 +118,7 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
 
     public void Awake()
     {
-        _pContext = new PlayerStateContext(interactorRef, headBobbingRef, footstepsRef, blinds, newCamPos, workCamera, transitionIdentifier, interactorSource, interactionRange, interactionMask, playerSprintSpeed, playerRunMultiplier, playerJumpForce, groundCheckDistance, characterController, isGrounded,
+        _pContext = new PlayerStateContext(interactorRef, headBobbingRef, footstepsRef, playerControls, blinds, newCamPos, workCamera, transitionIdentifier, interactorSource, interactionRange, interactionMask, playerSprintSpeed, playerRunMultiplier, playerJumpForce, groundCheckDistance, characterController, isGrounded,
         gravity, velocity, verticalRotation, rb, playerGameObject, mouseSensitivityX, mouseSensitivityY, minLookAngleY, maxLookAngleY, playerCamera, camPivotRef, actualPlayerCamera,
         zTiltAmount, tiltStartSpeed, tiltEndSpeed, zCurrentTilt, zTargetTilt, zSmoothTilt, xTiltAmount, xCurrentTilt, xTargetTilt, xSmoothTilt, changeToWorkState);
         InitialiseStates();     

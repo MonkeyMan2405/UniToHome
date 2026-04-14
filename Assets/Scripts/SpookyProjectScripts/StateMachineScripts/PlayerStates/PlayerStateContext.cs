@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class PlayerStateContext
 {
 
@@ -8,6 +8,8 @@ public class PlayerStateContext
     public HeadBobbing headBobbingRef;
     public SoundManager audioManagerRef;
     public PlayerFootsteps footstepsRef;
+
+    public InputAction playerControls;
 
 
 
@@ -95,6 +97,8 @@ public class PlayerStateContext
         HeadBobbing headBobbingRef,
         PlayerFootsteps footstepsRef,
 
+        InputAction playerControls,
+
         Transform blinds,
 
         Transform newCamPos,
@@ -153,6 +157,8 @@ public class PlayerStateContext
         this.interactorRef = interactorRef;
         this.headBobbingRef = headBobbingRef;
         this.footstepsRef = footstepsRef;
+
+        this.playerControls = playerControls;
 
         this.transitionIdentifier = transitionIdentifier;
 

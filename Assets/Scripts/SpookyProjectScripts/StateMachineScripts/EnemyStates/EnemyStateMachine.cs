@@ -42,7 +42,7 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EEnemyState>
 
     private void Awake()
     {
-        _context = new EnemyStateContext(enemyRb, enemyAgent, targetTransform, playerLastLocation, patrolPointsList, rayCheckDistance, layerMask, hitInfo, enemyMeshRenderer, enemyFaceMaterial.parent, rayCount, raySpacing);
+        _context = new EnemyStateContext(enemyRb, enemyAgent, targetTransform, playerLastLocation, patrolPointsList, rayCheckDistance, layerMask, hitInfo, enemyMeshRenderer, enemyFaceMaterial, rayCount, raySpacing);
         InitialiseStates();
     }
 

@@ -4,6 +4,8 @@ public class Flashlight : MonoBehaviour
 {
     public Transform playerTransform;
     public float zFlashlightOffset;
+
+    [Tooltip("This is how long the flashlight takes to catch up the the camnera forward position")]
     public float catchingSpeed;
     public Light flashlightLight;
 
