@@ -29,7 +29,6 @@ public class GameManagerBroadcaster : MonoBehaviour
     void Start()
     {
         flashLightAction = InputSystem.actions.FindAction("FlashLight");
-        debugText.text = Application.platform.ToString() +" & " + SystemInfo.operatingSystem +" & " + SystemInfo.deviceType + " & " + SystemInfo.deviceName;
     }
 
     
