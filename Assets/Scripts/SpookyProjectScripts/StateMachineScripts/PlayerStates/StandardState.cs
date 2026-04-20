@@ -15,7 +15,7 @@ public class StandardState : PlayerState, IInteractable
     InputAction mouseJoystickLook;
     InputAction interact;
 
-
+    InputAction MoveAction;
 
     public StandardState(PlayerStateContext _pcontext, PlayerStateMachine.EPlayerState state) : base(_pcontext, state)
     {
@@ -44,6 +44,16 @@ public class StandardState : PlayerState, IInteractable
         mouseJoystickLook = InputSystem.actions.FindAction("Look");
 
         interact = InputSystem.actions.FindAction("Interact");
+
+        if(SystemInfo.deviceName =="STEAMDECK")
+        {
+            PContext.mouseSensitivityX = 1.5f;
+            PContext.mouseSensitivityY = 1.5f;
+        }
+
+        MoveAction = InputSystem.actions.FindAction("Move");
+
+
 
     }
 
@@ -100,18 +110,16 @@ public class StandardState : PlayerState, IInteractable
 
     public void CameraTilt()
     {
-        bool leftStrafe = Input.GetKey(KeyCode.A);
-        bool rightStrafe = Input.GetKey(KeyCode.D);
-        bool forwardStrafe = Input.GetKey(KeyCode.W);
-        bool backwardStrafe = Input.GetKey(KeyCode.S);
+
+        Vector2 movement = MoveAction.ReadValue<Vector2>();
 
         //Left-Right Strafing Tilting
         // Determine the Ztarget tilt based on strafing input. If strafing left, set target tilt to positive value. If strafing right, set to negative value. If not strafing, set to zero
-        if (leftStrafe && !rightStrafe)
+        if (movement.x <= -0.1f)
         {
             PContext.zTargetTilt = PContext.zTiltAmount;    
         }
-        else if (rightStrafe && !leftStrafe)
+        else if (movement.x >= 0.1f)
         {
             PContext.zTargetTilt = -PContext.zTiltAmount;
         }
@@ -135,11 +143,11 @@ public class StandardState : PlayerState, IInteractable
 
 
         // Determine the Xtarget tilt based on strafing input. If strafing forward, set target tilt to positive value. If strafing backwards, set to negative value. If not strafing, set to zero
-        if (forwardStrafe && !backwardStrafe)
+        if (movement.y >= 0.1f)
         {
             PContext.xTargetTilt = PContext.xTiltAmount;
         }
-        else if (backwardStrafe && !forwardStrafe)
+        else if (movement.y <= -0.1f)
         {
             PContext.xTargetTilt = -PContext.xTiltAmount;
         }
@@ -217,10 +225,8 @@ public class StandardState : PlayerState, IInteractable
             Vector2 mouseX = mouseJoystickLook.ReadValue<Vector2>();
             Vector2 mouseY = mouseJoystickLook.ReadValue<Vector2>();
 
-            float floatMouseX = mouseX.x * PContext.mouseSensitivityX * Time.deltaTime;
-
-            float floatMouseY = mouseY.y * PContext.mouseSensitivityY * Time.deltaTime;
-
+            float floatMouseX = mouseX.x * PContext.mouseSensitivityX;
+            float floatMouseY = mouseY.y * PContext.mouseSensitivityY;
 
             PContext.verticalRotation -= floatMouseY;
             //Clamp the vertical rotation to prevent flipping. Clamps A by given floats

@@ -29,6 +29,7 @@ public class BlindsState : PlayerState
 
     InputAction interact;
 
+    InputAction MoveAction;
 #endregion
 
 
@@ -54,6 +55,15 @@ public class BlindsState : PlayerState
         {
             playerResetSpeed = PlayerStateMachine.playerMovementSpeed;
         }
+
+
+         if(SystemInfo.deviceName =="STEAMDECK")
+        {
+            PContext.mouseSensitivityX = 1;
+            PContext.mouseSensitivityY = 1;
+        }
+
+        MoveAction = InputSystem.actions.FindAction("Move");
 
     }
 
@@ -172,9 +182,9 @@ public class BlindsState : PlayerState
             Vector2 mouseX = mouseJoystickLook.ReadValue<Vector2>();
             Vector2 mouseY = mouseJoystickLook.ReadValue<Vector2>();
 
-            float floatMouseX = mouseX.x * PContext.mouseSensitivityX * Time.deltaTime;
+            float floatMouseX = mouseX.x * PContext.mouseSensitivityX;
 
-            float floatMouseY = mouseY.y * PContext.mouseSensitivityY * Time.deltaTime;
+            float floatMouseY = mouseY.y * PContext.mouseSensitivityY;
 
 
             PContext.verticalRotation -= floatMouseY;
@@ -193,18 +203,15 @@ public class BlindsState : PlayerState
    
     public void CameraTilt()
     {
-        bool leftStrafe = Input.GetKey(KeyCode.A);
-        bool rightStrafe = Input.GetKey(KeyCode.D);
-        bool forwardStrafe = Input.GetKey(KeyCode.W);
-        bool backwardStrafe = Input.GetKey(KeyCode.S);
+        Vector2 movement = MoveAction.ReadValue<Vector2>();
 
         //Left-Right Strafing Tilting
         // Determine the Ztarget tilt based on strafing input. If strafing left, set target tilt to positive value. If strafing right, set to negative value. If not strafing, set to zero
-        if (leftStrafe && !rightStrafe)
+        if (movement.x <= -0.1f)
         {
-            PContext.zTargetTilt = PContext.zTiltAmount;
+            PContext.zTargetTilt = PContext.zTiltAmount;    
         }
-        else if (rightStrafe && !leftStrafe)
+        else if (movement.x >= 0.1f)
         {
             PContext.zTargetTilt = -PContext.zTiltAmount;
         }
@@ -227,13 +234,12 @@ public class BlindsState : PlayerState
         PContext.zCurrentTilt = Mathf.Lerp(PContext.zCurrentTilt, PContext.zTargetTilt, PContext.zSmoothTilt * Time.deltaTime);
 
 
-
         // Determine the Xtarget tilt based on strafing input. If strafing forward, set target tilt to positive value. If strafing backwards, set to negative value. If not strafing, set to zero
-        if (forwardStrafe && !backwardStrafe)
+        if (movement.y >= 0.1f)
         {
             PContext.xTargetTilt = PContext.xTiltAmount;
         }
-        else if (backwardStrafe && !forwardStrafe)
+        else if (movement.y <= -0.1f)
         {
             PContext.xTargetTilt = -PContext.xTiltAmount;
         }

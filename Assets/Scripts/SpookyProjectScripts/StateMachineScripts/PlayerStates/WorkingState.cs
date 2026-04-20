@@ -13,7 +13,7 @@ public class WorkingState : PlayerState
     InputAction interact;
     InputAction interact2;
 
-      InputAction MoveAction;
+    InputAction MoveAction;
 
 
 
