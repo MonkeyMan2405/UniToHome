@@ -47,8 +47,8 @@ public class StandardState : PlayerState, IInteractable
 
         if(SystemInfo.deviceName =="STEAMDECK")
         {
-            PContext.mouseSensitivityX = 1.5f;
-            PContext.mouseSensitivityY = 1.5f;
+            PContext.mouseSensitivityX = 1.8f;
+            PContext.mouseSensitivityY = 1.8f;
         }
 
         MoveAction = InputSystem.actions.FindAction("Move");

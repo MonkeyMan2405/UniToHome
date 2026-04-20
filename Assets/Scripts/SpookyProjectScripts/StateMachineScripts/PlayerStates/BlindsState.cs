@@ -59,8 +59,8 @@ public class BlindsState : PlayerState
 
          if(SystemInfo.deviceName =="STEAMDECK")
         {
-            PContext.mouseSensitivityX = 1;
-            PContext.mouseSensitivityY = 1;
+            PContext.mouseSensitivityX = 1.8f;
+            PContext.mouseSensitivityY = 1.8f;
         }
 
         MoveAction = InputSystem.actions.FindAction("Move");

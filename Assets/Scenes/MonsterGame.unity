@@ -13939,7 +13939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d276046a5c29c4489e996c644c78055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetFPS: -1
+  targetFPS: 60
   debugText: {fileID: 976122891}
 --- !u!4 &1649838062
 Transform:
