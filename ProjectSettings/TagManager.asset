@@ -8,6 +8,7 @@ TagManager:
   - InteractableWork
   - InteractableBlinds
   - MonsterTrigger
+  - Jumpable
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Ignore
   - EnemyLayerMask
   - Interactable
-  - 
+  - BotNoSelfCollision
   - 
   - 
   - 

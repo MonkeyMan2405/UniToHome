@@ -1,4 +1,4 @@
-Library: C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+Library: C:\Users\charl\Desktop\GitHub\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --platform=Windows
 --minimum-os-version=
 --backend=burst-llvm-19
@@ -10,10 +10,10 @@ Library: C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Workshop_Scripts_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Student\Desktop\Github\UniToHome\Temp\Burst
+--temp-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.55f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Student\Desktop\Github\UniToHome\Library\Burst
---output=C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Library\Burst
+--output=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=TransformBakingSystem, Unity.Transforms.Hybrid, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::__codegen__OnCreate(System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--882d20751c132b04840944b83cdc71ca
@@ -55,10 +55,10 @@ Library: C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Workshop_Scripts_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Student\Desktop\Github\UniToHome\Temp\Burst
+--temp-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.55f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Student\Desktop\Github\UniToHome\Library\Burst
---output=C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Library\Burst
+--output=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=TransformBakingSystem, Unity.Transforms.Hybrid, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::__codegen__OnCreate(System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--882d20751c132b04840944b83cdc71ca
@@ -102,10 +102,10 @@ Library: C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins
 --float-mode=Fast
 --linker-options=PdbAltPath="Workshop_Scripts_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Student\Desktop\Github\UniToHome\Temp\Burst
+--temp-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.55f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Student\Desktop\Github\UniToHome\Library\Burst
---output=C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Library\Burst
+--output=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobForExtensions+ForJobStruct`1[[UnityEngine.Rendering.Universal.ZBinningJob, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Rendering.Universal.ZBinningJob&, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--77fc393cb521ac129b1392d4eb94d29a
@@ -123,10 +123,10 @@ Library: C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins
 --float-mode=Fast
 --linker-options=PdbAltPath="Workshop_Scripts_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Student\Desktop\Github\UniToHome\Temp\Burst
+--temp-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.55f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Student\Desktop\Github\UniToHome\Library\Burst
---output=C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Library\Burst
+--output=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobForExtensions+ForJobStruct`1[[UnityEngine.Rendering.Universal.ZBinningJob, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Rendering.Universal.ZBinningJob&, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--77fc393cb521ac129b1392d4eb94d29a
@@ -142,10 +142,10 @@ Library: C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Workshop_Scripts_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Student\Desktop\Github\UniToHome\Temp\Burst
+--temp-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.55f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Student\Desktop\Github\UniToHome\Library\Burst
---output=C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Library\Burst
+--output=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Entities.JobChunkExtensions+JobChunkProducer`1[[Unity.Physics.Systems.PhysicsWorldBuilder+Jobs+CreateMotions, Unity.Physics, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], Unity.Entities, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Unity.Entities.JobChunkExtensions+JobChunkWrapper`1[[Unity.Physics.Systems.PhysicsWorldBuilder+Jobs+CreateMotions, Unity.Physics, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]&, Unity.Entities, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--b7beeb9a838f6000b4be87e2d84ef6aa
@@ -259,10 +259,10 @@ Library: C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Workshop_Scripts_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Student\Desktop\Github\UniToHome\Temp\Burst
+--temp-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.55f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Student\Desktop\Github\UniToHome\Library\Burst
---output=C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Library\Burst
+--output=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Entities.JobChunkExtensions+JobChunkProducer`1[[Unity.Physics.Systems.PhysicsWorldBuilder+Jobs+CreateMotions, Unity.Physics, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], Unity.Entities, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Unity.Entities.JobChunkExtensions+JobChunkWrapper`1[[Unity.Physics.Systems.PhysicsWorldBuilder+Jobs+CreateMotions, Unity.Physics, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]&, Unity.Entities, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--b7beeb9a838f6000b4be87e2d84ef6aa
@@ -376,10 +376,10 @@ Library: C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Workshop_Scripts_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Student\Desktop\Github\UniToHome\Temp\Burst
+--temp-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.55f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Student\Desktop\Github\UniToHome\Library\Burst
---output=C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Library\Burst
+--output=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobParallelForExtensions+ParallelForJobStruct`1[[Unity.Entities.Baking.BakeDependencies+CalculateActiveDependenciesJob, Unity.Entities.Hybrid, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Unity.Entities.Baking.BakeDependencies+CalculateActiveDependenciesJob&, Unity.Entities.Hybrid, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--e9ade15c85327400eb76be54a4b6c1b8
@@ -493,10 +493,10 @@ Library: C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Workshop_Scripts_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Student\Desktop\Github\UniToHome\Temp\Burst
+--temp-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.55f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Student\Desktop\Github\UniToHome\Library\Burst
---output=C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Library\Burst
+--output=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobParallelForExtensions+ParallelForJobStruct`1[[Unity.Entities.Baking.BakeDependencies+CalculateActiveDependenciesJob, Unity.Entities.Hybrid, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Unity.Entities.Baking.BakeDependencies+CalculateActiveDependenciesJob&, Unity.Entities.Hybrid, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--e9ade15c85327400eb76be54a4b6c1b8
@@ -610,10 +610,10 @@ Library: C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Workshop_Scripts_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Student\Desktop\Github\UniToHome\Temp\Burst
+--temp-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.55f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Student\Desktop\Github\UniToHome\Library\Burst
---output=C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Library\Burst
+--output=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
@@ -727,10 +727,10 @@ Library: C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Workshop_Scripts_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Student\Desktop\Github\UniToHome\Temp\Burst
+--temp-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.55f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Student\Desktop\Github\UniToHome\Library\Burst
---output=C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Library\Burst
+--output=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
@@ -844,10 +844,10 @@ Library: C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Workshop_Scripts_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Student\Desktop\Github\UniToHome\Temp\Burst
+--temp-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.55f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Student\Desktop\Github\UniToHome\Library\Burst
---output=C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Library\Burst
+--output=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobParallelForExtensions+ParallelForJobStruct`1[[Unity.Entities.EntityManager+RemapChunksFilteredJob, Unity.Entities, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Unity.Entities.EntityManager+RemapChunksFilteredJob&, Unity.Entities, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--133cdc8adea96c01df559b08afa2ef56
@@ -961,10 +961,10 @@ Library: C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Workshop_Scripts_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Student\Desktop\Github\UniToHome\Temp\Burst
+--temp-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.55f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Student\Desktop\Github\UniToHome\Library\Burst
---output=C:\Users\Student\Desktop\Github\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\charl\Desktop\GitHub\UniToHome\Library\Burst
+--output=C:\Users\charl\Desktop\GitHub\UniToHome\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobParallelForExtensions+ParallelForJobStruct`1[[Unity.Entities.EntityManager+RemapChunksFilteredJob, Unity.Entities, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Unity.Entities.EntityManager+RemapChunksFilteredJob&, Unity.Entities, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--133cdc8adea96c01df559b08afa2ef56
