@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using System.Collections;
+using System.Runtime.CompilerServices;
 using Unity.Transforms;
 using UnityEngine;
 
@@ -17,6 +18,9 @@ public class RagPlayerController : MonoBehaviour
     private bool dontCheckStep;
     private bool leftOrRight;
 
+    private bool rayCheck;
+    private bool stepCheck;
+
     private RaycastHit rayHitInfo;
     private RaycastHit rayFootHitInfo;
 
@@ -24,6 +28,7 @@ public class RagPlayerController : MonoBehaviour
     private Transform footDetectorTransform;
 
     private Vector3 footPosition;
+    private Vector3 centerPosition;
     private float pelvisToLastStepDist;
     [SerializeField]
     private float footstepDistance = 2f;
@@ -48,6 +53,7 @@ public class RagPlayerController : MonoBehaviour
 
     private float distanceToLFoot;
     private float distanceToRFoot;
+    private float centerDistance;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -57,10 +63,24 @@ public class RagPlayerController : MonoBehaviour
         hipsRb = GetComponent<Rigidbody>();
 
         isGrounded = true;
+        rayCheck = true;
+        stepCheck = true;
+
     }
 
     private void FixedUpdate()
     {
+
+        if(rayCheck == true)
+        {
+            CenterOfMassSet();
+        }
+
+        if(stepCheck == true)
+        {
+            BalancerAndSteps();
+        }
+      
         //if foot hit floor, that is new ref point, need do this
 
 
@@ -68,7 +88,7 @@ public class RagPlayerController : MonoBehaviour
 
         //leftOrRightDetector();
 
-        LegStepCalculator();
+        //LegStepCalculator();
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -81,21 +101,21 @@ public class RagPlayerController : MonoBehaviour
                 hipsRb.AddForce(hipsRb.transform.right * speed);
             }
 
-            if (leftOrRight == false)
-            {
-                leftLeg.transform.RotateAround(leftLeg.transform.position, -Vector3.forward, 90 * rotationPower * Time.deltaTime);
-                //leftForeLeg.targetRotation = Quaternion.Euler(90, leftForeLeg.targetRotation.x, leftForeLeg.targetRotation.y);
+            //if (leftOrRight == false)
+            //{
+            //    leftLeg.transform.RotateAround(leftLeg.transform.position, -Vector3.forward, 90 * rotationPower * Time.deltaTime);
+            //    //leftForeLeg.targetRotation = Quaternion.Euler(90, leftForeLeg.targetRotation.x, leftForeLeg.targetRotation.y);
 
-                rightForeLeg.targetRotation = Quaternion.Euler(0, rightForeLeg.targetRotation.x, rightForeLeg.targetRotation.y);
-            }
+            //    rightForeLeg.targetRotation = Quaternion.Euler(0, rightForeLeg.targetRotation.x, rightForeLeg.targetRotation.y);
+            //}
 
-            if (leftOrRight == true)
-            {
-                rightLeg.transform.RotateAround(rightLeg.transform.position, -Vector3.forward, 90 * rotationPower * Time.deltaTime);
-                //rightForeLeg.targetRotation = Quaternion.Euler(-90, rightForeLeg.targetRotation.x, rightForeLeg.targetRotation.y);
+            //if (leftOrRight == true)
+            //{
+            //    rightLeg.transform.RotateAround(rightLeg.transform.position, -Vector3.forward, 90 * rotationPower * Time.deltaTime);
+            //    //rightForeLeg.targetRotation = Quaternion.Euler(-90, rightForeLeg.targetRotation.x, rightForeLeg.targetRotation.y);
 
-                leftForeLeg.targetRotation = Quaternion.Euler(0, leftForeLeg.targetRotation.x, leftForeLeg.targetRotation.y);
-            }
+            //    leftForeLeg.targetRotation = Quaternion.Euler(0, leftForeLeg.targetRotation.x, leftForeLeg.targetRotation.y);
+            //}
         }
 
 
@@ -122,20 +142,20 @@ public class RagPlayerController : MonoBehaviour
                 hipsRb.AddForce(hipsRb.transform.right * -speed);
             }
 
-            if (leftOrRight == false)
-            {
-                leftLeg.transform.RotateAround(leftLeg.transform.position, Vector3.forward, 90 * rotationPower * Time.deltaTime);
+            //if (leftOrRight == false)
+            //{
+            //    leftLeg.transform.RotateAround(leftLeg.transform.position, Vector3.forward, 90 * rotationPower * Time.deltaTime);
                
-                rightForeLeg.targetRotation = Quaternion.Euler(0, rightForeLeg.targetRotation.x, rightForeLeg.targetRotation.y);
-            }
+            //    rightForeLeg.targetRotation = Quaternion.Euler(0, rightForeLeg.targetRotation.x, rightForeLeg.targetRotation.y);
+            //}
 
-            if (leftOrRight == true)
-            {
-                rightLeg.transform.RotateAround(rightLeg.transform.position, Vector3.forward, 90 * rotationPower * Time.deltaTime);
+            //if (leftOrRight == true)
+            //{
+            //    rightLeg.transform.RotateAround(rightLeg.transform.position, Vector3.forward, 90 * rotationPower * Time.deltaTime);
                 
 
-                leftForeLeg.targetRotation = Quaternion.Euler(0, leftForeLeg.targetRotation.x, leftForeLeg.targetRotation.y);
-            }
+            //    leftForeLeg.targetRotation = Quaternion.Euler(0, leftForeLeg.targetRotation.x, leftForeLeg.targetRotation.y);
+            //}
 
         }
 
@@ -199,7 +219,8 @@ public class RagPlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.T))
         {
-            rightForeLeg.targetRotation = Quaternion.Euler(-90, rightForeLeg.targetRotation.x, rightForeLeg.targetRotation.y);
+            //rightForeLeg.targetRotation = Quaternion.Euler(-90, rightForeLeg.targetRotation.x, rightForeLeg.targetRotation.y);
+            rayCheck = true;
         }
 
         //    if (Input.GetKeyDown(KeyCode.R))
@@ -254,6 +275,84 @@ public class RagPlayerController : MonoBehaviour
             //    leftLeg.transform.RotateAround(leftLeg.transform.position, -Vector3.forward, 90 * rotationPower * Time.deltaTime);
             //}
     }
+
+
+    public void CenterOfMassSet()
+    {
+
+        if (Physics.Raycast(hipsRb.transform.position, new Vector3(0, -1, 0), out rayFootHitInfo, 5.75f, ragdollLayerMask))
+        {
+            centerPosition = rayHitInfo.point = new Vector3(0, hipsRb.transform.position.y, 0);
+            rayCheck = false;
+            Debug.Log(centerPosition);
+            //maybe set back to true when stopping movement?
+        }
+    }
+
+
+   public void BalancerAndSteps()
+   {
+        centerDistance = Vector3.Distance(centerPosition, hipsRb.transform.position);
+
+        if (centerDistance > footstepDistance)
+        {
+            stepCheck = false;
+            rayCheck = true;
+            Debug.Log("take step");
+            StartCoroutine(TakeStep());       
+        }
+
+   }
+
+
+    IEnumerator TakeStep()
+    {
+        if (leftOrRight == false)
+        {
+            //leftForeLeg.transform.position = 
+            leftLegJoint.targetRotation = Quaternion.Euler(-40, leftLegJoint.targetRotation.x, leftLegJoint.targetRotation.y);
+            //leftForeLeg.targetRotation = Quaternion.Euler(-45, leftForeLeg.targetRotation.x, leftForeLeg.targetRotation.y);
+            yield return new WaitForSeconds(0.4f);
+
+            if (Physics.Raycast(hipsRb.transform.position, new Vector3(0, -1, 0), out rayFootHitInfo, 5.75f, ragdollLayerMask))
+            {
+                centerPosition = rayHitInfo.point;
+
+                leftLegJoint.targetRotation = Quaternion.Euler(0, leftLegJoint.targetRotation.x, leftLegJoint.targetRotation.y);
+                leftFoot.transform.position = Vector3.Lerp(leftFoot.transform.position, centerPosition, footLerpPower * Time.deltaTime);
+
+                stepCheck = true;
+                leftOrRight = true;
+            }
+        }
+
+        else
+        {
+            //leftForeLeg.transform.position = 
+            rightLegJoint.targetRotation = Quaternion.Euler(40, rightLegJoint.targetRotation.x, rightLegJoint.targetRotation.y);
+            //leftForeLeg.targetRotation = Quaternion.Euler(-45, leftForeLeg.targetRotation.x, leftForeLeg.targetRotation.y);
+            yield return new WaitForSeconds(0.4f);
+
+            if (Physics.Raycast(hipsRb.transform.position, new Vector3(0, -1, 0), out rayFootHitInfo, 5.75f, ragdollLayerMask))
+            {
+                centerPosition = rayHitInfo.point;
+
+                rightLegJoint.targetRotation = Quaternion.Euler(0, rightLegJoint.targetRotation.x, rightLegJoint.targetRotation.y);
+                rightFoot.transform.position = Vector3.Lerp(rightFoot.transform.position, centerPosition, footLerpPower * Time.deltaTime);
+
+                stepCheck = true;
+                leftOrRight = false;
+            }
+        }
+
+            StopCoroutine(TakeStep());
+    }
+
+
+
+
+
+
 
 
     public void LegStepCalculator()
@@ -393,14 +492,14 @@ public class RagPlayerController : MonoBehaviour
 
     }
 
-    public void TakeStep()
-    {
-        leftLeg.transform.RotateAround(leftLeg.transform.position, -Vector3.forward, 90 * rotationPower * Time.deltaTime);
-        if (leftLeg.transform.rotation.y >= -45)
-        {
-            Debug.Log("Should maybe work lol");
-        }
-    }
+    //public void TakeStep()
+    //{
+    //    leftLeg.transform.RotateAround(leftLeg.transform.position, -Vector3.forward, 90 * rotationPower * Time.deltaTime);
+    //    if (leftLeg.transform.rotation.y >= -45)
+    //    {
+    //        Debug.Log("Should maybe work lol");
+    //    }
+    //}
 
     //move runs the take step command,
     //a seperate script just alternates what leg it runs on?
