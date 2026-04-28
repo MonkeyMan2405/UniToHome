@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 using UnityEditor.PackageManager;
 using UnityEngine;
 
-public class IKFootSolver : MonoBehaviour
+public class IKFootSolver2 : MonoBehaviour
 {
     [SerializeField]
     private LayerMask floorLM;
@@ -10,9 +10,9 @@ public class IKFootSolver : MonoBehaviour
     private float stepDistance;
 
     public Vector3 rayheightincrease;
-    public Transform leftFoot;
+    public Transform rightFoot;
     public Transform pelvisPos;
-    public Rigidbody leftFootRB;
+    public Rigidbody rightFootRB;
     public Vector3 pelvisToFloorPos;
 
     private bool shouldCheck;
@@ -36,7 +36,7 @@ public class IKFootSolver : MonoBehaviour
             CheckRay();
         }
 
-        leftFoot.position = hitInfo.point + rayheightincrease;
+        rightFoot.position = hitInfo.point + rayheightincrease;
 
         CheckDistanceRay();
 
@@ -58,21 +58,20 @@ public class IKFootSolver : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(hitInfo.point, 0.1f);
-        Gizmos.DrawSphere(pelvisToFloorPos, 0.4f);
     }
 
 
     public void CheckRay()
     {
-        Ray footPlacementRay = new Ray(leftFoot.position, Vector3.down);
+        Ray footPlacementRay = new Ray(rightFoot.position, Vector3.down);
 
         if (Physics.Raycast(transform.position, Vector3.down, out hitInfo, 3))
         {
             shouldCheck = false;
-            Debug.DrawRay(leftFoot.position, Vector3.down * 3f, Color.red);
+            Debug.DrawRay(rightFoot.position, Vector3.down * 3f, Color.red);
             //foot.position = hitInfo.point + rayheightincrease;
-            leftFootRB.constraints = RigidbodyConstraints.FreezeAll;
-            Debug.Log(leftFoot.position);
+            rightFootRB.constraints = RigidbodyConstraints.FreezeAll;
+            Debug.Log(rightFoot.position);
 
 
         }
@@ -80,40 +79,16 @@ public class IKFootSolver : MonoBehaviour
 
     public void CheckDistanceRay()
     {
-        //Debug.DrawRay(pelvisPos.position, new Vector3(0, -7, 0), Color.red);
 
-
-        if (Physics.Raycast(pelvisPos.position, new Vector3(0, -1, 0), out hitInfo2, 6))
+        if (Physics.Raycast(pelvisPos.position, Vector3.down, out hitInfo2, 5.75f, floorLM))
         {
-            Debug.DrawRay(pelvisPos.position, new Vector3(0, -6, 0), Color.red);
             pelvisToFloorPos = hitInfo2.point;
 
-            if(Vector3.Distance(pelvisToFloorPos, leftFoot.position) > stepDistance)
+            if(Vector3.Distance(pelvisToFloorPos, rightFoot.position) > stepDistance)
             {
-                shouldCheck = true;
-                transform.position = hitInfo2.point;
                 Debug.Log("yes");
             }
-
-
         }
-        
-
-        //if (Physics.Raycast(pelvisPos.position, Vector3.down, out hitInfo2, 20f, floorLM))
-        //{
-        //    Debug.DrawRay(pelvisPos.position, Vector3.down, Color.red, 20f);
-        //    Debug.Log("boo");
-        //    //pelvisToFloorPos = hitInfo.point;
-        //    if(Vector3.Distance(pelvisToFloorPos, leftFoot.position) > stepDistance)
-        //    {
-        //        Debug.Log("yes");
-        //    }
-
-        //    Debug.DrawRay(pelvisPos.position, hitInfo2.point, Color.red);
-        //}
-
-
-      
 
     }
 
