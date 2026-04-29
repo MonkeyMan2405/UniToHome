@@ -20,6 +20,19 @@ public class HexGridMeshGen : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        MouseController.OnLeftMouseClick.AddListener(OnLeftMouseClick);
+        MouseController.OnRightMouseClick.AddListener(OnRightMouseClick);
+        MouseController.OnMiddleMouseClick.AddListener(OnMiddleMouseClick);
+    }
+
+    private void OnDisable()
+    {
+        MouseController.OnLeftMouseClick.RemoveListener(OnLeftMouseClick);
+        MouseController.OnRightMouseClick.RemoveListener(OnRightMouseClick);
+        MouseController.OnMiddleMouseClick.RemoveListener(OnMiddleMouseClick)   ;
+    }
 
     public void CreateHexMesh()
     {
@@ -123,5 +136,44 @@ public class HexGridMeshGen : MonoBehaviour
 
     }
 
+
+
+
+
+
+
+
+
+
+
+
+    public void OnLeftMouseClick(RaycastHit mouseRayHit)
+    {
+        Debug.Log("Hit Object: " + mouseRayHit.transform.name + " at position: " + mouseRayHit.point);
+
+        float localX = mouseRayHit.point.x - transform.position.x;
+        float localZ = mouseRayHit.point.z - transform.position.z;
+        
+        Debug.Log("Offset Position: " + StaticHexMetrics.CoordinateToOffset(localX, localZ, hexGrid.hexSize, hexGrid.Orientation));
+    }
+
+    public void OnRightMouseClick(RaycastHit mouseRayHit)
+    {
+        float localX = mouseRayHit.point.x - transform.position.x;
+        float localZ = mouseRayHit.point.z - transform.position.z;
+
+        Vector2 location = StaticHexMetrics.CoordinateToOffset(localX, localZ, hexGrid.hexSize, hexGrid.Orientation);
+        Vector3 center = StaticHexMetrics.Center(hexGrid.hexSize, (int)location.x, (int)location.y, hexGrid.Orientation);
+
+        Debug.Log("Right clicked on Hex: " + location);
+
+
+    }
+
+
+    public void OnMiddleMouseClick(RaycastHit mouseRayHit)
+    {
+       
+    }
 
 }
