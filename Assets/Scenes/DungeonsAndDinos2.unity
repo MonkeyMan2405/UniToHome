@@ -461,9 +461,141 @@ PrefabInstance:
       value: HexTileBaseTrueStart
       objectReference: {fileID: 0}
     - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: tileLM.m_Bits
+      value: 32768
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: bossTilesPrefab
+      value: 
+      objectReference: {fileID: 2339545384699065298, guid: dea73831afba65043b0b4d8e00c5a198, type: 3}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: failedSpawnsAllowed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: spawnVectorsList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
       propertyPath: 'hexTilePrefabList.Array.data[0]'
       value: 
       objectReference: {fileID: 661824612594341515, guid: 4ce29807be3de4a4d9deca8286532b78, type: 3}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: spawnVectorsList.Array.data[6].x
+      value: 0.866
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: spawnVectorsList.Array.data[6].z
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: standardSpawnVectorsList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[0].x
+      value: -1.732
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[0].z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[1].z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[2].x
+      value: 1.732
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[2].z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[3].x
+      value: -2.598
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[3].z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[4].x
+      value: 2.598
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[4].z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[5].x
+      value: -3.464
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[6].x
+      value: 3.464
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[7].x
+      value: -2.598
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[7].z
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[8].x
+      value: 2.598
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[8].z
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[9].x
+      value: -1.732
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[9].z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[10].x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[10].z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[11].x
+      value: 1.732
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnVectorsList.Array.data[11].z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: standardSpawnVectorsList.Array.data[0].x
+      value: -0.866
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: standardSpawnVectorsList.Array.data[0].z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: standardSpawnVectorsList.Array.data[1].x
+      value: 0.866
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: standardSpawnVectorsList.Array.data[1].z
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -570,24 +702,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hexTilePrefabList:
   - {fileID: 919132149155446097, guid: 1a5a9a13db0ce0c4cae20ac10aad9007, type: 3}
-  hexSpawnLocationsList: []
   emptySpawnHolderList: []
-  spawnedTilesList: []
-  spawnVectorsList:
-  - {x: -0.866, y: 0, z: 1.5}
-  - {x: 0.866, y: 0, z: 1.5}
-  - {x: -1.732, y: 0, z: 0}
-  - {x: 1.732, y: 0, z: 0}
-  - {x: -0.866, y: 0, z: -1.5}
-  - {x: 0.866, y: 0, z: -1.5}
-  lastSpawnPos: {x: 90, y: 0, z: 0}
-  startingTile: {fileID: 0}
-  spawnLocation: {fileID: 0}
+  standardSpawnVectorsList: []
+  biggerSpawnVectorsList: []
   hexTileAmount: 10
   failedSpawnsAllowed: 2
   tileLM:
     serializedVersion: 2
     m_Bits: 0
+  bossTilesPrefab: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
