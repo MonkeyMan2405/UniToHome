@@ -461,9 +461,17 @@ PrefabInstance:
       value: HexTileBaseTrueStart
       objectReference: {fileID: 0}
     - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: hexTileAmount
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
       propertyPath: tileLM.m_Bits
       value: 32768
       objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: hexTileToSpawn
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: 1a5a9a13db0ce0c4cae20ac10aad9007, type: 3}
     - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
       propertyPath: bossTilesPrefab
       value: 
@@ -596,6 +604,74 @@ PrefabInstance:
       propertyPath: standardSpawnVectorsList.Array.data[1].z
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: standardSpawnVectorsList.Array.data[2].x
+      value: -1.732
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: standardSpawnVectorsList.Array.data[3].x
+      value: 1.732
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: standardSpawnVectorsList.Array.data[4].x
+      value: -0.866
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: standardSpawnVectorsList.Array.data[4].z
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: standardSpawnVectorsList.Array.data[5].x
+      value: 0.866
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: standardSpawnVectorsList.Array.data[5].z
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnOverrideVectorsList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnOverrideVectorsList.Array.data[0].x
+      value: -0.866
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnOverrideVectorsList.Array.data[0].z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnOverrideVectorsList.Array.data[1].x
+      value: 0.866
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnOverrideVectorsList.Array.data[1].z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnOverrideVectorsList.Array.data[2].x
+      value: -1.732
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnOverrideVectorsList.Array.data[3].x
+      value: 1.732
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnOverrideVectorsList.Array.data[4].x
+      value: -0.866
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnOverrideVectorsList.Array.data[4].z
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnOverrideVectorsList.Array.data[5].x
+      value: 0.866
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393359795305434698, guid: 4bdcfd85ba7e76c4c85576aa9111957d, type: 3}
+      propertyPath: biggerSpawnOverrideVectorsList.Array.data[5].z
+      value: -1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -645,11 +721,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7265a78911d1c694c86c402bdcc682c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridWidth: 5
-  gridHeight: 5
+  gridWidth: 90
+  gridHeight: 90
   hexSize: 1
-  noiseScale: 0.1
-  heightMultiplier: 1
+  noiseScale: 0.2
+  heightMultiplier: 2
   hexBasePrefab: {fileID: 919132149155446097, guid: 1a5a9a13db0ce0c4cae20ac10aad9007, type: 3}
   emptyPrefab: {fileID: 919132149155446097, guid: 1a5a9a13db0ce0c4cae20ac10aad9007, type: 3}
   waterPrefab: {fileID: 919132149155446097, guid: ab1ed4e6d2d43a44cae8091dc8e35f67, type: 3}
@@ -703,13 +779,17 @@ MonoBehaviour:
   hexTilePrefabList:
   - {fileID: 919132149155446097, guid: 1a5a9a13db0ce0c4cae20ac10aad9007, type: 3}
   emptySpawnHolderList: []
+  spawnedTilesList: []
   standardSpawnVectorsList: []
   biggerSpawnVectorsList: []
+  biggerSpawnOverrideVectorsList: []
+  lastSpawnPos: {x: 0, y: 0, z: 0}
   hexTileAmount: 10
   failedSpawnsAllowed: 2
   tileLM:
     serializedVersion: 2
     m_Bits: 0
+  hexTileToSpawn: {fileID: 0}
   bossTilesPrefab: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

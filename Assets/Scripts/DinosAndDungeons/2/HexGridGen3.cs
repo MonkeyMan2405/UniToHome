@@ -11,14 +11,14 @@ public class HexGridGen3 : MonoBehaviour
 
     public List<GameObject> hexTilePrefabList;
     public List<GameObject> emptySpawnHolderList;
-
-    private List<GameObject> spawnedTilesList;
+    public List<GameObject> spawnedTilesList;
 
     //written directly into the Inspector, goes from Top Left(TL) to Top Right(TR)
     public List<Vector3> standardSpawnVectorsList;
     public List<Vector3> biggerSpawnVectorsList;
+    public List<Vector3> biggerSpawnOverrideVectorsList;
 
-    private Vector3 lastSpawnPos;
+    [SerializeField] private Vector3 lastSpawnPos;
 
 
     //public Transform spawnLocation;
@@ -58,13 +58,13 @@ public class HexGridGen3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKey(KeyCode.G))
         {
             chooseRandomTile();
         }
 
     }
+
 
 
 
@@ -213,6 +213,7 @@ public class HexGridGen3 : MonoBehaviour
                     tileIdentifier++;
                     failedAttempts = 0;
 
+                    //ensure this is set to base position in inspector for first iteration
                     lastSpawnPos = spawnPoint;
                 }
 
@@ -253,26 +254,38 @@ public class HexGridGen3 : MonoBehaviour
 
     public void SpawnBiggerTile()
     {
-        //random spawn vector from list
+        //random direction and spawn setting
         int randomDirectionIndex = Random.Range(0, standardSpawnVectorsList.Count);
         Vector3 chosenSpawnDirection = standardSpawnVectorsList[randomDirectionIndex];
         Vector3 spawnPoint = lastSpawnPos + chosenSpawnDirection;
 
 
-        //check if overlapping first
-        //need implement check which loops through where big tile prefabs be, check if they overlap too
+        //check overlapping, delete them.
+        int localCoordsIndex = 0;
 
-
-
-        foreach (Vector3 coordsToCheck in biggerSpawnVectorsList)
+        //checks through set vectors that if this spawned, it would override, should then delete them. then spawn it
+        foreach (Vector3 coordsToCheck in biggerSpawnOverrideVectorsList)
         {
+            
+            Vector3 localCoordsToCheck = spawnPoint + biggerSpawnOverrideVectorsList[localCoordsIndex];
 
-            Collider[] overlappedTilesCollider = Physics.OverlapBox(coordsToCheck, new Vector3(0.5f, 0.5f, 0.5f));
 
-            Destroy(overlappedTilesCollider[0].gameObject);
+            Collider[] overlappedTilesCollider = Physics.OverlapBox(localCoordsToCheck, new Vector3(0.5f, 0.5f, 0.5f));
+            foreach (Collider col in overlappedTilesCollider)
+            {
+                Destroy(col.gameObject);
+            }
+
+            //increment to check next index next iteration
+            localCoordsIndex++;
+      
         }
 
+        //then spawn
+
         Instantiate(bossTilesPrefab, spawnPoint, Quaternion.identity);
+        hexTileAmount--;
+        //lastSpawnPos = spawnPoint;
 
 
     }
@@ -389,16 +402,16 @@ public class HexGridGen3 : MonoBehaviour
             hexTileToSpawn = hexTilePrefabList[0];
             SpawnBaseSizeTile();
         }
-        //else if (hexTileAmount == 1)
-        //{
-        //    hexTileToSpawn = bossTilesPrefab;
-        //    SpawnBiggerTile();
-        //}
-        //else
-        //{
-        //    //no tiles left, do nothing,
-        //    Debug.Log("No more Tiles, Dungeon Complete");
-        //}
+        else if (hexTileAmount == 1)
+        {
+            hexTileToSpawn = bossTilesPrefab;
+            SpawnBiggerTile();
+        }
+        else
+        {
+            //no tiles left, do nothing,
+            Debug.Log("No more Tiles, Dungeon Complete");
+        }
 
 
 
@@ -419,53 +432,59 @@ public class HexGridGen3 : MonoBehaviour
         //    Transform hexSpawnLocation = hexSpawnLocations[spawnPointIndex];
 
 
-        //    //Spawn and set name
-        //    hexTileToSpawn = Instantiate(hexBasePrefab, hexSpawnLocation.position, Quaternion.identity);
-        //    hexTileToSpawn.name = $"HexTile {tileNumber} "; //name tile for easy identification in hierarchy
-        //    tileNumber++;
+
+    //    //Get random
+    //    int spawnPointIndex = Random.Range(0, hexSpawnLocations.Count);
+    //    Transform hexSpawnLocation = hexSpawnLocations[spawnPointIndex];
 
 
-        //    //Check if overlapping,
-        //    if (Physics.CheckBox(hexSpawnLocation.position, new Vector3(1f, 1f, 1f), Quaternion.identity))
-        //    {
-
-        //        Debug.Log(hexTileToSpawn.name + " Detected Overlapping Collision, Tile Destroyed");
-        //        Destroy(hexTileToSpawn);
-
-        //    }
-        //    // Log succesful spawn, remove spawn point from list, decrease room amount
-        //    else
-        //    {
-        //        Debug.Log(hexTileToSpawn.name + " Spawned Succesfully");
-        //        Destroy(hexSpawnLocations[spawnPointIndex]);
-        //        hexSpawnLocations.RemoveAt(spawnPointIndex);
-
-        //        hexTileAmount --;
-        //    }
+    //    //Spawn and set name
+    //    hexTileToSpawn = Instantiate(hexBasePrefab, hexSpawnLocation.position, Quaternion.identity);
+    //    hexTileToSpawn.name = $"HexTile {tileNumber} "; //name tile for easy identification in hierarchy
+    //    tileNumber++;
 
 
-        //}
-        //else
-        //{
-        //    Debug.Log(hexSpawnLocations.Count);
-        //}
+    //    //Check if overlapping,
+    //    if (Physics.CheckBox(hexSpawnLocation.position, new Vector3(1f, 1f, 1f), Quaternion.identity))
+    //    {
+
+    //        Debug.Log(hexTileToSpawn.name + " Detected Overlapping Collision, Tile Destroyed");
+    //        Destroy(hexTileToSpawn);
+
+    //    }
+    //    // Log succesful spawn, remove spawn point from list, decrease room amount
+    //    else
+    //    {
+    //        Debug.Log(hexTileToSpawn.name + " Spawned Succesfully");
+    //        Destroy(hexSpawnLocations[spawnPointIndex]);
+    //        hexSpawnLocations.RemoveAt(spawnPointIndex);
+
+    //        hexTileAmount --;
+    //    }
 
 
-        //foreach (Transform spawnLocation in hexSpawnLocations)
-        //{
+    //}
+    //else
+    //{
+    //    Debug.Log(hexSpawnLocations.Count);
+    //}
 
-        //    GameObject hexTileToSpawn = Instantiate(hexBasePrefab, spawnLocation.position, Quaternion.identity);
 
-        //    hexTileToSpawn.name = $"HexTile {tileNumber} "; //name tile for easy identification in hierarchy
-        //    tileNumber++;
-        //    // edit the size
+    //foreach (Transform spawnLocation in hexSpawnLocations)
+    //{
 
-        //    if (Physics.CheckBox(spawnLocation.position, new Vector3(1f, 1f, 1f), Quaternion.identity))
-        //    { 
+    //    GameObject hexTileToSpawn = Instantiate(hexBasePrefab, spawnLocation.position, Quaternion.identity);
 
-        //        Debug.Log(hexTileToSpawn.name + " detected collision");
-        //        Destroy(hexTileToSpawn);
+    //    hexTileToSpawn.name = $"HexTile {tileNumber} "; //name tile for easy identification in hierarchy
+    //    tileNumber++;
+    //    // edit the size
 
-        //    }
+    //    if (Physics.CheckBox(spawnLocation.position, new Vector3(1f, 1f, 1f), Quaternion.identity))
+    //    { 
+
+    //        Debug.Log(hexTileToSpawn.name + " detected collision");
+    //        Destroy(hexTileToSpawn);
+
+    //    }
 
 

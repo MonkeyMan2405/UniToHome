@@ -137,19 +137,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hexTilePrefabList:
   - {fileID: 5876287119603271845, guid: af4a22acaae10d6429d5e750ae1f6009, type: 3}
-  hexSpawnLocationsList: []
   emptySpawnHolderList: []
-  spawnVectorsList:
-  - {x: -0.866, y: 0, z: 1.5}
-  - {x: 0.866, y: 0, z: 1.5}
-  - {x: -1.732, y: 0, z: 0}
-  - {x: 1.732, y: 0, z: 0}
-  - {x: -0.866, y: 0, z: -1.5}
-  - {x: 0.866, y: 0, z: -1.5}
+  spawnedTilesList: []
+  standardSpawnVectorsList: []
+  biggerSpawnVectorsList: []
+  biggerSpawnOverrideVectorsList: []
   lastSpawnPos: {x: 90, y: 0, z: 0}
-  startingTile: {fileID: 0}
-  spawnLocation: {fileID: 0}
   hexTileAmount: 10
+  failedSpawnsAllowed: 2
   tileLM:
     serializedVersion: 2
     m_Bits: 0
+  hexTileToSpawn: {fileID: 0}
+  bossTilesPrefab: {fileID: 0}
