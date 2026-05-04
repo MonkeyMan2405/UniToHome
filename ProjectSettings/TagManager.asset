@@ -9,6 +9,7 @@ TagManager:
   - InteractableBlinds
   - MonsterTrigger
   - Jumpable
+  - NoDeletion
   layers:
   - Default
   - TransparentFX
