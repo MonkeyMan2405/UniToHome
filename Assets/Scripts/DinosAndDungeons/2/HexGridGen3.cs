@@ -205,7 +205,7 @@ public class HexGridGen3 : MonoBehaviour
                     failedAttempts = 0;
 
                     //ensure this is set to base position in inspector for first iteration
-                    //lastSpawnPos = spawnPoint;
+                    lastSpawnPos = spawnPoint;
                     smallOrBigTile = false;
                     shouldCheckNew = true;
                 }
