@@ -180,25 +180,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3474971303094241a0e252995616ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridWidth: 20
-  gridHeight: 20
+  gridWidth: 16
+  gridHeight: 16
   hexSize: 1
-  noiseScale: 0.15
+  tileLM:
+    serializedVersion: 2
+    m_Bits: 0
+  waterAmount: 0.35
+  sandAmount: 0.4
+  grassAmount: 0.45
+  upperGrassAmount: 0.7
+  hill1Amount: 0.75
+  hill2Amount: 0.76
+  waterHeight: -0.3
+  sandHeight: 0
+  grassHeight: 0.4
+  upperGrassHeight: 0.8
+  hill1Height: 2
+  hill2Height: 2.4
+  hill3Height: 2.8
   heightMultiplier: 1
+  noiseScale: 0.175
   hexBasePrefab: {fileID: 2171746484542529997, guid: 13cf81951831a0c4bb864fe0cb31abb7, type: 3}
   emptyPrefab: {fileID: 2171746484542529997, guid: d9b940b586884a84cb8420d7e7e40500, type: 3}
   waterPrefab: {fileID: 2171746484542529997, guid: d9b940b586884a84cb8420d7e7e40500, type: 3}
   grassPrefab: {fileID: 2171746484542529997, guid: 13cf81951831a0c4bb864fe0cb31abb7, type: 3}
   sandPrefab: {fileID: 2171746484542529997, guid: 8627d28560725fc428ab80fff7ab372c, type: 3}
-  upFloorPrefab: {fileID: 2171746484542529997, guid: 13cf81951831a0c4bb864fe0cb31abb7, type: 3}
+  upperFloorPrefab: {fileID: 2171746484542529997, guid: 13cf81951831a0c4bb864fe0cb31abb7, type: 3}
+  hill1Prefab: {fileID: 2171746484542529997, guid: 39dcd113fbf257842a50f163f4119c1d, type: 3}
+  hill2Prefab: {fileID: 2171746484542529997, guid: fbad0dfe4942fb049bfcb3f1eae603bc, type: 3}
+  hill3Prefab: {fileID: 2171746484542529997, guid: 39dcd113fbf257842a50f163f4119c1d, type: 3}
   spawnedTilesList: []
   standardHexTilePrefabList:
-  - {fileID: 2171746484542529997, guid: 13cf81951831a0c4bb864fe0cb31abb7, type: 3}
+  - {fileID: 2171746484542529997, guid: 8627d28560725fc428ab80fff7ab372c, type: 3}
   biggerHexTilePrefabList:
   - {fileID: 3816770346868894793, guid: 21fbb47f932b96741a214d337e6d20f5, type: 3}
   - {fileID: 2674744033458578107, guid: cab1f154b9538774089e9c3b81a7e0f6, type: 3}
   specialHexTilePrefabList: []
   emptySpawnHolderList: []
+  edgeTilesList: []
   standardSpawnVectorsList:
   - {x: -0.866, y: 0, z: 1.5}
   - {x: 0.866, y: 0, z: 1.5}
@@ -229,11 +249,16 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   lastSpawnPos: {x: 0, y: 0, z: 0}
   spawnPoint: {x: 0, y: 0, z: 0}
+  treeList:
+  - {fileID: 7499251734889566315, guid: 7a26fd57aad41054294770f7bc2bf66e, type: 3}
+  - {fileID: 7250675032463497241, guid: 683bacc4d3c02ff4897779f9c7e08ece, type: 3}
+  - {fileID: 3844101992160974051, guid: 544c4cf2a93327b4a839cf37f7923bc2, type: 3}
+  - {fileID: 919132149155446097, guid: b6ce2e5b295e90c4dbb849d60b22c41c, type: 3}
+  rockList: []
+  spawnedDecoratableTilesList: []
+  treeAmount: 10
+  rockAmount: 10
   hexTileAmount: 150
-  failedSpawnsAllowed: 6
-  tileLM:
-    serializedVersion: 2
-    m_Bits: 0
   hexTileToSpawn: {fileID: 0}
   bossTilesPrefab: {fileID: 0}
 --- !u!4 &625808855
@@ -691,7 +716,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
