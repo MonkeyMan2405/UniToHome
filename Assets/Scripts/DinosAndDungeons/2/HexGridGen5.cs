@@ -356,21 +356,23 @@ public class HexGridGen5 : MonoBehaviour
 
             //////////////////////////////////////////////////////////////////////////////////////////////////////////
            
+            //chekcs where spawned and will more often than not, spawn the layer below. leading to gradual sloping down
+
             if (Vector3.Distance(spawnPoint, gridCenter) <= 17.5f)
             {
                 if(spawnPoint.y <= sandHeight)
                 {
                     spawnPoint.y = waterHeight;
                 }
-                else if(spawnPoint.y <= grassHeight)
+                else if(spawnPoint.y <= grassHeight && Random.Range(0f, 1f) >= 0.5f)
                 {
                     spawnPoint.y = sandHeight;
                 }
-                else if (spawnPoint.y <= upperGrassHeight)
+                else if (spawnPoint.y <= upperGrassHeight && Random.Range(0f, 1f) >= 0.5f)
                 {
                     spawnPoint.y = grassHeight;
                 }
-                else if (spawnPoint.y <= hill1Height)
+                else if (spawnPoint.y <= hill1Height && Random.Range(0f, 1f) >= 0.5f)
                 {
                     spawnPoint.y = upperGrassHeight;
                 }
@@ -445,6 +447,8 @@ public class HexGridGen5 : MonoBehaviour
             Vector3 decorationSpawnLocation = spawnedDecoratableTilesList[Random.Range(0, spawnedDecoratableTilesList.Count)].transform.position;
             GameObject decorationToSpawn = treeList[Random.Range(0, treeList.Count)];
             Instantiate(decorationToSpawn, decorationSpawnLocation, Quaternion.identity);
+
+            spawnedDecoratableTilesList.Remove(decorationToSpawn);
             treeAmount--;
 
         }
